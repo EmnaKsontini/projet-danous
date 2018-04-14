@@ -11,8 +11,9 @@ header {
 
 }
 .top_head {
-    overflow: hidden;
+    /*overflow: hidden;*/
     position: relative;
+
 }
 .logo {
     float: left;
@@ -23,8 +24,13 @@ header {
 
 #search {
     float: right;
-    margin: 21px 41px 0 0;
+   /* margin: 21px 41px 0 0;*/
     text-align: right;
+    position:absolute;
+    top:0;
+    right: 40px;
+
+
 }
 #search form {
     float:right;

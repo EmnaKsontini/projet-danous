@@ -25,13 +25,8 @@
                 <li><a href="#">Contact us</a></li>
                 <li><a href="#">About</a></li>
 
-            </ul>
-        </nav>
-        <div class="top_head">
-            <div class="couverture ">
-                <!--notre couverture est en background-->
-            </div>
 
+            </ul>
             <section id="search"><!-- Search form -->
                 <form action="#" onsubmit="return false;" method="get">
                     <input type="text" onfocus="if (this.value =='Search..' ) this.value=''" onblur="if (this.value=='') this.value='Search..'" value="Search.." name="q">
@@ -39,6 +34,13 @@
                 </form>
 
             </section>
+        </nav>
+        <div class="top_head">
+            <div class="couverture ">
+                <!--notre couverture est en background-->
+            </div>
+
+
         </div>
         <section id="submenu">
             <ul>
