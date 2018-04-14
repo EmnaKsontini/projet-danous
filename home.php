@@ -36,11 +36,12 @@
             </ul>
         </nav>
         <div class="top_head">
-            <div class="logo">
+            <div class="couverture ">
                 <a href="https://www.script-tutorials.com/">
                     <img src="images/logo.png" title="E-Store template" alt="E-Store template" />
                 </a>
             </div>
+
             <section id="search"><!-- Search form -->
                 <form action="#" onsubmit="return false;" method="get">
                     <input type="text" onfocus="if (this.value =='Search..' ) this.value=''" onblur="if (this.value=='') this.value='Search..'" value="Search.." name="q">

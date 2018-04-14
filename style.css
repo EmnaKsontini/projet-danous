@@ -1,9 +1,14 @@
 
 header {
-    background: url("../images/header-bg.png") repeat scroll left top #fff;
-    border-bottom:2px solid #e0e0e0;
+    background: url("images/couverture.png");
     position: relative;
-    z-index: 10;
+    z-index: 16;
+    height: 500px;
+    background-repeat: no-repeat
+
+
+
+
 }
 .top_head {
     overflow: hidden;
@@ -13,6 +18,9 @@ header {
     float: left;
     padding: 37px 0 0 39px;
 }
+
+
+
 #search {
     float: right;
     margin: 21px 41px 0 0;
@@ -267,6 +275,7 @@ nav ul li a:hover, nav ul li.selected a {
 #content #left ul li .info .actions {
     overflow:hidden;
 }
+
 #content #left ul li .info .actions a {
     border: 1px solid #E0E0E0;
     color: #fd7a01;
