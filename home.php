@@ -7,8 +7,8 @@
     <title>E-Store  </title>
 
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+
+
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
 
     <link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen">
@@ -37,9 +37,7 @@
         </nav>
         <div class="top_head">
             <div class="couverture ">
-                <a href="https://www.script-tutorials.com/">
-                    <img src="images/logo.png" title="E-Store template" alt="E-Store template" />
-                </a>
+                <!--notre couverture est en background-->
             </div>
 
             <section id="search"><!-- Search form -->
@@ -55,7 +53,7 @@
                 </ul>
             </section>
         </div>
-        <section id="submenu"><!-- Defining the sub menu -->
+        <section id="submenu">
             <ul>
                 <li><a href="#">Category #1</a></li>
                 <li><a href="#">Category #2</a></li>
