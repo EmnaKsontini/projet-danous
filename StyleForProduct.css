@@ -37,15 +37,20 @@ header {
     padding: 0;
     width: 64px;
 }
+#search form input[type="submit"]:hover,
+#search form input[type="submit"]:active,
+#search form input[type="submit"]:focus {
+    border: 2px solid #86939E;
+    outline: none;
+}
 nav {
     background-color: #7f1413;
     overflow: hidden;
-}
-.sticky {
     position: fixed;
     top: 0;
     width: 100%
 }
+
 nav ul {
     margin: 0;
     padding: 0;
