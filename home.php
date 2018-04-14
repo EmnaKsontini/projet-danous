@@ -7,21 +7,13 @@
     <title>E-Store  </title>
 
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+
+
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
 
-    <link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen">
 
 
-    <script src="js/jquery.js"></script>
 
-    <script src="js/jquery.nivo.slider.pack.js"></script>
-
-    <script src="js/main.js"></script>
-
-
-    <script type="text/javascript" src="js/html5.js"></script>
 
 
     <header>
@@ -33,29 +25,24 @@
                 <li><a href="#">Contact us</a></li>
                 <li><a href="#">About</a></li>
 
-            </ul>
-        </nav>
-        <div class="top_head">
-            <div class="couverture ">
-                <a href="https://www.script-tutorials.com/">
-                    <img src="images/logo.png" title="E-Store template" alt="E-Store template" />
-                </a>
-            </div>
 
+            </ul>
             <section id="search"><!-- Search form -->
                 <form action="#" onsubmit="return false;" method="get">
                     <input type="text" onfocus="if (this.value =='Search..' ) this.value=''" onblur="if (this.value=='') this.value='Search..'" value="Search.." name="q">
                     <input type="submit" value="Search">
                 </form>
-                <ul id="social"><!-- Social profiles links -->
-                    <li><a href="#" title="facebook" rel="external nofollow"><img alt="" src="images/facebook.png"></a></li>
-                    <li><a href="#" title="twitter" rel="external nofollow"><img alt="" src="images/twitter.png"></a></li>
-                    <li><a href="#" title="linkedin" rel="external nofollow"><img alt="" src="images/linkedin.png"></a></li>
-                    <li><a href="#" title="rss" rel="external nofollow"><img alt="" src="images/rss.png"></a></li>
-                </ul>
+
             </section>
+        </nav>
+        <div class="top_head">
+            <div class="couverture ">
+                <!--notre couverture est en background-->
+            </div>
+
+
         </div>
-        <section id="submenu"><!-- Defining the sub menu -->
+        <section id="submenu">
             <ul>
                 <li><a href="#">Category #1</a></li>
                 <li><a href="#">Category #2</a></li>
