@@ -11,17 +11,9 @@
 
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
 
-    <link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen">
 
 
-    <script src="js/jquery.js"></script>
 
-    <script src="js/jquery.nivo.slider.pack.js"></script>
-
-    <script src="js/main.js"></script>
-
-
-    <script type="text/javascript" src="js/html5.js"></script>
 
 
     <header>
@@ -45,12 +37,7 @@
                     <input type="text" onfocus="if (this.value =='Search..' ) this.value=''" onblur="if (this.value=='') this.value='Search..'" value="Search.." name="q">
                     <input type="submit" value="Search">
                 </form>
-                <ul id="social"><!-- Social profiles links -->
-                    <li><a href="#" title="facebook" rel="external nofollow"><img alt="" src="images/facebook.png"></a></li>
-                    <li><a href="#" title="twitter" rel="external nofollow"><img alt="" src="images/twitter.png"></a></li>
-                    <li><a href="#" title="linkedin" rel="external nofollow"><img alt="" src="images/linkedin.png"></a></li>
-                    <li><a href="#" title="rss" rel="external nofollow"><img alt="" src="images/rss.png"></a></li>
-                </ul>
+
             </section>
         </div>
         <section id="submenu">
