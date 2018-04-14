@@ -1,27 +1,78 @@
+BODY {
+    PADDING-BOTTOM: 0px; PADDING-TOP: 5px; position:relative; width:1200px; height:460px; text-align:center;
+    padding-left: 5%;
 
-header {
+}
+header{
     background: url("images/couverture.png");
-    position: relative;
+    position:relative;
     z-index: 16;
     height: 500px;
-    background-repeat: no-repeat
-
-
-
+    background-repeat: no-repeat;
 
 }
-.top_head {
-    /*overflow: hidden;*/
+
+/*body
+{
+    margin: 0px;
+}
+body > *
+{
+    margin:auto;
+    padding: 0px;
+}
+#top, section
+{
     position: relative;
+    width:1000px;
+}*/
 
-}
-.logo {
+/*.logo {
     float: left;
     padding: 37px 0 0 39px;
+}*/
+
+/*#top nav
+{
+    background-color:#913027;
+    position:relative;
 }
 
+#top nav ul
+{
+    padding:0px;
+    margin:0 2px;
+    display: inline-block;
+    width:100%;
+    height:64px;
 
+}
+#top nav ul li
+{
+    width:196px;
+    margin : 0px;
+    height: inherit;
+    display: inline-flex;
 
+}
+#top nav ul li a
+{
+    text-decoration:none;
+    text-align: center;
+    color:#FFF;
+    width: 100%;
+    font-size:18px;
+    padding:15px 30px;
+    line-height: 196%;
+}
+#top img[alt="flash"]
+{
+    width: inherit;
+    margin-bottom: -2px;
+}
+nav ul li a:hover, nav ul li.selected a {
+    background: none repeat scroll 0 0 #353535;
+}*/
 #search {
     float: right;
    /* margin: 21px 41px 0 0;*/
@@ -29,6 +80,7 @@ header {
     position:absolute;
     top:0;
     right: 40px;
+    padding-top: 10px;
 
 
 }
@@ -75,22 +127,26 @@ header {
 nav {
     background-color: #7f1413;
     overflow: hidden;
+   height:50px;
 }
 nav ul {
     margin: 0;
     padding: 0;
+
 }
 nav ul li {
     float: left;
+    list-style: none outside none;
 }
 nav ul li a {
+    /*padding-top: 10px;*/
     color: #FFFFFF;
     display: block;
     font-size: 11px;
     font-weight: bold;
-    height: 20px;
+    height: 50px;
     line-height: 20px;
-    padding: 4px 10px 4px 11px;
+    padding: 15px 10px 4px 11px;
     position: relative;
     text-decoration: none;
     text-transform: uppercase;
@@ -102,14 +158,19 @@ nav ul li a:hover, nav ul li.selected a {
 
     background: linear-gradient(#ffffff, #f6f6f6);
     border: 1px solid #E0E0E0;
-    height: 34px;
-
+    height: 30px;
+    width: 875px;
+   /* padding-left: 100px;*/
     position:absolute;
     bottom:0;
+}
+#cat {
+    padding-left:200px;
 }
 #submenu ul {
     margin: 0;
     padding: 0;
+    list-style:none;
 }
 #submenu li {
     float: left;
@@ -117,6 +178,7 @@ nav ul li a:hover, nav ul li.selected a {
     list-style: none outside none;
     margin: 0;
     position: relative;
+
 }
 #submenu li a {
     background: url("../images/smenup.png") no-repeat scroll 0 9px transparent;
@@ -132,7 +194,7 @@ nav ul li a:hover, nav ul li.selected a {
     text-transform: uppercase;
 }
 #submenu li a:hover {
-    background-image: url("../images/smenua.png");
+    background-color:darkred;
 }
 
 #main {
