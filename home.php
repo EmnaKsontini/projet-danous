@@ -38,7 +38,7 @@
         <div class="top_head">
             <div class="couverture ">
                 <a href="https://www.script-tutorials.com/">
-                    <img src="images/logo.png" title="logo" alt="logo" />
+                    <img src="images/logo.png" title="E-Store template" alt="E-Store template" />
                 </a>
             </div>
 
