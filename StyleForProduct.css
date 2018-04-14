@@ -1,19 +1,15 @@
 header {
-    background: url("images/couverture.png");
     position: relative;
     z-index: 16;
     height: 500px;
-    background-repeat: no-repeat
+    background: url("images/couverture.png") no-repeat;
 }
 #search {
     float: right;
-    /* margin: 21px 41px 0 0;*/
     text-align: right;
     position:absolute;
     top:0;
     right: 40px;
-
-
 }
 #search form {
     float:right;
@@ -23,7 +19,7 @@ header {
     border: 1px solid #E0E0E0;
     float: left;
     font-family: Arial,Helvetica,sans-serif;
-    height: 15px;
+    height: 17px;
     padding: 5px;
     width: 129px;
 }
@@ -37,14 +33,24 @@ header {
     font-family: Arial,Helvetica,sans-serif;
     font-size: 11px;
     font-weight: bold;
-    height: 27px;
+    height: 29px;
     padding: 0;
     width: 64px;
+}
+#search form input[type="submit"]:hover,
+#search form input[type="submit"]:active,
+#search form input[type="submit"]:focus {
+    border: 2px solid #86939E;
+    outline: none;
 }
 nav {
     background-color: #7f1413;
     overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%
 }
+
 nav ul {
     margin: 0;
     padding: 0;
@@ -125,95 +131,8 @@ html, body {
     color: #86939E;
     line-height: 24px;
 }
-.product-color {
-    margin-bottom: 30px;
-}
 
-.color-choose div {
-    display: inline-block;
-}
 
-.color-choose input[type=&quot;radio&quot;] {
-    display: none;
-}
-
-.color-choose input[type=&quot;radio&quot;] + label span {
-                                                display: inline-block;
-                                                width: 40px;
-                                                height: 40px;
-                                                margin: -1px 4px 0 0;
-                                                vertical-align: middle;
-                                                cursor: pointer;
-                                                border-radius: 50%;
-                                            }
-
-.color-choose input[type=&quot;radio&quot;] + label span {
-                                                border: 2px solid #FFFFFF;
-                                                box-shadow: 0 1px 3px 0 rgba(0,0,0,0.33);
-                                            }
-
-.color-choose input[type=&quot;radio&quot;]#red + label span {
-                                               background-color: #C91524;
-                                           }
-.color-choose input[type=&quot;radio&quot;]#blue + label span {
-                                               background-color: #314780;
-                                           }
-.color-choose input[type=&quot;radio&quot;]#black + label span {
-                                               background-color: #323232;
-                                           }
-
-.color-choose input[type=&quot;radio&quot;]:checked + label span {
-                                               background-image: url(images/check-icn.svg);
-                                               background-repeat: no-repeat;
-                                               background-position: center;
-                                           }
-.cable-choose {
-    margin-bottom: 20px;
-}
-
-.cable-choose button {
-    border: 2px solid #E1E8EE;
-    border-radius: 6px;
-    padding: 13px 20px;
-    font-size: 14px;
-    color: #5E6977;
-    background-color: #fff;
-    cursor: pointer;
-    transition: all .5s;
-}
-
-.cable-choose button:hover,
-.cable-choose button:active,
-.cable-choose button:focus {
-    border: 2px solid #86939E;
-    outline: none;
-}
-
-.cable-config {
-    border-bottom: 1px solid #E1E8EE;
-    margin-bottom: 20px;
-}
-
-.cable-config a {
-    color: #358ED7;
-    text-decoration: none;
-    font-size: 12px;
-    position: relative;
-    margin: 10px 0;
-    display: inline-block;
-}
-.cable-config a:before {
-    content: &quot;?&quot;;
-    height: 15px;
-    width: 15px;
-    border-radius: 50%;
-    border: 2px solid rgba(53, 142, 215, 0.5);
-    display: inline-block;
-    text-align: center;
-    line-height: 16px;
-    opacity: 0.5;
-    margin-right: 5px;
-}
 /* Product Price */
 .product-price {
     display: flex;
