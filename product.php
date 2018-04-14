@@ -14,7 +14,7 @@
 </head>
 <body>
 <header>
-    <nav>
+    <nav id="navbar">
         <ul>
             <li class="selected"><a href="#">Home</a></li>
             <li><a href="#">Specials</a></li>
@@ -61,5 +61,6 @@
     </div>
 </main>
 
+<script  src="JS/JSForProduct.js"></script>
 
 </body>
