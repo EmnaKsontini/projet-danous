@@ -2,22 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
     <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
 
     <link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen">
 
-
-    <script src="js/jquery.js"></script>
-
-    <script src="js/jquery.nivo.slider.pack.js"></script>
-
-    <script src="js/main.js"></script>
 
 
     <script type="text/javascript" src="js/html5.js"></script>
@@ -101,12 +91,12 @@
                         echo  "<form>";
                         foreach ($values as $val){
                             $key=$a->Field;
-                            $f=verif_carct_sep($val->$key);
-                            $req_count="SELECT COUNT(*) FROM pc where `".$key."`=\"".$f."\"";
+                            $str=verif_carct_sep($val->$key);
+                            $req_count="SELECT COUNT(*) FROM pc where `".$key."`=\"".$str."\"";
                             $query_count=$bdd->query($req_count);
                             $count=$query_count->fetch();
 
-                            echo ("<input type=\"checkbox\" id=\"vehicle1\" value=\"".$val->$key."\">".$val->$key." (".$count[0].")<br>");
+                            echo ("<input type=\"checkbox\"  id=\"".$val->$key."\" name=\"$key\">".$val->$key." (".$count[0].")<br>");
                         }
                         echo "</form>";
                     }
@@ -120,4 +110,6 @@
 </div>
 </section>
 </body>
+<script src="JS/products.js"></script>
+
 </html>
