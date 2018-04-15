@@ -1,22 +1,34 @@
+BODY {
+    PADDING-BOTTOM: 0px; PADDING-TOP: 5px; position:relative; width:100%;  text-align:center;
 
-header {
-    background: url("../images/header-bg.png") repeat scroll left top #fff;
-    border-bottom:2px solid #e0e0e0;
-    position: relative;
-    z-index: 10;
 }
-.top_head {
-    overflow: hidden;
-    position: relative;
+
+body > *
+{
+    width: 1200px;
+    margin: 0 auto;
 }
-.logo {
-    float: left;
-    padding: 37px 0 0 39px;
+
+header{
+    background: url("images/couverture.png");
+    position:relative;
+    z-index: 16;
+    height: 500px;
+    background-repeat: no-repeat;
+
 }
+
+
 #search {
     float: right;
-    margin: 21px 41px 0 0;
+   /* margin: 21px 41px 0 0;*/
     text-align: right;
+    position:absolute;
+    top:0;
+    right: 40px;
+    padding-top: 10px;
+
+
 }
 #search form {
     float:right;
@@ -61,22 +73,26 @@ header {
 nav {
     background-color: #7f1413;
     overflow: hidden;
+   height:50px;
 }
 nav ul {
     margin: 0;
     padding: 0;
+
 }
 nav ul li {
     float: left;
+    list-style: none outside none;
 }
 nav ul li a {
+    /*padding-top: 10px;*/
     color: #FFFFFF;
     display: block;
     font-size: 11px;
     font-weight: bold;
-    height: 20px;
+    height: 50px;
     line-height: 20px;
-    padding: 4px 10px 4px 11px;
+    padding: 15px 10px 4px 11px;
     position: relative;
     text-decoration: none;
     text-transform: uppercase;
@@ -85,44 +101,40 @@ nav ul li a:hover, nav ul li.selected a {
     background: none repeat scroll 0 0 #353535;
 }
 #submenu {
-    background: -moz-linear-gradient(#ffffff, #f6f6f6); /* FF 3.6+ */
-    background: -ms-linear-gradient(#ffffff, #f6f6f6); /* IE10 */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #f6f6f6)); /* Safari 4+, Chrome 2+ */
-    background: -webkit-linear-gradient(#ffffff, #f6f6f6); /* Safari 5.1+, Chrome 10+ */
-    background: -o-linear-gradient(#ffffff, #f6f6f6); /* Opera 11.10 */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6'); /* IE6 & IE7 */
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6')"; /* IE8+ */
-    background: linear-gradient(#ffffff, #f6f6f6); /* the standard */
-    border: 1px solid #E0E0E0;
-    height: 34px;
-    margin: 20px 40px;
+
+   background: linear-gradient(#ffffff, #2e2e2e);
+   /* border: 1px solid #E0E0E0;*/
+    height: 30px;
+
+   /* padding-left: 100px;*/
+   /* position:absolute;*/
+    width: 60%;
+    margin: auto;
+}
+#cat {
+    margin-top: 420px;//blassit categorie
 }
 #submenu ul {
     margin: 0;
     padding: 0;
+    list-style:none;
 }
-#submenu li {
-    float: left;
-    line-height: 1em;
-    list-style: none outside none;
-    margin: 0;
-    position: relative;
-}
-#submenu li a {
-    background: url("../images/smenup.png") no-repeat scroll 0 9px transparent;
-    border-right: 1px solid #E0E0E0;
-    color: #383838;
+
+#submenu ul li a {
+
+    /*border-right: 1px solid #E0E0E0;*/
+    color: white;
     display: block;
-    font-size: 12px;
-    font-weight: bold;
-    line-height: 14px;
-    margin: 0 0 0 19px;
-    padding: 9px 18px 11px 24px;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 5px;
     text-decoration: none;
+    text-decoration-color: black;
     text-transform: uppercase;
+
 }
 #submenu li a:hover {
-    background-image: url("../images/smenua.png");
+    background-color:darkred;
 }
 
 #main {
@@ -267,6 +279,7 @@ nav ul li a:hover, nav ul li.selected a {
 #content #left ul li .info .actions {
     overflow:hidden;
 }
+
 #content #left ul li .info .actions a {
     border: 1px solid #E0E0E0;
     color: #fd7a01;
