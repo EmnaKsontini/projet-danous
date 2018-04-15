@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
     <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
@@ -77,11 +81,12 @@
                 <?php
                 $req = "DESCRIBE pc";
                 $query = $bdd -> query($req);
-                $pcs = $query -> fetchAll(PDO::FETCH_OBJ);
-                foreach ($pcs as $p) {
-                    if (verifierFiltre($p->Field)){
-                        echo ("<h4>".$p->Field."</h4>");
-                        $req2 = "SELECT DISTINCT ".$p->Field." FROM pc";
+                $tab = $query -> fetchAll(PDO::FETCH_OBJ);
+               // var_dump($tab);
+                foreach ($tab as $a) {
+                    if (verifierFiltre($a->Field)){
+                        echo ("<h4>".$a->Field."</h4>");
+                        $req2 = "SELECT DISTINCT `".$a->Field."` FROM pc";
                         $query2 = $bdd -> query($req2);
                         try {
                             $values = $query2->fetchAll(PDO::FETCH_OBJ);
@@ -89,9 +94,9 @@
                             echo 'Exception reçue : ',  $e->getMessage(), "\n";
                         }
                         echo  "<form>";
-                        foreach ($values as $v){
-                            $key1=$p->Field;
-                            echo ("<input type=\"checkbox\" name=\"vehicle1\" value=\"Bike\">".$v->$key1."<br>");
+                        foreach ($values as $val){
+                            $key=$a->Field;
+                            echo ("<input type=\"checkbox\" id=\"vehicle1\" value=\"".$val->$key."\">".$val->$key."<br>");
                         }
                         echo "</form>";
                     }
@@ -101,10 +106,8 @@
 
             </div>
         </li>
-
     </ul>
 </div>
 </section>
-</div>
 </body>
 </html>
