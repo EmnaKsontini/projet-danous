@@ -14,7 +14,9 @@
 
 <body>
 
+
 <div class="structure">
+    <a href="home.php"><img class="fleche" src="images/fleche.gif"></a>
     <div class="signup">  <!--par defaut la classe sign up est la premiere a etre affichée ( donc pas de slide up ) !-->
         <h2 class="form-title" id="signup"><span>or</span>Sign up</h2>
         <div class="form-holder">

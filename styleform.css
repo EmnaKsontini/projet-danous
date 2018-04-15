@@ -17,6 +17,11 @@ html, body {
     position: relative;
     overflow: hidden;
 }
+.fleche{
+    height:30px;
+    width:30px;
+
+}
 .structure .signup {
     position: absolute;
     top: 50%;
@@ -74,7 +79,7 @@ html, body {
 }
 
 .structure .signup .form-holder .input::placeholder {
-    color: red;
+    color: #7f1413;
 }
 .structure .signup .submit-btn {
     background-color: rgba(0, 0, 0, 0.4);
@@ -163,7 +168,7 @@ html, body {
     color: rgba(0, 0, 0, 0.4);
 }
 .structure .login .form2 .submit-btn {
-    background-color: #6B92A4;
+    background-color: #951413;
     color: rgba(255, 255, 255, 0.7);
     border: 0;
     border-radius: 15px;
