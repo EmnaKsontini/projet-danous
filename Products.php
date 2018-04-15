@@ -27,6 +27,10 @@
         <h3>All Products</h3>
         <ul>
             <?php
+                // cette fonction permet d eliminer les attributs qu on va pas utiliser dans le filtre--
+                function verifierFiltre ($s){
+                  return (strcmp($s,"Reference")!=0 &&strcmp($s,"Grantie")!=0 && strcmp($s,"Connecteurs")!=0 && strcmp($s,"stock")!=0  );
+              }
                 try {
                    $bdd = new
                   PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '');
@@ -39,7 +43,6 @@
                 $query = $bdd -> query($req);
                 $pcs = $query -> fetchAll(PDO::FETCH_OBJ);
                 foreach ($pcs as $p) {
-                    //var_dump($p);
                 echo ("
                  <li>
                      <div class=\"img\">
@@ -60,7 +63,7 @@
                 </div>
             </li>  ");
             };
-            ?>
+                ?>
 
 
         </ul>
@@ -70,13 +73,32 @@
     <h3>Filtre</h3>
     <ul>
         <li>
-            <div class="img"><a href="#"><img alt="" src="images/post6.jpg"></a></div>
             <div class="info">
-                <a class="title" href="#">Product 7</a>
-                <div class="price">
-                    <span class="usual">dt600.00 </span>&nbsp;
-                    <span class="special">dt500.00</span>
-                </div>
+                <?php
+                $req = "DESCRIBE pc";
+                $query = $bdd -> query($req);
+                $pcs = $query -> fetchAll(PDO::FETCH_OBJ);
+                foreach ($pcs as $p) {
+                    if (verifierFiltre($p->Field)){
+                        echo ("<h4>".$p->Field."</h4>");
+                        $req2 = "SELECT DISTINCT ".$p->Field." FROM pc";
+                        $query2 = $bdd -> query($req2);
+                        try {
+                            $values = $query2->fetchAll(PDO::FETCH_OBJ);
+                        } catch (Exception $e) {
+                            echo 'Exception reçue : ',  $e->getMessage(), "\n";
+                        }
+                        echo  "<form>";
+                        foreach ($values as $v){
+                            $key1=$p->Field;
+                            echo ("<input type=\"checkbox\" name=\"vehicle1\" value=\"Bike\">".$v->$key1."<br>");
+                        }
+                        echo "</form>";
+                    }
+                };
+
+                ?>
+
             </div>
         </li>
 
