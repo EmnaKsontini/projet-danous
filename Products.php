@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
-    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
 
-    <link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen">
+
+
+
 
 
 
@@ -32,7 +32,7 @@
                 }
                 try {
                    $bdd = new
-                  PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '');
+                  PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '0000');
                 }catch (PDOException $e){
                      print "Erreur : " . $e->getMessage();
                      die();
