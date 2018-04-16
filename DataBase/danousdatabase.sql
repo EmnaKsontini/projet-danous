@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  Dim 15 avr. 2018 à 10:32
+-- Genere le :  Dim 15 avr. 2018 à 10:32
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `danousdatabase`
+-- Base de donnees :  `danousdatabase`
 --
 
 -- --------------------------------------------------------
@@ -47,16 +47,16 @@ CREATE TABLE IF NOT EXISTS `pc` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `pc`
+-- Dechargement des donnees de la table `pc`
 --
 
 INSERT INTO `pc` (`Reference`, `Categorie`, `Marque`, `Prix`, `stock`, `Grantie`, `Processeur`, `Memoire Cache`, `Memoire Ram`, `Connecteurs`, `Carte graphique`, `Ecran`, `Systeme d'exploitation`, `Disque Dur`) VALUES
   ('80WK00ATFG', 'PC Gamer', 'Lenovo', 1969, 5, 3, 'Intel Core i5', '6 Mo', '8 Go', '2xUSB 3.0 / 1xUSB 2.0 / 1xHDMI / 1xUSB Type C (3.1)', 'NVIDIA GeForce', '15.6\"', 'Free Dos', '1 To'),
   ('X550VX I7-7700HQ', 'PC Gamer', 'Asus', 2149, 3, 1, 'Intel Core i7', '6 Mo', '4 Go', '1 x COMBO audio jack 1 x VGA port/Mini D-sub 15-pin for externalmonitor 2 x USB 3.0 port(s) 1 x USB 2.0 port(s) 1 x RJ45 LAN Jack for LAN insert 1 x HDMI', 'Graphique Integree', '15.6\"', 'Free Dos', '1 To'),
   ('GL553VD', 'PC Gamer', 'Asus', 2779, 2, 1, 'Intel Core i7', '6 Mo', '8 Go', '1x sortie casque et audio-in Combo Jack -USB 3.1 Type C - 1 x USB 2.0, 2 x USB 3.0- HDMI - RJ45', 'NVIDIA GeForce', '15.6\"', 'Windows', '1 To'),
-  ('3RM82EA', 'PC Gamer', 'Hp', 2229, 6, 1, 'Intel Core i7', '6 Mo', '12 Go', '	1 port HDMI; 1 prise combo casque/microphone; 1 port USB 2.0; 2 ports USB 3.1 1e génération, 1 port RJ-45', 'NVIDIA GeForce', '15.6\"', 'Free Dos', '1 To'),
+  ('3RM82EA', 'PC Gamer', 'Hp', 2229, 6, 1, 'Intel Core i7', '6 Mo', '12 Go', '	1 port HDMI; 1 prise combo casque/microphone; 1 port USB 2.0; 2 ports USB 3.1 1e generation, 1 port RJ-45', 'NVIDIA GeForce', '15.6\"', 'Free Dos', '1 To'),
   ('GL62M-7RDX-2036XFR', 'PC Gamer', 'Msi', 2099, 6, 1, 'Intel Core i5', '6 Mo', '8 Go', ' -1xUSB3.1+ 2xUSB3.0 - HDMI', 'NVIDIA GeForce', '15.6\"', 'Free Dos', '1 To'),
-  ('CN577044G-10606G', 'PC Gamer', 'Dell', 3399, 2, 1, 'Intel Core i7', '6 Mo', '16 Go', '1 x HDMI 2.0 - 3 x ports USB 3.1 Gén. 1 Type-A - 1 x port Thunderbolt™ 3 (USB 3.1 Gén. 2 Type-C™ avec prise en charge des technologies DisplayPort et Thunderbolt à 40 Gbit/s)', 'NVIDIA GeForce', '15.6\"', 'Linux', '1 To + 256 Go SSD'),
+  ('CN577044G-10606G', 'PC Gamer', 'Dell', 3399, 2, 1, 'Intel Core i7', '6 Mo', '16 Go', '1 x HDMI 2.0 - 3 x ports USB 3.1 Gen. 1 Type-A - 1 x port Thunderbolt™ 3 (USB 3.1 Gen. 2 Type-C™ avec prise en charge des technologies DisplayPort et Thunderbolt à 40 Gbit/s)', 'NVIDIA GeForce', '15.6\"', 'Linux', '1 To + 256 Go SSD'),
   ('X541NA-GO017', 'PC Portable', 'Asus', 639, 12, 1, 'Intel Dual Core', '2Mo', '4 Go', '1xHDMI, 1xUSB 3.0', 'Graphique Integree', '15.6\"', 'Free Dos', '500 Go');
 COMMIT;
 
