@@ -23,7 +23,7 @@
             <?php
                 // cette fonction permet d eliminer les attributs qu on va pas utiliser dans le filtre--
                 function verifierFiltre ($s){
-                  return (strcmp($s,"Reference")!=0 &&strcmp($s,"Grantie")!=0 && strcmp($s,"Connecteurs")!=0 && strcmp($s,"stock")!=0  );
+                  return (strcmp($s,"Reference")!=0 &&strcmp($s,"Grantie")!=0 && strcmp($s,"Connecteurs")!=0 && strcmp($s,"stock")!=0 &&strcmp($s,"Garantie")!=0 &&strcmp($s,"Dimension")!=0  );
                 }
                 //cette fonction permet de corriger la requete lorsque on utilise le caractere spécialte " -> \"
                 function verif_carct_sep ($s){
@@ -37,23 +37,24 @@
                      print "Erreur : " . $e->getMessage();
                      die();
                 }
+                $table="telephone";
                 $req = $bdd ->query("use danousdatabase");
-                $req = "SELECT * FROM pc";
+                $req = "SELECT * FROM ".$table;
                 $query = $bdd -> query($req);
-                $pcs = $query -> fetchAll(PDO::FETCH_OBJ);
-                foreach ($pcs as $p) {
+                $elments = $query -> fetchAll(PDO::FETCH_OBJ);
+                foreach ($elments as $el) {
                 echo ("
                  <li>
                      <div class=\"img\">
                         <a href=\"#\">
-                        <img src=\"images\\".$p->Reference.".jpg\" alt=\"".$p->Reference."\" style=\"width:128px;height:128px;\">
+                        <img src=\"images\\".$el->Reference.".jpg\" alt=\"".$el->Reference."\" style=\"width:128px;height:128px;\">
                         </a>
                     </div>
                      <div class=\"info\">
-                    <a class=\"title\" href=\"#\">".$p->Reference."</a>
+                    <a class=\"title\" href=\"#\">".$el->Reference."</a>
                     <p>on va ecire une description ici1</p>
                     <div class=\"price\">
-                        <span class=\"st\">Our price:</span><strong>".$p->Prix." DT</strong>
+                        <span class=\"st\">Our price:</span><strong>".$el->Prix." DT</strong>
                     </div>
                     <div class=\"actions\">
                         <a href=\"#\">Details</a>
@@ -74,14 +75,14 @@
         <li>
             <div class="info">
                 <?php
-                $req = "DESCRIBE pc";
+                $req = "DESCRIBE ".$table;
                 $query = $bdd -> query($req);
                 $tab = $query -> fetchAll(PDO::FETCH_OBJ);
                // var_dump($tab);
                 foreach ($tab as $a) {
                     if (verifierFiltre($a->Field)){
                         echo ("<h4>".$a->Field."</h4>");
-                        $req_dist_element = "SELECT DISTINCT `".$a->Field."` FROM pc";
+                        $req_dist_element = "SELECT DISTINCT `".$a->Field."` FROM ".$table;
                         $query_dist_element= $bdd -> query($req_dist_element);
                         try {
                             $values = $query_dist_element->fetchAll(PDO::FETCH_OBJ);
@@ -92,7 +93,7 @@
                         foreach ($values as $val){
                             $key=$a->Field;
                             $str=verif_carct_sep($val->$key);
-                            $req_count="SELECT COUNT(*) FROM pc where `".$key."`=\"".$str."\"";
+                            $req_count="SELECT COUNT(*) FROM ".$table." where `".$key."`=\"".$str."\"";
                             $query_count=$bdd->query($req_count);
                             $count=$query_count->fetch();
 
