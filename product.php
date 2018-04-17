@@ -21,10 +21,10 @@ try {
     print "Erreur : " . $e->getMessage();
     die();
 }
-$table_name="pc";
-$ref = "3RM82EA";
+$table_name="telephone";
+$ref = "Samsung Galaxy J5";
 $req = $bdd ->query("use danousdatabase");
-$req = "SELECT * FROM pc where `Reference`=\"".$ref."\"";
+$req = "SELECT * FROM ".$table_name." where `Reference`=\"".$ref."\"";
 $query = $bdd -> query($req);
 $obj = $query -> fetch(PDO::FETCH_OBJ);
 
@@ -69,6 +69,7 @@ $obj = $query -> fetch(PDO::FETCH_OBJ);
             <span>".$obj->Categorie."</span>
             <h1>".$obj->Marque."</h1>
             <span>".$ref."</span>");
+
 
             ?>
         </div>
