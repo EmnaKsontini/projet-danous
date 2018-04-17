@@ -82,7 +82,8 @@ $obj = $query -> fetch(PDO::FETCH_OBJ);
             foreach ($tab_attribut as $ta){
                 echo("<tr>");
                 echo ("<td>".$ta[0]."</td>");
-                echo ("<td>".$obj->$ta[0]."</td>");
+                $s=$ta[0];
+                echo ("<td>".$obj->$s."</td>");
                 echo("</tr>");
             }
             ?>
