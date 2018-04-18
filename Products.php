@@ -51,7 +51,7 @@ if(isset($_POST["addtocart"])){
     <section id="cat">
         <nav id="submenu">
             <ul>
-                <li><a href="#">Category #1</a></li>
+                <li><a href="#">LAPTOP</a></li>
                 <li><a href="#">Category #2</a></li>
                 <li><a href="#">Category #3</a></li>
                 <li><a href="#">Category #4</a></li>
@@ -129,24 +129,39 @@ if(isset($_POST["addtocart"])){
                         foreach ($tab as $a) {
                             if (verifierFiltre($a->Field)){
                                 echo ("<h4>".$a->Field."</h4>");
-                                $req_dist_element = "SELECT DISTINCT `".$a->Field."` FROM ".$table;
-                                $query_dist_element= $bdd -> query($req_dist_element);
-                                try {
-                                    $values = $query_dist_element->fetchAll(PDO::FETCH_OBJ);
-                                }catch (Exception $e) {
-                                    echo 'Exception reçue : ',  $e->getMessage(), "\n";
+                                if ($a->Field=="Prix"){
+
+                                    $req_min = "SELECT MIN(Prix) FROM " . $table ;
+                                    $query_min= $bdd->query($req_min);
+                                    $min = $query_min->fetch();
+                                    echo $min[0];
+                                    ?>
+                                    <input type="range" id="a" name="a" value="50">
+                                <?php
+                                    $req_max = "SELECT MAX(Prix) FROM " . $table ;
+                                    $query_max = $bdd->query($req_max);
+                                    $max = $query_max->fetch();
+                                    echo $max[0];
+                                }else {
+                                    $req_dist_element = "SELECT DISTINCT `" . $a->Field . "` FROM " . $table;
+                                    $query_dist_element = $bdd->query($req_dist_element);
+                                    try {
+                                        $values = $query_dist_element->fetchAll(PDO::FETCH_OBJ);
+                                    } catch (Exception $e) {
+                                        echo 'Exception reçue : ', $e->getMessage(), "\n";
+                                    }
+                                    echo "<form>";
+                                    foreach ($values as $val) {
+                                        $key = $a->Field;
+                                        $str = verif_carct_sep($val->$key);
+                                        $req_count = "SELECT COUNT(*) FROM " . $table . " WHERE `" . $key . "`=\"" . $str . "\"";
+                                        $query_count = $bdd->query($req_count);
+                                        $count = $query_count->fetch();
+                                        echo("<input type=\"checkbox\"  id=\"" . $val->$key . "\" name=\"$key\">" . $val->$key . " (" . $count[0] . ")<br>");
+                                    }
+                                    echo "</form>";
                                 }
-                                echo  "<form>";
-                                foreach ($values as $val){
-                                    $key=$a->Field;
-                                    $str=verif_carct_sep($val->$key);
-                                    $req_count="SELECT COUNT(*) FROM ".$table." where `".$key."`=\"".$str."\"";
-                                    $query_count=$bdd->query($req_count);
-                                    $count=$query_count->fetch();
-                                    echo ("<input type=\"checkbox\"  id=\"".$val->$key."\" name=\"$key\">".$val->$key." (".$count[0].")<br>");
-                                }
-                                echo "</form>";
-                            };
+                                };
                         };?>
                     </div>
                 </li>
