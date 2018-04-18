@@ -10,7 +10,7 @@
 </head>
 <body>
 <header>
-    <nav >
+    <nav  >
         <ul>
             <li class="selected"><a href="#">Home</a></li>
             <li><a href="#">Specials</a></li>

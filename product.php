@@ -6,13 +6,29 @@
 
     <title>Product  </title>
 
-    <meta charset="utf-8">
+    <meta charset="utf-16">
 
 
     <link rel="stylesheet" href="StyleForProduct.css">
 
 </head>
 <body>
+<?php
+try {
+    $bdd = new
+    PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '');
+}catch (PDOException $e){
+    print "Erreur : " . $e->getMessage();
+    die();
+}
+$table_name="telephone";
+$ref = "Samsung Galaxy J5";
+$req = $bdd ->query("use danousdatabase");
+$req = "SELECT * FROM ".$table_name." where `Reference`=\"".$ref."\"";
+$query = $bdd -> query($req);
+$obj = $query -> fetch(PDO::FETCH_OBJ);
+
+?>
 <header>
     <nav id="navbar">
         <ul>
@@ -36,10 +52,11 @@
 
     <!-- Left Column / Headphones Image -->
     <div class="left-column">
-        <img data-image="black" src="images/3RM82EA.jpg" alt="">
-        <img data-image="blue" src="images/3RM82EA.jpg" alt="">
-        <img data-image="red" class="active" src="images/3RM82EA.jpg" alt="">
+        <?php
+        echo("<img  class=\"active\" src=\"images/".$ref.".jpg\" alt=\"\">");
+        ?>
     </div>
+
 
 
     <!-- Right Column -->
@@ -47,18 +64,43 @@
 
         <!-- Product Description -->
         <div class="product-description">
-            <span>Headphones</span>
-            <h1>HP OMEN</h1>
-            <p>With budget gaming laptops, you get what you pay for. The HP Omen 15t ($849 as tested) is a capable machine that can play the latest games at 1080p, and you get this solid performance in a sleek and portable design. But you know HP had to make some sacrifices to reach this price, and those include a dim display and shallow keyboard. The Omen 15t is a solid choice for entry-level gamers, but it's not our top pick under $1,000.</p>
+            <?php
+            echo ("
+            <span>".$obj->Categorie."</span>
+            <h1>".$obj->Marque."</h1>
+            <span>".$ref."</span>");
+
+
+            ?>
         </div>
+        <table>
+            <?php
+            $req = "DESCRIBE ".$table_name;
+            //echo $req;
+            $query = $bdd -> query($req);
+            $tab_attribut = $query -> fetchall(PDO::FETCH_NUM );
+            //var_dump($tab_attribut);
+            foreach ($tab_attribut as $ta){
+                echo("<tr>");
+                echo ("<td>".$ta[0]."</td>");
+                $s=$ta[0];
+                echo ("<td>".$obj->$s."</td>");
+                echo("</tr>");
+            }
+            ?>
+        </table>
 
 
         <!-- Product Pricing -->
         <div class="product-price">
-            <span>1000$</span>
+            <?php
+            echo ("
+            <span>".$obj->Prix." DT</span> ");
+            ?>
             <a href="#" class="cart-btn">Add to cart</a>
         </div>
     </div>
+
 </main>
 
 
