@@ -15,14 +15,14 @@ try {
 if(!empty($_POST["quantity"])) {
 
     $rep = $bdd->query("SELECT * FROM pc WHERE Reference='" . $_GET["code"] . "'");
-    $productByCode = $rep -> fetchAll(PDO::FETCH_OBJ);
-    $itemArray = array($productByCode[0]["Reference"]=>array('Categorie'=>$productByCode[0]["Categorie"], 'Reference'=>$productByCode[0]["Reference"], 'quantity'=>$_POST["quantity"], 'Prix'=>$productByCode[0]["Prix"]));
-
+    $productByCode = $rep -> fetch(PDO::FETCH_OBJ);
+    $itemArray = array($productByCode->Reference=>array('Reference'=>$productByCode->Reference, 'quantity'=>$_POST["quantity"]));
+//bich nista3mlouh fil page facturation nijbdou mil base de donnée bil référence
     if(!empty($_SESSION["cart_item"])) {
 
-        if(in_array($productByCode[0]["Reference"],array_keys($_SESSION["cart_item"]))) {
+        if(in_array($productByCode->Reference,array_keys($_SESSION["cart_item"]))) {
             foreach($_SESSION["cart_item"] as $k => $v) {
-                if($productByCode[0]["code"] == $k) {
+                if($productByCode->Reference == $k) {
                     if(empty($_SESSION["cart_item"][$k]["quantity"])) {
                         $_SESSION["cart_item"][$k]["quantity"] = 0;
                     }
@@ -34,6 +34,7 @@ if(!empty($_POST["quantity"])) {
         }
     } else {
         $_SESSION["cart_item"] = $itemArray;
+
     }
 
 }

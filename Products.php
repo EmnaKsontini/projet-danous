@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <?php
-if(isset($_PO0ST["addtocart"])){
-    echo "<script>console.log(\"hello\");</script>";
+session_start();
+
+if(isset($_POST["addtocart"])){
+
     include "cart.php";
+    var_dump( $_SESSION["cart_item"]);//tester si les produits ajouter au chaiot son sauvegarder
 }
 
 ?>
