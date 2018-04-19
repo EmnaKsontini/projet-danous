@@ -10,6 +10,8 @@
 
 
     <link rel="stylesheet" href="StyleForProduct.css">
+    <link rel="stylesheet" href="style.css">
+
 
 </head>
 <body>
@@ -21,8 +23,9 @@ try {
     print "Erreur : " . $e->getMessage();
     die();
 }
-$table_name="telephone";
-$ref = "Samsung Galaxy J5";
+$table_name="ecran";
+//$ref = $_GET['ref'];
+$ref = "LI2054";
 $req = $bdd ->query("use danousdatabase");
 $req = "SELECT * FROM ".$table_name." where `Reference`=\"".$ref."\"";
 $query = $bdd -> query($req);
@@ -30,7 +33,7 @@ $obj = $query -> fetch(PDO::FETCH_OBJ);
 
 ?>
 <header>
-    <nav id="navbar">
+    <nav id="nav">
         <ul>
             <li class="selected"><a href="#">Home</a></li>
             <li><a href="#">Specials</a></li>
@@ -60,7 +63,7 @@ $obj = $query -> fetch(PDO::FETCH_OBJ);
 
 
     <!-- Right Column -->
-    <div class="right-column">
+    <div class="right-column color">
 
         <!-- Product Description -->
         <div class="product-description">
@@ -102,7 +105,4 @@ $obj = $query -> fetch(PDO::FETCH_OBJ);
     </div>
 
 </main>
-
-
-
 </body>

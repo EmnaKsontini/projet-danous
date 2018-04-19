@@ -83,7 +83,7 @@ if(isset($_POST["addtocart"])){
                     print "Erreur : " . $e->getMessage();
                     die();
                 }
-                $table="pc";
+                $table="ecran";
                 $req = $bdd ->query("use danousdatabase");
                 $req = "SELECT * FROM ".$table;
                 $query = $bdd -> query($req);

@@ -1,18 +1,16 @@
 header {
     position: relative;
-    z-index: 16;
-    height: 500px;
     background: url("images/couverture.png") no-repeat;
 }
 #search {
-    float: right;
+
     text-align: right;
     position:absolute;
     top:0;
     right: 40px;
 }
 #search form {
-    float:right;
+
 }
 #search form input[type="text"] {
     background: none repeat scroll 0 0 #FFFFFF;
@@ -75,8 +73,6 @@ nav ul li a:hover, nav ul li.selected a {
 }
 /*new*/
 html, body {
-    height: 100%;
-    width: 100%;
     margin: 0;
     font-family: 'Roboto', sans-serif;
 }
