@@ -134,14 +134,16 @@ if(isset($_POST["addtocart"])){
                                     $req_min = "SELECT MIN(Prix) FROM " . $table ;
                                     $query_min= $bdd->query($req_min);
                                     $min = $query_min->fetch();
-                                    echo $min[0];
-                                    ?>
-                                    <input type="range" id="a" name="a" value="50">
-                                <?php
+                                    //echo (int)$min[0];
                                     $req_max = "SELECT MAX(Prix) FROM " . $table ;
                                     $query_max = $bdd->query($req_max);
                                     $max = $query_max->fetch();
-                                    echo $max[0];
+                                    ?>
+                                    <input type="range" id="scroll" <?php echo "max=\"".$max[0]."\" min =\"".$min[0]."\" value=\"".$max[0]."\">"?>
+                                    <div id="prixVal"><?php echo $max[0] ?></div>
+                                <?php
+
+
                                 }else {
                                     $req_dist_element = "SELECT DISTINCT `" . $a->Field . "` FROM " . $table;
                                     $query_dist_element = $bdd->query($req_dist_element);
@@ -157,7 +159,7 @@ if(isset($_POST["addtocart"])){
                                         $req_count = "SELECT COUNT(*) FROM " . $table . " WHERE `" . $key . "`=\"" . $str . "\"";
                                         $query_count = $bdd->query($req_count);
                                         $count = $query_count->fetch();
-                                        echo("<input type=\"checkbox\"  id=\"" . $val->$key . "\" name=\"$key\">" . $val->$key . " (" . $count[0] . ")<br>");
+                                        echo("<input type=\"checkbox\"  id=\"" .$str . "\" name=\"$key\">" . $val->$key . " (" . $count[0] . ")<br>");
                                     }
                                     echo "</form>";
                                 }
@@ -176,5 +178,4 @@ if(isset($_POST["addtocart"])){
         src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
-
 </html>
