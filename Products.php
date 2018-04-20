@@ -4,7 +4,7 @@ session_start();
 // echo "hello".$_SESSION["login"];  //emna: ena zedt star heda bch njareb session
 if(isset($_POST["addtocart"])){
     include "cart.php";
-    var_dump( $_SESSION["cart_item"]);//tester si les produits ajouter au chaiot son sauvegarder
+    var_dump( $_SESSION["cart_item"]);//tester si les produits ajouter au chariot sont sauvegarder
 }
 ?>
 <!DOCTYPE html>
@@ -78,13 +78,12 @@ if(isset($_POST["addtocart"])){
                     return $ret;
                 }
                 try {
-                    $bdd = new
-                    PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '');
+                    $bdd = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '');
                 }catch (PDOException $e){
                     print "Erreur : " . $e->getMessage();
                     die();
                 }
-                $table="ecran";
+                $table="pc";
                 $req = $bdd ->query("use danousdatabase");
                 $req = "SELECT * FROM ".$table;
                 $query = $bdd -> query($req);
@@ -96,6 +95,11 @@ if(isset($_POST["addtocart"])){
                             <a href="#">
                                 <img src="images/<?php echo"$p->Reference"?>.jpg" alt="<?php echo "$p->Reference" ?>" style="width:128px;height:128px">
                             </a>
+                            <form method="post" action="product.php?code=<?php echo $p->Reference; ?> ">
+                                <div>
+                                    <input id="Details" type="submit" value="Details" />
+                                </div>
+                            </form>
                         </div>
                         <div class="info">
                             <a class="title" href="#"><?php echo"$p->Reference"?></a>
@@ -106,9 +110,9 @@ if(isset($_POST["addtocart"])){
                             <div class="actions">
                                 <form method="post" action="products.php?code=<?php echo $p->Reference; ?> ">
                                     <div>
-                                        <input type="text" name="quantity" value="1" size="2" />
+                                        <input type="submit" name="addtocomparator" value="Add to comparator" />
                                         <input type="submit" name="addtocart" value="Add to cart" />
-                                        <input type="submit" value="Details" />
+                                        <input type="text" id="q" name="quantity" value="1" size="1" />
                                     </div>
                                 </form>
                             </div>
