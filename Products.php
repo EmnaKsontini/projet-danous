@@ -3,7 +3,11 @@
 session_start();
 if(isset($_POST["addtocart"])){
     include "cart.php";
-    var_dump( $_SESSION["cart_item"]);//tester si les produits ajouter au chariot sont sauvegarder
+    //var_dump( $_SESSION["cart_item"]);//tester si les produits ajouter au chariot sont sauvegarder
+}
+if(isset($_POST["addtocomparator"])){
+    include "comparator.php";
+    //var_dump( $_SESSION["comparator_item"]);
 }
 ?>
 <!DOCTYPE html>

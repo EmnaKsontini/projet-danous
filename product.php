@@ -9,7 +9,6 @@
     <meta charset="utf-16">
 
 
-
     <link rel="stylesheet" href="style.css">
 
 
@@ -17,7 +16,7 @@
 <body>
 <?php
 try {
-    $bdd = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '0000');
+    $bdd = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '');
 }catch (PDOException $e){
     print "Erreur : " . $e->getMessage();
     die();
