@@ -15,9 +15,13 @@
 <body>
 <div class="structure">
     <img class="fleche" src="images/fleche.gif"  onclick="red('home.php')" >
-    <div class="signup">  <!--par defaut la classe sign up est la premiere a etre affichée ( donc pas de slide up ) !-->
-        <h2 class="form-title" id="signup"><span>or</span>Sign up</h2>
+    <img class="logo" src="images/logo.png"" >
+    <div class="signup">
+
+        <!--par defaut la classe sign up est la premiere a etre affichée ( donc pas de slide up ) !-->
+        <h2 class="form-title" id="signup"><span>or click here to </span>  Sign up!</h2>
         <div class="form-holder">
+
             <form action="AddUser.php" method="post" >
                 <input type="text" class="input" placeholder="Login"  name="login" />
                 <input type="text" class="input" placeholder="Name"   name="nom" />

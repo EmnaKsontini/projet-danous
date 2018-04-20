@@ -2,7 +2,7 @@
 html, body {
     position: relative;
     min-height: 100vh;
-    background-color: #E1E8EE;
+    background-color: #eee6d3;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,7 +10,7 @@ html, body {
 }
 
 .structure {
-    background-color: #222;
+    background-color: #eeebec;
     border-radius: 15px;
     height: 550px;
     width: 350px;
@@ -18,9 +18,14 @@ html, body {
     overflow: hidden;
 }
 .fleche{
-    height:30px;
-    width:30px;
+    height:3px;
+    width:3px;
 
+}
+.logo{
+    height:120px;
+    width:250px;
+    transform: translate(15%,-10%)
 }
 .structure .signup {
     position: absolute;
@@ -41,6 +46,7 @@ html, body {
 .structure .signup.slide-up .form-title {
     font-size: 1em;
     cursor: pointer;
+    transform: translate(-3%, 155%);
 }
 .structure .signup.slide-up .form-title span {  /*modification du  mot "or" */
     margin-right: 5px;
@@ -48,12 +54,13 @@ html, body {
     visibility: visible;
 }
 .structure .signup .form-title {
-    color: #fff;
+    color: rgba(38, 38, 38, 0.4);
+    color: rgba(38, 38, 38, 0.4);
     font-size: 1.7em;
     text-align: center;
 }
 .structure .signup .form-title span {
-    color: rgba(0, 0, 0, 0.4);
+    color: rgba(228, 0, 4, 0.4);
     opacity: 0;
     visibility: hidden;
 }
@@ -80,9 +87,10 @@ html, body {
 
 .structure .signup .form-holder .input::placeholder {
     color: #7f1413;
+    font-family: "Comic Sans MS", cursive, sans-serif;
 }
 .structure .signup .submit-btn {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: #951413;
     color: rgba(255, 255, 255, 0.7);
     border: 0;
     border-radius: 15px;
