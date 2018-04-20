@@ -28,17 +28,19 @@
         </div>
         <button class="submit-btn">Sign up</button>
     </div>
+    <form action="form.php" method="post" >
     <div class="login slide-up">
         <div class="form2">
-            <h2 class="form-title" id="login"><span>or</span>Log in</h2>
+            <h2 class="form-title"  id="login"><span>or</span>Log in</h2>
             <div class="form-holder">
-                <input type="email" class="input" placeholder="Email" />
-                <input type="password" class="input" placeholder="Password" />
+               <input type="text" name="login" class="input" placeholder="Email" />
+                <input type="password" name="password" class="input" placeholder="Password" />
             </div>
             <button class="submit-btn">Log in</button>
         </div>
     </div>
-</div>
+</div> </form>
+
 
 
 
