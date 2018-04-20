@@ -9,7 +9,7 @@
     <meta charset="utf-16">
 
 
-    <link rel="stylesheet" href="StyleForProduct.css">
+
     <link rel="stylesheet" href="style.css">
 
 
@@ -17,13 +17,12 @@
 <body>
 <?php
 try {
-    $bdd = new
-    PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '');
+    $bdd = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '0000');
 }catch (PDOException $e){
     print "Erreur : " . $e->getMessage();
     die();
 }
-$table_name="ecran";
+$table_name="pc";
 //$ref = $_GET['ref'];
 $ref = "LI2054";
 $req = $bdd ->query("use danousdatabase");
@@ -49,7 +48,18 @@ $obj = $query -> fetch(PDO::FETCH_OBJ);
 
         </section>
     </nav>
-
+    <section id="cat">
+        <nav id="submenu">
+            <ul>
+                <li><a href="#">LAPTOP</a></li>
+                <li><a href="#">Category #2</a></li>
+                <li><a href="#">Category #3</a></li>
+                <li><a href="#">Category #4</a></li>
+                <li><a href="#">Category #5</a></li>
+                <li><a href="#">Category #6</a></li>
+            </ul>
+        </nav>
+    </section>
 </header>
 <main class="container">
 

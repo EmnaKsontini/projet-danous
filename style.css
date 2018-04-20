@@ -276,6 +276,20 @@ nav ul li a:hover, nav ul li.selected a {
     font-weight: bold;
     text-decoration: none;
 }
+#content #left ul li .img form div{
+    overflow:hidden;
+}
+
+#content #left ul li .img form div input  {
+    border: 1px solid #E0E0E0;
+    color: #7f1413;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 16px;
+    padding: 5px;
+    text-decoration: none;
+}
+
 #content #left ul li .info .actions form div{
     overflow:hidden;
 }
@@ -291,6 +305,7 @@ nav ul li a:hover, nav ul li.selected a {
     padding: 5px;
     text-decoration: none;
 }
+
 #content #left ul li .info .actions form div input:first-child {
     color: #009832;
     float:left;
