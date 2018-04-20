@@ -38,6 +38,8 @@ $obj = $query -> fetch(PDO::FETCH_OBJ);
             <li><a href="#">All Products</a></li>
             <li><a href="#">Contact us</a></li>
             <li><a href="#">About</a></li>
+            <li><a href="formulaireLogin.php"> <img src="images/this .png" ></a></li>
+         <!--   <li><a href="formulaireLogin.php"> <img src="taswira Danous!!" ></a></li>-->
         </ul>
         <section id="search"><!-- Search form -->
             <form action="#" onsubmit="return false;" method="get">

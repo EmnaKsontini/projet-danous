@@ -14,9 +14,11 @@
         <ul>
             <li class="selected"><a href="#">Home</a></li>
             <li><a href="#">Specials</a></li>
-            <li><a href="#">All Products</a></li>
+            <li><a href="Products.php">All Products</a></li>
             <li><a href="#">Contact us</a></li>
             <li><a href="#">About</a></li>
+            <li><a href="formulaireLogin.php"> <img src="images/this .png" ></a></li>
+          <!--  <li><a href="facturation.php"> <img src="" alt="taswira taa danous" ></a></li>-->
 
 
         </ul>
@@ -39,12 +41,12 @@
     <section id="cat">
     <nav id="submenu">
         <ul>
-            <li><a href="#">Category #1</a></li>
-            <li><a href="#">Category #2</a></li>
-            <li><a href="#">Category #3</a></li>
-            <li><a href="#">Category #4</a></li>
-            <li><a href="#">Category #5</a></li>
-            <li><a href="#">Category #6</a></li>
+            <li><a href="#">Category 1</a></li>
+            <li><a href="#">Category 2</a></li>
+            <li><a href="#">Category 3</a></li>
+            <li><a href="#">Category 4</a></li>
+            <li><a href="#">Category 5</a></li>
+            <li><a href="#">Category 6</a></li>
         </ul>
     </nav>
     </section>
@@ -238,7 +240,7 @@
 
         <footer>
             <div id="privacy">
-                Made By GL2 People without BootStrap !!!!!!
+
             </div>
         </footer>
 </body>

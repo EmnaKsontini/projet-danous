@@ -305,8 +305,22 @@ nav ul li a:hover, nav ul li.selected a {
     padding: 5px;
     text-decoration: none;
 }
-
 #content #left ul li .info .actions form div input:first-child {
     color: #009832;
     float:left;
 }
+footer {
+
+
+    bottom: 0;
+
+    background-color: #383838;
+    color: white;
+
+    height: 200px;
+    margin: 0 auto;
+    PADDING-BOTTOM: 0px;  position:relative;
+    text-align:center;
+}
+
+
