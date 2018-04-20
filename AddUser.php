@@ -1,5 +1,5 @@
 <?php
-echo"ena lena";
+
 
 /*** first check that both the login, password and form token have been sent ***/
 if(!isset( $_POST['login'], $_POST['password']))
