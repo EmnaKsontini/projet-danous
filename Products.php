@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 session_start();
+// echo "hello".$_SESSION["login"];  //emna: ena zedt star heda bch njareb session
 if(isset($_POST["addtocart"])){
     include "cart.php";
     var_dump( $_SESSION["cart_item"]);//tester si les produits ajouter au chaiot son sauvegarder

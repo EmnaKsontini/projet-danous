@@ -1,34 +1,32 @@
 <?php
-
-
-// Test de l'envoi du formulaire
 if(!empty($_POST))
+{   $log=$_POST['login'];
+{   $pd=$_POST['password'];
+
+     $req="SELECT * FROM autho WHERE login= \"".$log."\"";
+    try {
+        $pdo = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '');
+        $stmt = $pdo->query($req);
+        $rows = $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+catch(Exception $e)
 {
-    // Les identifiants sont transmis ?
-    if(!empty($_POST['login']) && !empty($_POST['password']))
-    {
-        // Sont-ils les mêmes que les constantes ?
-        if($_POST['login'] !== "emna")
-        {
-            $errorMessage = 'Mauvais login !';
-        }
-        elseif($_POST['password'] !== "000")
-        {
-            $errorMessage = 'Mauvais password !';
-        }
-        else
-        {
-            // On ouvre la session
-            session_start();
-            // On enregistre le login en session
-            $_SESSION['login'] ="emna";
-            // On redirige vers le fichier admin.php
-            header('Location:home.php');
-            exit();
-        }
-    }
-    else
-    {
-        $errorMessage = 'Veuillez inscrire vos identifiants svp !';
-    }
-} ?>
+    exit('<b>Catched exception at line '. $e->getLine() .' (code : '. $e->getCode() .') :</b> '. $e->getMessage());
+}
+
+ if(!$rows["login"]) {
+     echo "login inexistant ";
+ }
+ else
+ { if($rows["passwd"]!=$pd)
+     echo "le mot de passe saisit ne correspond pas a votre login ";
+ else
+ {
+     session_start();
+     $_SESSION['login'] = $log;
+     header('Location:Products.php');
+ }
+ }
+
+}
+ }?>

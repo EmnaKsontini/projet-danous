@@ -33,3 +33,12 @@ signup.addEventListener('click', function(e) {
         login.parentNode.parentNode.classList.add('slide-up')
     }
 });
+
+// pour ne pas quitter imediatement
+function red(lien) {
+    if (window.confirm("voulez vous vraiment quittez ? ")) {
+        window.location = (lien);
+    }
+    else
+        die();
+}
