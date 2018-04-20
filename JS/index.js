@@ -34,7 +34,7 @@ signup.addEventListener('click', function(e) {
     }
 });
 
-// pour ne pas quitter imediatement
+
 function red(lien) {
     if (window.confirm("voulez vous vraiment quittez ? ")) {
         window.location = (lien);
@@ -42,3 +42,4 @@ function red(lien) {
     else
         die();
 }
+
