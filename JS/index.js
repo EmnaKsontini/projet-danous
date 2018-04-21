@@ -1,4 +1,4 @@
-console.clear();
+
 
 const login = document.getElementById('login');
 const signup= document.getElementById('signup');
@@ -33,3 +33,13 @@ signup.addEventListener('click', function(e) {
         login.parentNode.parentNode.classList.add('slide-up')
     }
 });
+
+
+function red(lien) {
+    if (window.confirm("voulez vous vraiment quittez ? ")) {
+        window.location = (lien);
+    }
+    else
+        die();
+}
+

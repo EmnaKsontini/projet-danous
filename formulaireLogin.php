@@ -14,36 +14,36 @@
 
 <body>
 
+<div class="structure">
+    <img class="fleche" src="images/home.png" title="Home"  onclick="red('home.php')" >
+    <img class="logo" src="images/logo.png"" >
+    <div class="signup">
 
-<form action="AddUser.php" method="post">
-    <div class="structure">
-        <a href="home.php"><img class="fleche" src="images/fleche.gif"></a>
-        <div class="signup">  <!--par defaut la classe sign up est la premiere a etre affichée ( donc pas de slide up ) !-->
-            <h2 class="form-title" id="signup"><span>or</span>Sign up</h2>
-            <div class="form-holder">
-                <input type="text" class="input" placeholder="Login" id="login" name="login" />
-                <input type="text" class="input" placeholder="Name"  id="nom" name="nom" />
-                <input type="text" class="input" placeholder="prénom"  id="prenom" name="prenom" />
-                <input type="password" class="input" placeholder="Password" id="password" name="password" />
+        <!--par defaut la classe sign up est la premiere a etre affichée ( donc pas de slide up ) !-->
+        <h2 class="form-title" id="signup"><span>or click here to </span>  Sign up!</h2>
+        <div class="form-holder">
 
-
-            </div>
-            <!--<button class="submit-btn" type="submit">Sign up</button>-->
-            <input class="submit-btn" name="ok" type="submit"  />
+            <form action="AddUser.php" method="post" >
+                <input type="text" class="input" placeholder="Login"  name="login" />
+                <input type="text" class="input" placeholder="Name"   name="nom" />
+                <input type="text" class="input" placeholder="prénom"   name="prenom" />
+                <input type="password" class="input" placeholder="Password"  name="password" />
         </div>
-</form>
-
+        <button class="submit-btn" name="ok" >Sign up</button>
+    </div> </form>
+    <form action="form.php" method="post" >
     <div class="login slide-up">
         <div class="form2">
-            <h2 class="form-title" id="login"><span>or</span>Log in</h2>
+            <h2 class="form-title"  id="login"><span>or</span>Log in</h2>
             <div class="form-holder">
-                <input type="email" class="input" placeholder="Email" />
-                <input type="password" class="input" placeholder="Password" />
+               <input type="text" name="login"  class="input" placeholder="Login" />
+                <input type="password" name="password" class="input" placeholder="Password" />
             </div>
             <button class="submit-btn">Log in</button>
         </div>
     </div>
-</div>
+</div> </form>
+
 
 
 

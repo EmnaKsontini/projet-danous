@@ -60,6 +60,7 @@ INSERT INTO `telephone` (`Reference`, `Categorie`, `Marque`, `Prix`, `Stock`, `G
 ('Iphone 7', 'Smartphone', 'Apple', 2500, 4, 1, '138.3 x 67.1 x 7.1 mm', '128 Go', '2 Go', '12MP', '7MP', '750 X 1334 pixels', '1960mAh', '2.34 GHz');
 COMMIT;
 
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

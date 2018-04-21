@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 session_start();
+// echo "hello".$_SESSION["login"];  //emna: ena zedt star heda bch njareb session
 if(isset($_POST["addtocart"])){
     include "cart.php";
     //var_dump( $_SESSION["cart_item"]);//tester si les produits ajouter au chariot sont sauvegarder
@@ -30,12 +31,13 @@ if(isset($_POST["addtocomparator"])){
 <header>
     <nav >
         <ul>
-            <li class="selected"><a href="#">Home</a></li>
+            <li class="selected"><a href="home.php">Home</a></li>
             <li><a href="#">Specials</a></li>
             <li><a href="#">All Products</a></li>
             <li><a href="#">Contact us</a></li>
             <li><a href="#">About</a></li>
-
+            <li><a href="formulaireLogin.php"> <img src="images/this .png" ></a></li>
+           <!-- <li><a href="facturation.php"> <img src="" alt="photo de danous " ></a></li>-->
 
         </ul>
         <section id="search"><!-- Search form -->
