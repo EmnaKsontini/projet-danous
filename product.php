@@ -16,13 +16,14 @@
 <body>
 <?php
 try {
-    $bdd = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '');
+    $bdd = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '0000');
 }catch (PDOException $e){
     print "Erreur : " . $e->getMessage();
     die();
 }
+$ref = $_GET["code"];
 $table_name=$_POST["type"];
-$ref = $_GET['Reference'];
+
 //$ref = "LI2054";
 $req = $bdd ->query("use danousdatabase");
 $req = "SELECT * FROM ".$table_name." where `Reference`=\"".$ref."\"";
@@ -53,8 +54,8 @@ $obj = $query -> fetch(PDO::FETCH_OBJ);
         <nav id="submenu">
             <ul>
                 <form method="post" action="products.php">
-                    <li><input name="type" type="submit" value="Category 1" /></li>
-                    <li><input name="type" type="submit" value="Category 2" /></li>
+                    <li><input name="type" type="submit" value="laptop" /></li>
+                    <li><input name="type" type="submit" value="phone" /></li>
                     <li><input name="type" type="submit" value="Category 3" /></li>
                     <li><input name="type" type="submit" value="Category 4" /></li>
                     <li><input name="type" type="submit" value="Category 5" /></li>
