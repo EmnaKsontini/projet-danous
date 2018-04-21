@@ -15,7 +15,7 @@
 <body>
 
 <div class="structure">
-    <img class="fleche" src="images/home.png" title="Home"  onclick="red('home.php')" >
+    <img class="fleche" src="images/fleche.gif"   onclick="red('home.php')" >
     <img class="logo" src="images/logo.png"" >
     <div class="signup">
 
