@@ -17,7 +17,10 @@ header{
     background-repeat: no-repeat;
 
 }
-
+home {
+    width: 20px;
+    height: 20px;
+}
 
 #search {
     float: right;

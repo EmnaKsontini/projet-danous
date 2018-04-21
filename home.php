@@ -17,7 +17,7 @@
             <li><a href="Products.php">All Products</a></li>
             <li><a href="#">Contact us</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="formulaireLogin.php"> <img src="images/this .png" ></a></li>
+            <li><a href="formulaireLogin.php"> <img class="home" src="images/this2.png" title="LogIn" ></a></li>
           <!--  <li><a href="facturation.php"> <img src="" alt="taswira taa danous" ></a></li>-->
 
 
