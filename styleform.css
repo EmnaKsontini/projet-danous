@@ -2,7 +2,8 @@
 html, body {
     position: relative;
     min-height: 100vh;
-    background-color: #eee6d3;
+    background-image: url("images/fond.jpg");
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,7 +11,7 @@ html, body {
 }
 
 .structure {
-    background-color: #eeebec;
+    background-image: url("images/meta.jpg");
     border-radius: 15px;
     height: 550px;
     width: 350px;
@@ -25,7 +26,7 @@ html, body {
 .logo{
     height:120px;
     width:250px;
-    transform: translate(15%,-10%)
+    transform: translate(15%,-10%);
 }
 .structure .signup {
     position: absolute;
