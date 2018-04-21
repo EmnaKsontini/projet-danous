@@ -7,13 +7,14 @@
  */
 
 try {
-    $bdd = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '');
+    $bdd = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '0000');
 }catch (PDOException $e){
     print "Erreur : " . $e->getMessage();
     die();
 }
+
 if(!empty($_POST["quantity"])) {
-    $rep = $bdd->query("SELECT * FROM pc WHERE Reference='" . $_GET["code"] . "'");
+    $rep = $bdd->query("SELECT * FROM ".$_POST["type"]." WHERE Reference='" . $_GET["code"] . "'");
     $productByCode = $rep -> fetch(PDO::FETCH_OBJ);
     $itemArray = array($productByCode->Reference=>array('Reference'=>$productByCode->Reference, 'quantity'=>$_POST["quantity"]));
 //bich nista3mlouh fil page facturation nijbdou mil base de donnée bil référence

@@ -114,29 +114,42 @@ nav ul li a:hover, nav ul li.selected a {
 #cat {
     margin-top: 420px;//blassit categorie
 }
-#submenu ul {
+#submenu ul form  {
+    float: left;
+    list-style: none outside none;
+}
+#submenu ul form {
     margin: 0;
     padding: 0;
     list-style:none;
 }
-
-#submenu ul li a {
+#submenu ul form li{
+    padding-top: 5px;
+    height: 50px;
+}
+#submenu ul form li input {
 
     /*border-right: 1px solid #E0E0E0;*/
-    color: white;
+    align-content: center;
+    background: none;
+    border: none;
     display: block;
     font-size: 14px;
+    font-weight: bold;
+    color: white;
+    width: 120px;
     text-align: center;
-    padding-top: 5px;
-    text-decoration: none;
-    text-decoration-color: black;
     text-transform: uppercase;
 
 }
-#submenu li a:hover {
+#submenu ul form li:hover {
     background-color:darkred;
 }
+#submenu ul form li input:focus {
 
+    outline:none;
+
+}
 #main {
     background-color: #fff;
     padding:20px 0;

@@ -15,7 +15,7 @@
 <body>
 
 <div class="structure">
-    <img class="fleche" src="images/fleche.gif"  onclick="red('home.php')" >
+    <img class="fleche" src="images/home.png" title="Home"  onclick="red('home.php')" >
     <img class="logo" src="images/logo.png"" >
     <div class="signup">
 
@@ -36,7 +36,7 @@
         <div class="form2">
             <h2 class="form-title"  id="login"><span>or</span>Log in</h2>
             <div class="form-holder">
-               <input type="text" name="login" class="input" placeholder="Email" />
+               <input type="text" name="login"  class="input" placeholder="Login" />
                 <input type="password" name="password" class="input" placeholder="Password" />
             </div>
             <button class="submit-btn">Log in</button>

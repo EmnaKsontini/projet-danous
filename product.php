@@ -16,14 +16,15 @@
 <body>
 <?php
 try {
-    $bdd = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '');
+    $bdd = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '0000');
 }catch (PDOException $e){
     print "Erreur : " . $e->getMessage();
     die();
 }
-$table_name="pc";
-//$ref = $_GET['ref'];
-$ref = "LI2054";
+$ref = $_GET["code"];
+$table_name=$_POST["type"];
+
+//$ref = "LI2054";
 $req = $bdd ->query("use danousdatabase");
 $req = "SELECT * FROM ".$table_name." where `Reference`=\"".$ref."\"";
 $query = $bdd -> query($req);
@@ -52,12 +53,14 @@ $obj = $query -> fetch(PDO::FETCH_OBJ);
     <section id="cat">
         <nav id="submenu">
             <ul>
-                <li><a href="#">LAPTOP</a></li>
-                <li><a href="#">Category #2</a></li>
-                <li><a href="#">Category #3</a></li>
-                <li><a href="#">Category #4</a></li>
-                <li><a href="#">Category #5</a></li>
-                <li><a href="#">Category #6</a></li>
+                <form method="post" action="products.php">
+                    <li><input name="type" type="submit" value="laptop" /></li>
+                    <li><input name="type" type="submit" value="phone" /></li>
+                    <li><input name="type" type="submit" value="Category 3" /></li>
+                    <li><input name="type" type="submit" value="Category 4" /></li>
+                    <li><input name="type" type="submit" value="Category 5" /></li>
+                    <li><input name="type" type="submit" value="Category 6" /></li>
+                </form>
             </ul>
         </nav>
     </section>

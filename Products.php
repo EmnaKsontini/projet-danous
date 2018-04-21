@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 session_start();
+//echo $_POST["type"] ;
 // echo "hello".$_SESSION["login"];  //emna: ena zedt star heda bch njareb session
 if(isset($_POST["addtocart"])){
     include "cart.php";
@@ -57,14 +58,15 @@ if(isset($_POST["addtocomparator"])){
     <section id="cat">
         <nav id="submenu">
             <ul>
-                <li><a href="#">LAPTOP</a></li>
-                <li><a href="#">Category #2</a></li>
-                <li><a href="#">Category #3</a></li>
-                <li><a href="#">Category #4</a></li>
-                <li><a href="#">Category #5</a></li>
-                <li><a href="#">Category #6</a></li>
+                <form method="post" action="products.php">
+                    <li><input name="type" type="submit" value="laptop" /></li>
+                    <li><input name="type" type="submit" value="phone" /></li>
+                    <li><input name="type" type="submit" value="Category 3" /></li>
+                    <li><input name="type" type="submit" value="Category 4" /></li>
+                    <li><input name="type" type="submit" value="Category 5" /></li>
+                    <li><input name="type" type="submit" value="Category 6" /></li>
+                </form>
             </ul>
-        </nav>
     </section>
 </header>
 <article>
@@ -83,14 +85,22 @@ if(isset($_POST["addtocomparator"])){
                     return $ret;
                 }
                 try {
-                    $bdd = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '');
+                    $bdd = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '0000');
                 }catch (PDOException $e){
                     print "Erreur : " . $e->getMessage();
                     die();
                 }
-                $table="pc";
+                //inkemlou l condition lil les catégories l kol
+                if($_POST["type"]=="laptop")
+                {
+                    $_SESSION["table"]="pc";//lezim ism i table ikoun howa bidou ism l catégorie!!!! bich tkoun dynamique
+                }
+                if($_POST["type"]=="phone")
+                {
+                    $_SESSION["table"]="telephone";//lezim ism i table ikoun howa bidou ism l catégorie!!!! bich tkoun dynamique
+                }
                 $req = $bdd ->query("use danousdatabase");
-                $req = "SELECT * FROM ".$table;
+                $req = "SELECT * FROM ".$_SESSION["table"];
                 $query = $bdd -> query($req);
                 $pcs = $query -> fetchAll(PDO::FETCH_OBJ);
                 foreach ($pcs as $p){
@@ -100,9 +110,10 @@ if(isset($_POST["addtocomparator"])){
                             <a href="#">
                                 <img src="images/<?php echo"$p->Reference"?>.jpg" alt="<?php echo "$p->Reference" ?>" style="width:128px;height:128px">
                             </a>
-                            <form method="post" action="product.php?code=<?php echo $p->Reference; ?> ">
+                            <form method="post" action="product.php?code=<?php echo $p->Reference; ?>">
                                 <div>
                                     <input id="Details" type="submit" value="Details" />
+                                    <input type="hidden" name="type" value="<?php echo $p->type; ?>" />
                                 </div>
                             </form>
                         </div>
@@ -118,6 +129,7 @@ if(isset($_POST["addtocomparator"])){
                                         <input type="submit" name="addtocomparator" value="Add to comparator" />
                                         <input type="submit" name="addtocart" value="Add to cart" />
                                         <input type="text" id="q" name="quantity" value="1" size="1" />
+                                        <input type="hidden" name="type" value="<?php echo $p->type; ?>" />
                                     </div>
                                 </form>
                             </div>
