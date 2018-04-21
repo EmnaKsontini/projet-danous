@@ -31,22 +31,17 @@
         </section>
     </nav>
 
-    <!--<div class="top_head">
-        <div class="couverture ">
-            notre couverture est en background
-        </div>
-
-
-    </div>!-->
     <section id="cat">
     <nav id="submenu">
         <ul>
-            <li><a href="#">Category 1</a></li>
-            <li><a href="#">Category 2</a></li>
-            <li><a href="#">Category 3</a></li>
-            <li><a href="#">Category 4</a></li>
-            <li><a href="#">Category 5</a></li>
-            <li><a href="#">Category 6</a></li>
+            <form method="post" action="products.php">
+                <li><input name="type" type="submit" value="Category 1" /></li>
+                <li><input name="type" type="submit" value="Category 2" /></li>
+                <li><input name="type" type="submit" value="Category 3" /></li>
+                <li><input name="type" type="submit" value="Category 4" /></li>
+                <li><input name="type" type="submit" value="Category 5" /></li>
+                <li><input name="type" type="submit" value="Category 6" /></li>
+            </form>
         </ul>
     </nav>
     </section>

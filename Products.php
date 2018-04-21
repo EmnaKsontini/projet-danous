@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 session_start();
+echo $_POST["type"] ;
 // echo "hello".$_SESSION["login"];  //emna: ena zedt star heda bch njareb session
 if(isset($_POST["addtocart"])){
     include "cart.php";
@@ -57,14 +58,15 @@ if(isset($_POST["addtocomparator"])){
     <section id="cat">
         <nav id="submenu">
             <ul>
-                <li><a href="#">LAPTOP</a></li>
-                <li><a href="#">Category #2</a></li>
-                <li><a href="#">Category #3</a></li>
-                <li><a href="#">Category #4</a></li>
-                <li><a href="#">Category #5</a></li>
-                <li><a href="#">Category #6</a></li>
+                <form method="post" action="products.php">
+                    <li><input name="type" type="submit" value="Category 1" /></li>
+                    <li><input name="type" type="submit" value="Category 2" /></li>
+                    <li><input name="type" type="submit" value="Category 3" /></li>
+                    <li><input name="type" type="submit" value="Category 4" /></li>
+                    <li><input name="type" type="submit" value="Category 5" /></li>
+                    <li><input name="type" type="submit" value="Category 6" /></li>
+                </form>
             </ul>
-        </nav>
     </section>
 </header>
 <article>
@@ -83,12 +85,20 @@ if(isset($_POST["addtocomparator"])){
                     return $ret;
                 }
                 try {
-                    $bdd = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '0000');
+                    $bdd = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '');
                 }catch (PDOException $e){
                     print "Erreur : " . $e->getMessage();
                     die();
                 }
-                $table="pc";
+                //inkemlou l condition lil les catégories l kol
+                if($_POST["type"]=="Category 1")
+                {
+                    $table="pc";//lezim ism i table ikoun howa bidou ism l catégorie!!!! bich tkoun dynamique
+                }
+                if($_POST["type"]=="Category 2")
+                {
+                    $table="telephone";//lezim ism i table ikoun howa bidou ism l catégorie!!!! bich tkoun dynamique
+                }
                 $req = $bdd ->query("use danousdatabase");
                 $req = "SELECT * FROM ".$table;
                 $query = $bdd -> query($req);
