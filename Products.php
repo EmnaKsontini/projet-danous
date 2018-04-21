@@ -81,7 +81,7 @@ if(isset($_POST["addtocomparator"])){
                     return $ret;
                 }
                 try {
-                    $bdd = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '');
+                    $bdd = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '0000');
                 }catch (PDOException $e){
                     print "Erreur : " . $e->getMessage();
                     die();
@@ -98,9 +98,10 @@ if(isset($_POST["addtocomparator"])){
                             <a href="#">
                                 <img src="images/<?php echo"$p->Reference"?>.jpg" alt="<?php echo "$p->Reference" ?>" style="width:128px;height:128px">
                             </a>
-                            <form method="post" action="product.php?code=<?php echo $p->Reference; ?> ">
+                            <form method="post" action="product.php?code=<?php echo $p->Reference; ?>">
                                 <div>
                                     <input id="Details" type="submit" value="Details" />
+                                    <input type="hidden" name="type" value="<?php echo $p->type; ?>" />
                                 </div>
                             </form>
                         </div>

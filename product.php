@@ -16,14 +16,14 @@
 <body>
 <?php
 try {
-    $bdd = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '');
+    $bdd = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '0000');
 }catch (PDOException $e){
     print "Erreur : " . $e->getMessage();
     die();
 }
-$table_name="pc";
-//$ref = $_GET['ref'];
-$ref = "LI2054";
+$table_name=$_POST["type"];
+$ref = $_GET['Reference'];
+//$ref = "LI2054";
 $req = $bdd ->query("use danousdatabase");
 $req = "SELECT * FROM ".$table_name." where `Reference`=\"".$ref."\"";
 $query = $bdd -> query($req);
