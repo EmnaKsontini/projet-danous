@@ -86,7 +86,7 @@ if(isset($_POST["addtocomparator"])){
                     return $ret;
                 }
                 try {
-                    $bdd = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '0000');
+                    $bdd = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '');
                 }catch (PDOException $e){
                     print "Erreur : " . $e->getMessage();
                     die();
@@ -99,6 +99,7 @@ if(isset($_POST["addtocomparator"])){
                 if($_POST["type"]=="phone")
                 {
                     $_SESSION["table"]="telephone";//lezim ism i table ikoun howa bidou ism l catégorie!!!! bich tkoun dynamique
+                    
                 }
                 $req = $bdd ->query("use danousdatabase");
                 $req = "SELECT * FROM ".$_SESSION["table"];
@@ -146,7 +147,7 @@ if(isset($_POST["addtocomparator"])){
                 <li>
                     <div class="info">
                         <?php
-                        $req = "DESCRIBE ".$table;
+                        $req = "DESCRIBE ".$_SESSION["table"];
                         $query = $bdd -> query($req);
                         $tab = $query -> fetchAll(PDO::FETCH_OBJ);
                         foreach ($tab as $a) {
@@ -154,11 +155,11 @@ if(isset($_POST["addtocomparator"])){
                                 echo ("<h4>".$a->Field."</h4>");
                                 if ($a->Field=="Prix"){
 
-                                    $req_min = "SELECT MIN(Prix) FROM " . $table ;
+                                    $req_min = "SELECT MIN(Prix) FROM " . $_SESSION["table"] ;
                                     $query_min= $bdd->query($req_min);
                                     $min = $query_min->fetch();
                                     //echo (int)$min[0];
-                                    $req_max = "SELECT MAX(Prix) FROM " . $table ;
+                                    $req_max = "SELECT MAX(Prix) FROM " . $_SESSION["table"] ;
                                     $query_max = $bdd->query($req_max);
                                     $max = $query_max->fetch();
                                     ?>
@@ -168,7 +169,7 @@ if(isset($_POST["addtocomparator"])){
 
 
                                 }else {
-                                    $req_dist_element = "SELECT DISTINCT `" . $a->Field . "` FROM " . $table;
+                                    $req_dist_element = "SELECT DISTINCT `" . $a->Field . "` FROM " . $_SESSION["table"];
                                     $query_dist_element = $bdd->query($req_dist_element);
                                     try {
                                         $values = $query_dist_element->fetchAll(PDO::FETCH_OBJ);
@@ -179,7 +180,7 @@ if(isset($_POST["addtocomparator"])){
                                     foreach ($values as $val) {
                                         $key = $a->Field;
                                         $str = verif_carct_sep($val->$key);
-                                        $req_count = "SELECT COUNT(*) FROM " . $table . " WHERE `" . $key . "`=\"" . $str . "\"";
+                                        $req_count = "SELECT COUNT(*) FROM " . $_SESSION["table"] . " WHERE `" . $key . "`=\"" . $str . "\"";
                                         $query_count = $bdd->query($req_count);
                                         $count = $query_count->fetch();
                                         echo("<input type=\"checkbox\"  id=\"" .$str . "\" name=\"$key\">" . $val->$key . " (" . $count[0] . ")<br>");
