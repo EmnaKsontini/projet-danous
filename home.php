@@ -10,15 +10,20 @@
 </head>
 <body>
 <header>
-    <nav  >
+    <nav class="hey" >
         <ul>
             <li class="selected"><a href="#">Home</a></li>
             <li><a href="#">Specials</a></li>
             <li><a href="Products.php">All Products</a></li>
             <li><a href="#">Contact us</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="formulaireLogin.php"> <img class="home" src="images/this2.png" title="LogIn" ></a></li>
-          <!--  <li><a href="facturation.php"> <img src="" alt="taswira taa danous" ></a></li>-->
+            <?php
+            if(!isset($_SESSION['login']))
+                echo"<li><a href=\"formulaireLogin.php\"> <img class=\"home\" src=\"images/this2.png\" title=\"LogIn\" ></a></li>";
+            else echo"<li><a href=\"profile.php\">my profile</a> </li>";
+                ?>
+
+
 
 
         </ul>
@@ -235,7 +240,48 @@
 
         <footer>
             <div id="privacy">
+            <p>
+                <table class="colone1">
+                    <tr>
+                        <td  width="33%" colspan="2">CONTACTEZ NOUS :</td>
+                        <td width="33%" colspan="2">SUIVEZ_NOUS:</td>
 
+
+                        <br>
+
+
+                        <tr>
+                            <td><img src="images/mail.png"></td>
+                            <td align="center">Danous@Danous.tn</td>
+                            <td><img src="images/facebook.png" > </td>
+                            <td>DanousVente</td>
+
+                         </tr>
+                         <tr>
+                            <td><img src="images/phone.png"></td>
+                             <td align="center"> 71 777 777</td>
+                             <td><img src="images/insta.png" > </td>
+                             <td>DanousVente</td>
+
+
+
+
+                            </tr>
+
+
+                    </tr>
+
+                </table>
+                <div id="right">
+                <tabele class="colone1">
+
+
+
+
+
+                </tabele>
+                </div>
+            </p>
             </div>
         </footer>
 </body>
