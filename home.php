@@ -243,9 +243,9 @@
             <p>
                 <table class="colone1">
                     <tr>
-                        <td  width="33%" colspan="2">CONTACTEZ NOUS :</td>
-                        <td width="33%" colspan="2">SUIVEZ_NOUS:</td>
-
+                        <td  width="20%" colspan="2">CONTACTEZ NOUS :</td>
+                        <td width="20%" colspan="2">SUIVEZ_NOUS:</td>
+                        <td width="20%"></td>
 
                         <br>
 
@@ -255,6 +255,7 @@
                             <td align="center">Danous@Danous.tn</td>
                             <td><img src="images/facebook.png" > </td>
                             <td>DanousVente</td>
+                            <td>LOGO</td>
 
                          </tr>
                          <tr>
@@ -262,6 +263,7 @@
                              <td align="center"> 71 777 777</td>
                              <td><img src="images/insta.png" > </td>
                              <td>DanousVente</td>
+                             <td><img src="images/c.png"></td>
 
 
 

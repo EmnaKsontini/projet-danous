@@ -10,24 +10,36 @@ if(!isset( $_POST['login'], $_POST['password']))
 
 elseif (strlen( $_POST['login']) > 20 || strlen($_POST['login']) < 4)
 {
-    $message = 'Incorrect Length for login';
+    echo '<script language="JavaScript">
+	alert("Votre Login est de taille incorrecte. Merci de recommencer");
+	window.location.replace("formulaireLogin.php");
+	</script>';
 }
 
 elseif (strlen( $_POST['password']) > 20 || strlen($_POST['password']) < 4)
 {
-    $message = 'Incorrect Length for Password';
+    echo '<script language="JavaScript">
+	alert("Votre password est de taille incorrecte. Merci de recommencer");
+	window.location.replace("formulaireLogin.php");
+	</script>';
 }
 
 elseif (ctype_alnum($_POST['login']) != true)
 {
 
-    $message = "login must be alpha numeric";
+    echo '<script language="JavaScript">
+	alert("Votre Login doit etre alphanumerique. Merci de recommencer");
+	window.location.replace("formulaireLogin.php");
+	</script>';
 }
 
 elseif (ctype_alnum($_POST['password']) != true)
 {
 
-    $message = "Password must be alpha numeric";
+    echo '<script language="JavaScript">
+	alert("Votre mot de passe doit etre alphanumerique. Merci de recommencer");
+	window.location.replace("formulaireLogin.php");
+	</script>';
 }
 else
 {
@@ -57,23 +69,31 @@ else
         ));
         
         $message = 'New user added';
+        header('location:profile.php');
     }
     catch(Exception $e)
     {
 
         if( $e->getCode() == 23000)
         {
-            $message = 'login already exists';
+            echo '<script language="JavaScript">
+	alert("login Existant. Merci de recommencer");
+	window.location.replace("formulaireLogin.php");
+	</script>';
         }
         else
         {
             /*** if we are here, something has gone wrong with the database ***/
-            $message = 'We are unable to process your request. Please try again later"';
+            echo '<script language="JavaScript">
+	alert("Un probleme est survenu , veuillez telecharger les bases de données correctement les amis !!. Merci de recommencer");
+	window.location.replace("formulaireLogin.php");
+	</script>';
+
         }
     }
 }
 ?>
 
 
-<?php echo $message; ?>
+<!-- < ?php echo $message; ?>-->
 

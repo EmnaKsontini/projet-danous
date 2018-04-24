@@ -20,9 +20,9 @@
             <li><a href="#">About</a></li>
             <?php
 
-             echo"<li>";
-             echo $_SESSION['login'];
-             echo" </li>";
+            echo"<li>";
+            echo$_SESSION['login'];
+            echo" </li>";
             ?>
 
 
@@ -43,7 +43,9 @@
 <article>
     <div id="w">
         <div id="contenu" class="clearfix">
-            <div id="userphoto"><a href ="Edit.php"> <img src="images/avatar.png" alt="default avatar" title="change your AVATAR"></a></div>
+            <div id="userphoto"><img src="images/avatar.png" alt="default avatar"></div>
+
+
             <h1>User Profile </h1>
 
             <nav id="profiletabs">
@@ -54,21 +56,27 @@
                     <li><a href="#settings">Settings</a></li>
                 </ul>
             </nav>
+            <br>
+            <br>
+            <br>
+            <br>
+            <input id="userphoto" type="file"  placeholder="Name"   name="nom" />
             <section id="settings" >
                 <p>Edit your user settings:</p>
 
-                <p class="setting"><span>name<a href ="Edit.php"> <img src="images/edit.png" alt="*Edit*"></a></span> Folen</p>
-                <p class="setting"><span>Last Name <a href ="Edit.php"> <img src="images/edit.png" alt="*Edit*"></a></span>Foulen</p>
 
-                <p class="setting"><span>E-mail Address<a href ="Edit.php"> <img src="images/edit.png" alt="*Edit*"></a></span> lolno@gmail.com</p>
+                <p class="setting"><span>name </span> <input type="text"  placeholder="Name"   name="nom" /></p>
+                <p class="setting"><span>Last Name </span><input type="text"  placeholder="last Name"   name="nom" /></p>
 
-                <p class="setting"><span>Language <a href ="Edit.php"> <img src="images/edit.png" alt="*Edit*"></a></span> English(US)</p>
+                <p class="setting"><span>E-mail Address </span> <input type="text"  placeholder="Email"   name="nom" /></p>
 
-
-
+                <p class="setting"><span>Language </span> <input type="text"  placeholder="Language"   name="nom" /></p>
 
 
-                <p class="setting"><span>age <a href ="Edit.php"> <img src="images/edit.png" alt="*Edit*"></a></span> </p>
+
+
+
+                <p class="setting"><span>age </span> <input type="text"  placeholder="age"   name="nom" /></p>
             </section>
 
 
@@ -111,7 +119,13 @@
 
         </table>
         <div id="right">
+            <tabele class="colone1">
 
+
+
+
+
+            </tabele>
         </div>
         </p>
     </div>
