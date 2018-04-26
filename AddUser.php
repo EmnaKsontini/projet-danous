@@ -59,17 +59,21 @@ else
         $BD_connexion=new PDO('mysql:host=localhost;dbname=danousdatabase','root','');
 
         $BD_connexion->query("use autho");
-        $req = $BD_connexion->prepare("INSERT INTO `autho`(`login`, `nom`, `prenom`, `passwd`) VALUES (:val1,:val2,:val3,:val4)");
+        $str="INSERT INTO `autho`(`login`, `nom`, `prenom`, `passwd`,`mail`, `pays`, `age`) VALUES (:val1,:val2,:val3,:val4,:val5,:val6,:val7)";
+        $req = $BD_connexion->prepare($str);
         $req->execute(array(
             'val1'=>$login,
             'val2'=>$nom,
             'val3'=>$prenom,
             'val4'=>$password,
+            'val5'=>"",
+            'val6'=>"",
+            'val7'=>18,
 
         ));
         
         $message = 'New user added';
-        header('location:profile.php');
+       // header('location:profile.php');
     }
     catch(Exception $e)
     {
