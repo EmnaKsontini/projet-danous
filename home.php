@@ -286,4 +286,13 @@
             </p>
             </div>
         </footer>
+<div class="bottom" id="alert">
+    this website use cookies
+    <button onclick="accpetCookie()">
+        click here for accpet cookie
+    </button>
+</div>
+<div class="scroll">
+    website content
+</div>
 </body>
