@@ -10,6 +10,7 @@
 
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="StyleForProduct.css">
 
 
 </head>
@@ -23,7 +24,6 @@ try {
 }
 $ref = $_GET["code"];
 $table_name=$_POST["type"];
-
 //$ref = "LI2054";
 $req = $bdd ->query("use danousdatabase");
 $req = "SELECT * FROM ".$table_name." where `Reference`=\"".$ref."\"";
@@ -32,24 +32,32 @@ $obj = $query -> fetch(PDO::FETCH_OBJ);
 
 ?>
 <header>
-    <nav id="nav">
+    <nav class="hey" >
         <ul>
             <li class="selected"><a href="#">Home</a></li>
             <li><a href="#">Specials</a></li>
-            <li><a href="#">All Products</a></li>
+            <li><a href="Products.php">All Products</a></li>
             <li><a href="#">Contact us</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="formulaireLogin.php"> <img src="images/this .png" ></a></li>
-         <!--   <li><a href="formulaireLogin.php"> <img src="taswira Danous!!" ></a></li>-->
+            <?php
+            if(!isset($_SESSION['login']))
+                echo"<li><a href=\"formulaireLogin.php\"> <img class=\"home\" src=\"images/this2.png\" title=\"LogIn\" ></a></li>";
+            else echo"<li><a href=\"profile.php\">my profile</a> </li>";
+            ?>
+
+
+
+
         </ul>
         <section id="search"><!-- Search form -->
             <form action="#" onsubmit="return false;" method="get">
                 <input type="text" onfocus="if (this.value =='Search..' ) this.value=''" onblur="if (this.value=='') this.value='Search..'" value="Search.." name="q">
-                <input type="submit" value="Search" id="searchbutton">
+                <input type="submit" value="Search">
             </form>
 
         </section>
     </nav>
+
     <section id="cat">
         <nav id="submenu">
             <ul>
@@ -77,7 +85,7 @@ $obj = $query -> fetch(PDO::FETCH_OBJ);
 
 
     <!-- Right Column -->
-    <div class="right-column color">
+    <div class="right-column">
 
         <!-- Product Description -->
         <div class="product-description">
@@ -86,7 +94,6 @@ $obj = $query -> fetch(PDO::FETCH_OBJ);
             <span>".$obj->Categorie."</span>
             <h1>".$obj->Marque."</h1>
             <span>".$ref."</span>");
-
 
             ?>
         </div>
@@ -117,6 +124,5 @@ $obj = $query -> fetch(PDO::FETCH_OBJ);
             <a href="#" class="cart-btn">Add to cart</a>
         </div>
     </div>
-
 </main>
 </body>

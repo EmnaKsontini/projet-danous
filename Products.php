@@ -37,8 +37,9 @@ if(isset($_POST["addtocomparator"])){
             <li><a href="#">All Products</a></li>
             <li><a href="#">Contact us</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="formulaireLogin.php"> <img src="images/this .png" ></a></li>
-           <!-- <li><a href="facturation.php"> <img src="" alt="photo de danous " ></a></li>-->
+            <li><a href="formulaireLogin.php"> <img src="images/this2.png" title="LogIn" ></a></li>
+
+
 
         </ul>
         <section id="search"><!-- Search form -->
@@ -95,9 +96,10 @@ if(isset($_POST["addtocomparator"])){
                 {
                     $_SESSION["table"]="pc";//lezim ism i table ikoun howa bidou ism l catégorie!!!! bich tkoun dynamique
                 }
-                if($_POST["type"]=="phone")
+                if($_POST["type"]=="telephone")
                 {
                     $_SESSION["table"]="telephone";//lezim ism i table ikoun howa bidou ism l catégorie!!!! bich tkoun dynamique
+                    
                 }
                 $req = $bdd ->query("use danousdatabase");
                 $req = "SELECT * FROM ".$_SESSION["table"];

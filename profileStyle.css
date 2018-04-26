@@ -1,3 +1,4 @@
+
 BODY {
     PADDING-BOTTOM: 0px; PADDING-TOP: 5px; position:relative; width:100%;  text-align:center;
 
@@ -24,7 +25,7 @@ home {
 
 #search {
     float: right;
-   /* margin: 21px 41px 0 0;*/
+    /* margin: 21px 41px 0 0;*/
     text-align: right;
     position:absolute;
     top:0;
@@ -73,10 +74,10 @@ home {
     margin-top:1px;
 }
 /*navigation menu*/
-nav {
+.hey {
     background-color: #7f1413;
     overflow: hidden;
-   height:50px;
+    height:50px;
 }
 nav ul {
     margin: 0;
@@ -105,12 +106,12 @@ nav ul li a:hover, nav ul li.selected a {
 }
 #submenu {
 
-   background: linear-gradient(#ffffff, #2e2e2e);
-   /* border: 1px solid #E0E0E0;*/
+    background: linear-gradient(#ffffff, #2e2e2e);
+    /* border: 1px solid #E0E0E0;*/
     height: 30px;
 
-   /* padding-left: 100px;*/
-   /* position:absolute;*/
+    /* padding-left: 100px;*/
+    /* position:absolute;*/
     width: 60%;
     margin: auto;
 }
@@ -348,4 +349,160 @@ footer {
     font-size:40px;
     font-family: Arial,Helvetica,sans-serif;
 }
+
+
+
+
+
+
+
+
+
+
+table { border-collapse: collapse; border-spacing: 0; }
+img { border: 0; max-width: 100%; }
+
+
+
+
+h1 {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 2.5em;
+    line-height: 1.5em;
+    letter-spacing: -0.05em;
+    margin-bottom: 20px;
+    padding: .1em 0;
+    color: #444;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    display: inline-block;
+    width: 50%;
+    height: 1px;
+    vertical-align: middle;
+    background: #f0f0f0;
+}
+
+
+
+
+
+
+p {
+    display: block;
+    font-size: 1.4em;
+    line-height: 1.55em;
+    margin-bottom: 22px;
+    color: #555;
+}
+
+
+
+/** comme ca elle est au milieu !! **/
+#w {
+    display: block;
+    width: 750px;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 45px;
+}
+
+#contenu {
+    display: block;
+    width: 100%;
+    background: #fff;
+    padding: 25px 20px;
+    padding-bottom: 35px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+}
+
+#userphoto {
+    display: block;
+    float: right;
+    margin-left: 10px;
+    margin-bottom: 8px;
+}
+input[type='file'] {
+    color: transparent;
+    float: right;
+
+}
+
+#userphoto img {
+    display: block;
+    padding: 2px;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+
+/** profile nav links **/
+#profiletabs {
+    display: block;
+    margin-bottom: 4px;
+    height: 50px;
+}
+
+#profiletabs ul { list-style: none; display: block; width: 70%; height: 50px; }
+#profiletabls ul li { float: left; }
+#profiletabs ul li a {
+    display: block;
+    float: left;
+    padding: 8px 11px;
+    font-size: 1.2em;
+    font-weight: bold;
+    background: #eae8db;
+    color: #666;
+    margin-right: 7px;
+    border: 1px solid #fff;
+    -webkit-border-radius: 5px;
+    -webkit-border-bottom-left-radius: 0;
+    -moz-border-radius: 5px;
+    -moz-border-radius-bottomleft: 0;
+    border-radius: 5px;
+    border-bottom-left-radius: 0;
+}
+#profiletabs ul li a:hover {
+    text-decoration: none;
+    background: #dad7c2;
+    color: #565656;
+}
+
+#profiletabs ul li a.sel {
+    background: #fff;
+    border-color: #d1cdb5;
+}
+
+
+/** profile content sections **/
+.hidden {
+    display: none;
+}
+
+.activity {
+    border-bottom: 1px solid #d6d1af;
+    padding-bottom: 4px;
+}
+
+.setting {
+    display: block;
+    font-weight: normal;
+    padding: 7px 3px;
+    border-top: 1px solid #d6d1af;
+    margin-bottom: 5px;
+}
+.setting span {
+    float: left;
+    width: 250px;
+    font-weight: bold;
+}
+.setting span img {
+    cursor: pointer;
+}
+
 
