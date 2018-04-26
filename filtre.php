@@ -11,7 +11,7 @@ try {
 }
 
 
-$table="pc";
+$table="ecran";
 
 $req = $bdd ->query("use danousdatabase");
 $req = "SELECT * FROM ".$table;

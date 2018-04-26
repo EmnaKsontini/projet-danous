@@ -96,7 +96,7 @@ if(isset($_POST["addtocomparator"])){
                 {
                     $_SESSION["table"]="pc";//lezim ism i table ikoun howa bidou ism l catégorie!!!! bich tkoun dynamique
                 }
-                if($_POST["type"]=="phone")
+                if($_POST["type"]=="telephone")
                 {
                     $_SESSION["table"]="telephone";//lezim ism i table ikoun howa bidou ism l catégorie!!!! bich tkoun dynamique
                     
