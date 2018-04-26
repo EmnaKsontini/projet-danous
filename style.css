@@ -348,10 +348,12 @@ footer {
     position: fixed;
     bottom: 0;
     height : 90px;
-    border-radius: 6px;
+    border-radius:4em;
+    border: solid 1px;
     left : 0;
+    box-shadow: 1px 1px;
     width: 30%;
-    background: #F7E8EC;
+    background: rgba(238, 205, 130, 0.13);
     color: black;
     opacity: 0.9;
 }
@@ -359,4 +361,24 @@ footer {
 .scroll {
     min-height: 1500px;
 }
+.button4 {
+    display:inline-block;
+    padding:0.3em 1.2em;
+    margin:0 0.1em 0.1em 0;
+    border:0.16em solid rgba(255,255,255,0);
+    border-radius:2em;
+    background-color: rgba(207, 42, 28, 0.82);
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    text-align:center;
+    transition: all 0.2s;
+}
+.button4:hover{
+    border-color: rgba(255,255,255,1);
+}
+
 

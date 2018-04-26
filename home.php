@@ -286,13 +286,11 @@
             </p>
             </div>
         </footer>
-<div class="bottom" id="alert">
-    this website use cookies
-    <button onclick="accpetCookie()">
-        click here for accpet cookie
-    </button>
-</div>
-<div class="scroll">
-    website content
+<div class="bottom">
+    <img width="50" class="avatar" src="https://designmodo.com/wp-content/themes/designmodo/assets/img/misc/cookie.png" alt="Cookie Icon">
+    <div>We use cookies to give you the best experience on our website.
+ <button class="button4">Nice, I love cookies!</button> </div>
+        </div>
+    </div>
 </div>
 </body>

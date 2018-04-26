@@ -11,5 +11,3 @@ catch(Exception $e)
 
 foreach($rows as $row) {
     if ($row["login"]=="emna")  ; }
-
- ?>
