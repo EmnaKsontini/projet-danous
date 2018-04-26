@@ -204,7 +204,7 @@ nav ul li a:hover, nav ul li.selected a {
     background-color: #fbfbfb;
 }
 #content #right ul li:first-child {
-    border-width: none;
+    border-width:   none;
 }
 #content #left ul li .img {
     text-align: center;
