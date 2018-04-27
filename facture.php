@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<?php session_start()  ?>
+<?php session_start();
+ ?>
 <html>
 <head>
 <title> Payment </title>
@@ -13,31 +14,33 @@
 				<div class="div1_left1">
                     <h3>Payment Summary : </h3>
                     <?php
-                    foreach ( $_SESSION["cart_item"] as $key => $value) {
-                        echo "{$key} => {$value} ";
+
+                    foreach ( $_SESSION["cart_item"] as $key => $value)
+                    {
+                        foreach ( $value  as $key1 => $value1) {
+
+                            if ($key1 == "produit") {
+                                foreach ($value1 as $key2 => $value2) {
+                                    if ($key2 == "Reference") {
+                                        echo "<ul><li > Reference: $value2<span></span>";
+                                    }
+                                    if ($key2 == "Prix") {
+                                        echo "</li><li> Price: $value2</li>";
+                                    }
+
+                                }
+                            }
+                            if ($key1 == "quantity") {
+                                echo "<br><li> quantity : $value1</li></ul> <hr> ";
+                            }
+                        }
 
                     }
 
                     ?>
 
-					<ul>
-						<li >Electronics<span>2017 February 10, at 10:30 PM</span></li>
-						<li>CAF</li>
-					</ul>
-					<ul>
-						<li>Food<span>2017 February 25, at 1:30 PM</span></li>
-						<li>JFK</li>
-					</ul>
-					<ul>
-						<li>Grocery<span>2017 March 17, at 08:30 PM</span><span>2017 March 19, at 08:30 PM</span></li>
-						<li>LHR</li>
-					</ul>
-					<ul>
-						<li>Accessories<span>2017 April 09, at 10:00 AM</span></li>
-						<li>JFK</li>
-					</ul>
 				</div>
-				<div >
+				<div class="total">
 					<h3>Total Price</h3>
 					<h4>523.63 GBP</h4>					<p>Price includes all taxes</p>
 				</div>

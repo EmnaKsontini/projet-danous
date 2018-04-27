@@ -120,6 +120,15 @@ body a:hover,body a{
     color: #fff;
 	font-family:"Arial Narrow";
     font-weight: bold;
-    font-size: 2em;
-    vertical-align: top;
+    font-size: 1.5em;
+
+}
+.total
+{
+	background-color: red;
+
+}
+.total h3
+{
+	font:"Arial Narrow";
 }
