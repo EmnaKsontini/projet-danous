@@ -1,9 +1,19 @@
 <?php session_start();?>
-<h3>LAPTOP</h3>
-<ul>
 
 <?php
+if (isset($_SESSION["table"])) {
+    $table=$_SESSION["table"];
+    if ($_SESSION["table"] == "pc")
+        $title="Laptop";
+    if (  $_SESSION["table"]=="telephone")
+        $title= "phone";
 
+}else {
+    $title="LAPTOP";
+    $title="pc";
+}
+echo '<h3>'.$title.'</h3>
+<ul>';
 try {
     $bdd = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '');
 }catch (PDOException $e){
@@ -13,7 +23,7 @@ try {
 
 
 
-$table=$_SESSION["table"];
+
 
 $req = $bdd ->query("use danousdatabase");
 $req = "SELECT * FROM ".$table;
