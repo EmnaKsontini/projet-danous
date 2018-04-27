@@ -1,5 +1,4 @@
-<?php session_start();
-?>
+<?php session_start();?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -15,10 +14,10 @@
     <nav class="hey" >
         <ul>
             <li class="selected"><a href="#">Home</a></li>
-            <li><a href="#">Specials</a></li>
+
             <li><a href="Products.php">All Products</a></li>
-            <li><a href="#">Contact us</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="#bas">Contact us</a></li>
+            <li><a href="#bas">About</a></li>
             <?php
             session_start();
             if(!isset($_SESSION['login']))
@@ -26,11 +25,7 @@
             else echo"<li><a href=\"profile.php\">my profile</a> </li>";
                 ?>
         </ul>
-        <section id="search"><!-- Search form -->
-            <form action="#" onsubmit="return false;" method="get">
-                <input type="text" onfocus="if (this.value =='Search..' ) this.value=''" onblur="if (this.value=='') this.value='Search..'" value="Search.." name="q">
-                <input type="submit" value="Search">
-            </form>
+
 
         </section>
     </nav>
@@ -269,7 +264,7 @@
             </div>
         </footer>
 <div class="bottom" id="alert" >
-    <img width="50" class="avatar" src="images/cookies.png" alt="Cookie Icon">
+    <img width="50" class="avatar" src="https://designmodo.com/wp-content/themes/designmodo/assets/img/misc/cookie.png" alt="Cookie Icon">
     <div>We use cookies to give you the best experience on our website.</div>
  <button class="button4" onclick="accpetCookie()" >Nice, I love cookies!</button>
         </div>

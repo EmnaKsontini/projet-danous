@@ -46,23 +46,14 @@ if($_POST["type"]=="phone")
     <nav >
         <ul>
             <li class="selected"><a href="home.php">Home</a></li>
-            <li><a href="#">Specials</a></li>
+
             <li><a href="#">All Products</a></li>
-            <li><a href="#">Contact us</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="#bas">Contact us</a></li>
+            <li><a href="#bas">About</a></li>
             <li><a href="formulaireLogin.php"> <img src="images/this2.png" title="LogIn" ></a></li>
 
 
 
-        </ul>
-        <section id="search"><!-- Search form -->
-            <form action="#" onsubmit="return false;" method="get">
-                <input type="text" onfocus="if (this.value =='Search..' ) this.value=''" onblur="if (this.value=='') this.value='Search..'" value="Search.." name="q">
-                <input type="submit" value="Search">
-            </form>
-
-        </section>
-    </nav>
 
     <!--<div class="top_head">
         <div class="couverture ">
