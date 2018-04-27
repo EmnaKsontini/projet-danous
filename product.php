@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -23,7 +24,7 @@ try {
     die();
 }
 $ref = $_GET["code"];
-$table_name=$_POST["type"];
+$table_name=$_SESSION["table"];
 //$ref = "LI2054";
 $req = $bdd ->query("use danousdatabase");
 $req = "SELECT * FROM ".$table_name." where `Reference`=\"".$ref."\"";

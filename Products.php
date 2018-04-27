@@ -1,6 +1,8 @@
+<?php session_start();?>
+
 <!DOCTYPE html>
 <?php
-session_start();
+
 //echo $_POST["type"] ;
 // echo "hello".$_SESSION["login"];  //emna: ena zedt star heda bch njareb session
 if(isset($_POST["addtocart"])){
@@ -11,6 +13,15 @@ if(isset($_POST["addtocart"])){
 if(isset($_POST["addtocomparator"])){
     include "comparator.php";
     var_dump( $_SESSION["comparator_item"]);
+
+}
+if($_POST["type"]=="laptop")
+{     echo "flag";
+    $_SESSION["table"]="pc";//lezim ism i table ikoun howa bidou ism l catégorie!!!! bich tkoun dynamique
+}
+if($_POST["type"]=="phone")
+{    echo "flag22";
+    $_SESSION["table"]="telephone";//lezim ism i table ikoun howa bidou ism l catégorie!!!! bich tkoun dynamique
 
 }
 ?>
@@ -95,7 +106,7 @@ if(isset($_POST["addtocomparator"])){
                 }
                 //inkemlou l condition lil les catégories l kol
                 if($_POST["type"]=="laptop")
-                {
+                {     echo "flag";
                     $_SESSION["table"]="pc";//lezim ism i table ikoun howa bidou ism l catégorie!!!! bich tkoun dynamique
                 }
                 if($_POST["type"]=="phone")
