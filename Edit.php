@@ -76,6 +76,7 @@
 
 
                 <p class="setting"><span>age </span> <input type="text"  placeholder="age"   name="age" /></p>
+                    <button class="submit-btn" name="ok" >OK</button>
                 </form>
 
 

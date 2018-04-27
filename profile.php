@@ -52,23 +52,50 @@
 
 
                     <li><a href="#settings">Settings</a></li>
+                    <a href ="Edit.php"><img src="images/edit.png" alt="*Edit*"> </a>
                 </ul>
             </nav>
             <section id="settings" >
                 <p>Edit your user settings:</p>
+                <?php
+                session_start();
 
-                <p class="setting"><span>name<a href ="Edit.php"> <img src="images/edit.png" alt="*Edit*"></a></span> Folen</p>
-                <p class="setting"><span>Last Name <a href ="Edit.php"> <img src="images/edit.png" alt="*Edit*"></a></span>Foulen</p>
+    try {
+    $bdd=new PDO('mysql:host=localhost;dbname=danousdatabase','root','');
+    }
+    catch (PDOException $e)
+    {
+    print "Erreur  " . $e->getMessage();
+    die();
+    }
+    $login=$_SESSION["login"];
+    $MaRequette='SELECT * from `autho`  WHERE login= "'.$login.'"';
+    //$MaRequette="SELECT * from `autho`  WHERE login= \"".$login.'"';
+    //echo $MaRequette;
+    $rep=$bdd->query($MaRequette);
+   $personne = $rep->fetch(PDO::FETCH_OBJ);
 
-                <p class="setting"><span>E-mail Address<a href ="Edit.php"> <img src="images/edit.png" alt="*Edit*"></a></span> lolno@gmail.com</p>
-
-                <p class="setting"><span>Language <a href ="Edit.php"> <img src="images/edit.png" alt="*Edit*"></a></span> English(US)</p>
 
 
 
+                    echo "
+
+                <p class=\"setting\"><span>name<a href =\"Edit.php\"> </span> ".$personne->nom."</p>
+                <p class=\"setting\"><span>Last Name </span>".$personne->prenom."</p>
+
+                <p class=\"setting\"><span>E-mail Address</span> ".$personne->mail."</p>
+
+                <p class=\"setting\"><span>pays </span> ".$personne->pays."</p>
 
 
-                <p class="setting"><span>age <a href ="Edit.php"> <img src="images/edit.png" alt="*Edit*"></a></span> </p>
+
+
+
+                <p class=\"setting\"><span>age </span>".$personne->age." </p>";
+
+
+
+?>
             </section>
 
 

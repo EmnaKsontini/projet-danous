@@ -24,7 +24,7 @@ catch(Exception $e)
  {
      session_start();
      $_SESSION['login'] = $log;
-     header('Location:Products.php');
+     header('Location:profile.php');
  }
  }
 

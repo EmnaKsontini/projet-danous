@@ -19,6 +19,7 @@
             <li><a href="#">Contact us</a></li>
             <li><a href="#">About</a></li>
             <?php
+            session_start();
             if(!isset($_SESSION['login']))
                 echo"<li><a href=\"formulaireLogin.php\"> <img class=\"home\" src=\"images/this2.png\" title=\"LogIn\" ></a></li>";
             else echo"<li><a href=\"profile.php\">my profile</a> </li>";
@@ -55,30 +56,13 @@
 <article>
     <div id="slider"><!-- Defining the main content section -->
         <!-- Promo slider -->
-        <section id="slider-wrapper">
-            <div id="slider" class="nivoSlider">
+                <section id="slider-wrapper">
+                    <div id="slider" class="nivoSlider">
                 <img  src="images/test.jpg" alt="" title="#htmlcaption-1">
                 <img style="display: none;" src="images/promo2.jpg" alt="" title="#htmlcaption-2">
                 <img style="display: none;" src="images/promo3.jpg" alt="" title="#htmlcaption-3">
             </div>
-                 <!-- <div id="htmlcaption-1" class="nivo-html-caption">
-                      <h5 class="p2">Welcome to the our E-Shop</h5>
-                      <p>Put any description here</p>
-                  </div>
-                  <div id="htmlcaption-1" class="nivo-html-caption">
-                      <h5 class="p2">This is promo area</h5>
-                      <p>Put any description here</p>
-                  </div>
-                  <div id="htmlcaption-2" class="nivo-html-caption">
-                      <h5 class="p2">Where you can add any feature products</h5>
-                      <p>Put any description here</p>
-                  </div>
-                  <div id="htmlcaption-3" class="nivo-html-caption">
-                      <h5 class="p2">Or something else</h5>
-                      <p>Put any description here</p>
-                  </div>
-              </section>
-    </div>-->
+
           <div id="main"> <!-- Defining submain content section -->
                 <section id="content"><!-- Defining the content section #2 -->
                     <div id="left">
