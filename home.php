@@ -1,4 +1,4 @@
-<?php session_start();?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -216,6 +216,7 @@
 </article>
 
         <footer>
+            <div id="bas"></div>
             <div id="privacy">
             <p>
                 <table class="colone1">
