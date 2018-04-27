@@ -24,10 +24,6 @@
                 echo"<li><a href=\"formulaireLogin.php\"> <img class=\"home\" src=\"images/this2.png\" title=\"LogIn\" ></a></li>";
             else echo"<li><a href=\"profile.php\">my profile</a> </li>";
                 ?>
-
-
-
-
         </ul>
         <section id="search"><!-- Search form -->
             <form action="#" onsubmit="return false;" method="get">
@@ -272,7 +268,7 @@
             </div>
         </footer>
 <div class="bottom" id="alert" >
-    <img width="50" class="avatar" src="https://designmodo.com/wp-content/themes/designmodo/assets/img/misc/cookie.png" alt="Cookie Icon">
+    <img width="50" class="avatar" src="images/cookies.png" alt="Cookie Icon">
     <div>We use cookies to give you the best experience on our website.</div>
  <button class="button4" onclick="accpetCookie()" >Nice, I love cookies!</button>
         </div>

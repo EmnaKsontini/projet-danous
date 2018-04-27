@@ -16,7 +16,7 @@ try {
 if(!empty($_POST["quantity"])) {
     $rep = $bdd->query("SELECT * FROM ".$_POST["type"]." WHERE Reference='" . $_GET["code"] . "'");
     $productByCode = $rep -> fetch(PDO::FETCH_OBJ);
-    $itemArray = array($productByCode->Reference=>array('Reference'=>$productByCode->Reference, 'quantity'=>$_POST["quantity"]));
+    $itemArray = array($productByCode->Reference=>array('Reference'=>$productByCode->Reference, 'quantity'=>$_POST["quantity"], 'prix'=>$productByCode->Prix));
 //bich nista3mlouh fil page facturation nijbdou mil base de donnée bil référence
 
 

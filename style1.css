@@ -1,0 +1,125 @@
+
+html, body{
+	font-size: 100%;
+    font-family: 'Mirza', cursive;
+    background: url(../images/banner.jpg) no-repeat 0px 0px;
+    background-size: cover;
+    background-attachment: fixed;
+}
+h1,h2,h3,h4,h5,h6,input,p,a,select,button{
+	font-family: 'Mirza', cursive;
+	margin:0;
+}
+ul,label{
+	margin:0;
+	padding:0;
+}
+body a:hover,body a{
+	text-decoration:none;
+}
+
+
+.main{
+	padding:3em 0;
+}
+.main h1{
+	text-align: center;
+    color: #fff;
+    font-size:3.5em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+	margin-bottom: .8em;
+}
+
+.div1{
+	width:60%;
+	margin:0 auto;
+}
+.div1_left{
+	float:left;
+	width:40%;
+}
+.div1_right{
+	float: right;
+    width: 60%;
+    min-height: 555px;
+    background: #fff;
+}
+.div1_left1{
+	padding:2em;
+	background:rgba(0, 0, 0, 0.4);
+}
+.payement{
+	padding:2em;
+}
+.payement h2{
+	font-size:1.6em;
+	color:#f71926;
+	margin-bottom:1em;
+}
+.w3_agileits_card_number_grid_left,.div2_right{
+	float:left;
+	width:48%;
+}
+.div2_right{
+	float:right !important;
+}
+.div2_right2 h3{
+	font-size:1.2em;
+	color:#212121;
+	margin-bottom: 2em;
+}
+.div2_right2 h3 a{
+	text-decoration:underline;
+	color:#f71926;
+}
+.div2_right2 h3 a:hover{
+	color:#212121;
+}
+.div2_right2 input[type="email"],.div2_right2 input[type="password"],.creditly-wrapper .form-control{
+	display: block;
+    width: 95.5%;
+    padding: 15px 10px;
+    font-size: 14px;
+    color: #212121;
+    background: #fff;
+    border: 1px solid #e7e7e7;
+    margin-bottom: 25px;
+	outline:none;
+}
+
+.div2_right2 input[type="submit"] {
+    display: block;
+    position: relative;
+    padding: 6px 50px 11px;
+    letter-spacing: 3px;
+    background: #1adeed;
+    font-size: 1.5em;
+    color: #fff;
+    border: 1px solid #1adeed;
+    outline: none;
+    text-transform: uppercase;
+	cursor:pointer;
+}
+.div2_right2 input[type="submit"]:hover{
+	background: #fff;
+    color: #212121;
+	border: 1px solid #e7e7e7;
+}
+.div1_left1 h3{
+	font-size:3em;
+	font-family:"Arial Narrow";
+	color:#fff;
+}
+.div1_left1 ul{
+	margin-top:1.5em;
+}
+.div1_left1 ul li{
+	display: inline-block;
+    color: #fff;
+	font-family:"Arial Narrow";
+    font-weight: bold;
+    font-size: 2em;
+    vertical-align: top;
+}

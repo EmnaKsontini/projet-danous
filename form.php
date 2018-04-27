@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="css/styleform.css">
 <?php
 if(!empty($_POST))
 {   $log=$_POST['login'];
@@ -15,7 +16,7 @@ catch(Exception $e)
 }
 
  if(!$rows["login"]) {
-     echo "login inexistant ";
+     echo "<div class=\"alert\"><span class=\"\" onclick=\"this.parentElement.style.display=\'none\';\"> &times;</span> this is an alert box.\"</div>";
  }
  else
  { if($rows["passwd"]!=$pd)
