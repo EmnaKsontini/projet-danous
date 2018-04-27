@@ -64,19 +64,22 @@
             <section id="settings" >
                 <p>Edit your user settings:</p>
 
-
+                <form action="EditCode.php" method="post" >
                 <p class="setting"><span>name </span> <input type="text"  placeholder="Name"   name="nom" /></p>
-                <p class="setting"><span>Last Name </span><input type="text"  placeholder="last Name"   name="nom" /></p>
 
-                <p class="setting"><span>E-mail Address </span> <input type="text"  placeholder="Email"   name="nom" /></p>
+                <p class="setting"><span>Last Name </span><input type="text"  placeholder="last Name"   name="prenom" /></p>
 
-                <p class="setting"><span>Language </span> <input type="text"  placeholder="Language"   name="nom" /></p>
+                <p class="setting"><span>E-mail Address </span> <input type="text"  placeholder="Email"   name="mail" /></p>
 
-
-
+                <p class="setting"><span>pays </span> <input type="text"  placeholder="Language"   name="pays" /></p>
 
 
-                <p class="setting"><span>age </span> <input type="text"  placeholder="age"   name="nom" /></p>
+
+                <p class="setting"><span>age </span> <input type="text"  placeholder="age"   name="age" /></p>
+                </form>
+
+
+
             </section>
 
 

@@ -4,11 +4,12 @@
 
 try {
     $bdd = new
-    PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '0000');
+    PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '');
 }catch (PDOException $e){
     print "Erreur : " . $e->getMessage();
     die();
 }
+
 
 
 

@@ -286,4 +286,46 @@
             </p>
             </div>
         </footer>
+<div class="bottom" id="alert" >
+    <img width="50" class="avatar" src="https://designmodo.com/wp-content/themes/designmodo/assets/img/misc/cookie.png" alt="Cookie Icon">
+    <div>We use cookies to give you the best experience on our website.</div>
+ <button class="button4" onclick="accpetCookie()" >Nice, I love cookies!</button>
+        </div>
+    </div>
+</div>
+<script>
+    // if user has already checked the confirmation button
+    // the alert panel should be hidden.
+     if (getCookie('accepted') === 'yes') {
+        document.getElementById("alert").style.display = "none";}
+
+
+    // user clicks the confirmation -> set the 'yes' value to cookie and set 'accepted' as name
+    function accpetCookie() {
+        setCookie('accepted', 'yes', 100);
+        document.getElementById("alert").style.display = "none";
+    }
+
+    // code from :http://stackoverflow.com/a/4825695/191220
+    // set cookie method
+    function setCookie(c_name, value, exdays) {
+        var exdate = new Date();
+        exdate.setDate(exdate.getDate() + exdays);
+        var c_value = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString());
+        document.cookie = c_name + "=" + c_value;
+    }
+
+    // get cookie method
+    function getCookie(c_name) {
+        var i, x, y, ARRcookies = document.cookie.split(";");
+        for (i = 0; i < ARRcookies.length; i++) {
+            x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
+            y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
+            x = x.replace(/^\s+|\s+$/g, "");
+            if (x == c_name) {
+                return unescape(y);
+            }
+        }
+    }
+</script>
 </body>
