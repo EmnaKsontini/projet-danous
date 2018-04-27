@@ -3,11 +3,9 @@
 <!DOCTYPE html>
 <?php
 
-//echo $_POST["type"] ;
-// echo "hello".$_SESSION["login"];  //emna: ena zedt star heda bch njareb session
 if(isset($_POST["addtocart"])){
     include "cart.php";
-    //var_dump( $_SESSION["cart_item"]);//tester si les produits ajouter au chariot sont sauvegarder
+
 
 }
 if(isset($_POST["addtocomparator"])){
@@ -15,14 +13,14 @@ if(isset($_POST["addtocomparator"])){
     var_dump( $_SESSION["comparator_item"]);
 
 }
-if($_POST["type"]=="laptop")
-{     echo "flag";
-    $_SESSION["table"]="pc";//lezim ism i table ikoun howa bidou ism l catégorie!!!! bich tkoun dynamique
-}
-if($_POST["type"]=="phone")
-{    echo "flag22";
-    $_SESSION["table"]="telephone";//lezim ism i table ikoun howa bidou ism l catégorie!!!! bich tkoun dynamique
-
+if (isset($_POST["type"])) {
+    $title=$_POST["type"];
+    if ($_POST["type"] == "laptop")
+        $_SESSION["table"] = "pc";
+    if ($_POST["type"] == "phone")
+        $_SESSION["table"]="telephone";
+}else {
+    $title="LAPTOP";
 }
 ?>
 <!DOCTYPE html>
@@ -55,11 +53,7 @@ if($_POST["type"]=="phone")
 
 
 
-    <!--<div class="top_head">
-        <div class="couverture ">
-            notre couverture est en background
-        </div>
-    </div>!-->
+
     <section id="cat">
         <nav id="submenu">
             <ul>
@@ -77,12 +71,12 @@ if($_POST["type"]=="phone")
 <article>
     <section id="content">
         <div id="left">
-            <h3>LAPTOP</h3>
+            <h3><?php echo $title ?></h3>
             <ul>
                 <?php
                 // cette fonction permet d eliminer les attributs qu on va pas utiliser dans le filtre--
                 function verifierFiltre ($s){
-                    return (strcmp($s,"Reference")!=0 &&strcmp($s,"Grantie")!=0 && strcmp($s,"Connecteurs")!=0 && strcmp($s,"stock")!=0 &&strcmp($s,"Garantie")!=0 &&strcmp($s,"Dimension")!=0  );
+                    return (strcmp($s,"Reference")!=0 &&strcmp($s,"Grantie")!=0 && strcmp($s,"Connecteurs")!=0 && strcmp($s,"stock")!=0 &&strcmp($s,"Garantie")!=0 &&strcmp($s,"Dimension")!=0  && strcmp($s,"type")!=0);
                 }
                 //cette fonction permet de corriger la requete lorsque on utilise le caractere spécialte " -> \"
                 function verif_carct_sep ($s){
@@ -95,16 +89,8 @@ if($_POST["type"]=="phone")
                     print "Erreur : " . $e->getMessage();
                     die();
                 }
-                //inkemlou l condition lil les catégories l kol
-                if($_POST["type"]=="laptop")
-                {     echo "flag";
-                    $_SESSION["table"]="pc";//lezim ism i table ikoun howa bidou ism l catégorie!!!! bich tkoun dynamique
-                }
-                if($_POST["type"]=="phone")
-                {
-                    $_SESSION["table"]="telephone";//lezim ism i table ikoun howa bidou ism l catégorie!!!! bich tkoun dynamique
-                    
-                }
+
+
 
                 $req = $bdd ->query("use danousdatabase");
                 $req = "SELECT * FROM ".$_SESSION["table"];
