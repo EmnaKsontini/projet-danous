@@ -6,7 +6,7 @@
  * Time: 9:54 PM
  */
 try {
-    $bdd = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '');
+    $bdd = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '0000');
 }catch (PDOException $e){
     print "Erreur : " . $e->getMessage();
     die();
@@ -14,7 +14,7 @@ try {
 
 $rep = $bdd->query("SELECT * FROM ".$_POST["type"]." WHERE Reference='" . $_GET["code"] . "'");
 $productByCode = $rep -> fetch(PDO::FETCH_OBJ);
-    $itemArray = array($productByCode->Reference=>array('Reference'=>$productByCode->Reference, 'categorie'=>$productByCode->Categorie));
+    $itemArray = array($productByCode->Reference=>array('produit'=>$productByCode));
 //bich nista3mlouh fil page facturation nijbdou mil base de donnée bil référence
 
 

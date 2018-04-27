@@ -4,17 +4,16 @@
 
 try {
     $bdd = new
-    PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '');
+    PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '0000');
 }catch (PDOException $e){
     print "Erreur : " . $e->getMessage();
     die();
 }
 
 
-$table="pc";
 
 $req = $bdd ->query("use danousdatabase");
-$req = "SELECT * FROM ".$table;
+$req = "SELECT * FROM ".$_SESSION["table"];
 $str=$_POST["req"];
 if (strlen($str)!=0)
     $req=$req." Where ".$_POST["req"];

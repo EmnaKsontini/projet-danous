@@ -17,7 +17,7 @@
 <body>
 <?php
 try {
-    $bdd = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '');
+    $bdd = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '0000');
 }catch (PDOException $e){
     print "Erreur : " . $e->getMessage();
     die();
@@ -121,6 +121,9 @@ $obj = $query -> fetch(PDO::FETCH_OBJ);
             echo ("
             <span>".$obj->Prix." DT</span> ");
             ?>
+            <form>
+
+            </form>
             <a href="#" class="cart-btn">Add to cart</a>
         </div>
     </div>

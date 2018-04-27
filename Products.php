@@ -6,10 +6,12 @@ session_start();
 if(isset($_POST["addtocart"])){
     include "cart.php";
     //var_dump( $_SESSION["cart_item"]);//tester si les produits ajouter au chariot sont sauvegarder
+
 }
 if(isset($_POST["addtocomparator"])){
     include "comparator.php";
-    //var_dump( $_SESSION["comparator_item"]);
+    var_dump( $_SESSION["comparator_item"]);
+
 }
 ?>
 <!DOCTYPE html>
@@ -86,7 +88,7 @@ if(isset($_POST["addtocomparator"])){
                     return $ret;
                 }
                 try {
-                    $bdd = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '');
+                    $bdd = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '0000');
                 }catch (PDOException $e){
                     print "Erreur : " . $e->getMessage();
                     die();
@@ -96,11 +98,12 @@ if(isset($_POST["addtocomparator"])){
                 {
                     $_SESSION["table"]="pc";//lezim ism i table ikoun howa bidou ism l catégorie!!!! bich tkoun dynamique
                 }
-                if($_POST["type"]=="telephone")
+                if($_POST["type"]=="phone")
                 {
                     $_SESSION["table"]="telephone";//lezim ism i table ikoun howa bidou ism l catégorie!!!! bich tkoun dynamique
                     
                 }
+
                 $req = $bdd ->query("use danousdatabase");
                 $req = "SELECT * FROM ".$_SESSION["table"];
                 $query = $bdd -> query($req);
