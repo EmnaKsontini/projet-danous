@@ -22,10 +22,15 @@ catch(Exception $e)
  { if($rows["passwd"]!=$pd)
      echo "le mot de passe saisit ne correspond pas a votre login ";
  else
+
  {
+
      session_start();
      $_SESSION['login'] = $log;
-     header('Location:profile.php');
+        if($log=="ADMIN")
+             header('Location:ADMIN.php');
+        else
+            header('Location:profile.php');
  }
  }
 
