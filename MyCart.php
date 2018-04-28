@@ -65,7 +65,7 @@ if(isset($_POST["remove"])){
         <div id="cart">
                 <h3>My Cart</h3>
             <?php if(isset($_SESSION["cart_item"])){?>
-                <form id="top" method="post" action="facturation.php?code=<?php echo $k; ?> ">
+                <form id="top" method="post" action="facture.php ">
                     <input type="submit" name="BuyNow" value="Buy Now" />
                 </form>
             <?php }?>

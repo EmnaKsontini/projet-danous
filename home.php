@@ -14,42 +14,36 @@
     <nav class="hey" >
         <ul>
             <li class="selected"><a href="#">Home</a></li>
-            <li><a href="#">Specials</a></li>
-            <li><a href="MyCart.php">MyCart</a></li>
-            <li><a href="#">Contact us</a></li>
-            <li><a href="#">About</a></li>
+
+            <li><a href="Products.php">All Products</a></li>
+            <li><a href="MyCart.php">MYCART</a></li>
+            <li><a href="#bas">Contact us</a></li>
+            <li><a href="#bas">About</a></li>
             <?php
+            session_start();
             if(!isset($_SESSION['login']))
                 echo"<li><a href=\"formulaireLogin.php\"> <img class=\"home\" src=\"images/this2.png\" title=\"LogIn\" ></a></li>";
             else echo"<li><a href=\"profile.php\">my profile</a> </li>";
-                ?>
-
-
-
-
+            ?>
         </ul>
-        <section id="search"><!-- Search form -->
-            <form action="#" onsubmit="return false;" method="get">
-                <input type="text" onfocus="if (this.value =='Search..' ) this.value=''" onblur="if (this.value=='') this.value='Search..'" value="Search.." name="q">
-                <input type="submit" value="Search">
-            </form>
+
 
         </section>
     </nav>
 
     <section id="cat">
-    <nav id="submenu">
-        <ul>
-            <form method="post" action="products.php">
-                <li><input name="type" type="submit" value="laptop" /></li>
-                <li><input name="type" type="submit" value="phone" /></li>
-                <li><input name="type" type="submit" value="Category 3" /></li>
-                <li><input name="type" type="submit" value="Category 4" /></li>
-                <li><input name="type" type="submit" value="Category 5" /></li>
-                <li><input name="type" type="submit" value="Category 6" /></li>
-            </form>
-        </ul>
-    </nav>
+        <nav id="submenu">
+            <ul>
+                <form method="post" action="products.php">
+                    <li><input name="type" type="submit" value="laptop" /></li>
+                    <li><input name="type" type="submit" value="phone" /></li>
+                    <li><input name="type" type="submit" value="Category 3" /></li>
+                    <li><input name="type" type="submit" value="Category 4" /></li>
+                    <li><input name="type" type="submit" value="Category 5" /></li>
+                    <li><input name="type" type="submit" value="Category 6" /></li>
+                </form>
+            </ul>
+        </nav>
     </section>
 </header>
 <article>
@@ -61,25 +55,8 @@
                 <img style="display: none;" src="images/promo2.jpg" alt="" title="#htmlcaption-2">
                 <img style="display: none;" src="images/promo3.jpg" alt="" title="#htmlcaption-3">
             </div>
-                 <!-- <div id="htmlcaption-1" class="nivo-html-caption">
-                      <h5 class="p2">Welcome to the our E-Shop</h5>
-                      <p>Put any description here</p>
-                  </div>
-                  <div id="htmlcaption-1" class="nivo-html-caption">
-                      <h5 class="p2">This is promo area</h5>
-                      <p>Put any description here</p>
-                  </div>
-                  <div id="htmlcaption-2" class="nivo-html-caption">
-                      <h5 class="p2">Where you can add any feature products</h5>
-                      <p>Put any description here</p>
-                  </div>
-                  <div id="htmlcaption-3" class="nivo-html-caption">
-                      <h5 class="p2">Or something else</h5>
-                      <p>Put any description here</p>
-                  </div>
-              </section>
-    </div>-->
-          <div id="main"> <!-- Defining submain content section -->
+
+            <div id="main"> <!-- Defining submain content section -->
                 <section id="content"><!-- Defining the content section #2 -->
                     <div id="left">
                         <h3>Last products</h3>
@@ -239,65 +216,66 @@
             </div>
 </article>
 
-        <footer>
-            <div id="privacy">
-            <p>
-                <table class="colone1">
-                    <tr>
-                        <td  width="20%" colspan="2">CONTACTEZ NOUS :</td>
-                        <td width="20%" colspan="2">SUIVEZ_NOUS:</td>
-                        <td width="20%"></td>
+<footer>
+    <div id="bas"></div>
+    <div id="privacy">
+        <p>
+        <table class="colone1">
+            <tr>
+                <td  width="20%" colspan="2">CONTACTEZ NOUS :</td>
+                <td width="20%" colspan="2">SUIVEZ_NOUS:</td>
+                <td width="20%"></td>
 
-                        <br>
-
-
-                        <tr>
-                            <td><img src="images/mail.png"></td>
-                            <td align="center">Danous@Danous.tn</td>
-                            <td><img src="images/facebook.png" > </td>
-                            <td>DanousVente</td>
-                            <td>LOGO</td>
-
-                         </tr>
-                         <tr>
-                            <td><img src="images/phone.png"></td>
-                             <td align="center"> 71 777 777</td>
-                             <td><img src="images/insta.png" > </td>
-                             <td>DanousVente</td>
-                             <td><img src="images/c.png"></td>
+                <br>
 
 
+            <tr>
+                <td><img src="images/mail.png"></td>
+                <td align="center">Danous@Danous.tn</td>
+                <td><img src="images/facebook.png" > </td>
+                <td>DanousVente</td>
+                <td>LOGO</td>
 
-
-                            </tr>
-
-
-                    </tr>
-
-                </table>
-                <div id="right">
-                <tabele class="colone1">
+            </tr>
+            <tr>
+                <td><img src="images/phone.png"></td>
+                <td align="center"> 71 777 777</td>
+                <td><img src="images/insta.png" > </td>
+                <td>DanousVente</td>
+                <td><img src="images/c.png"></td>
 
 
 
 
+            </tr>
 
-                </tabele>
-                </div>
-            </p>
-            </div>
-        </footer>
+
+            </tr>
+
+        </table>
+        <div id="right">
+            <tabele class="colone1">
+
+
+
+
+
+            </tabele>
+        </div>
+        </p>
+    </div>
+</footer>
 <div class="bottom" id="alert" >
     <img width="50" class="avatar" src="https://designmodo.com/wp-content/themes/designmodo/assets/img/misc/cookie.png" alt="Cookie Icon">
     <div>We use cookies to give you the best experience on our website.</div>
- <button class="button4" onclick="accpetCookie()" >Nice, I love cookies!</button>
-        </div>
-    </div>
+    <button class="button4" onclick="accpetCookie()" >Nice, I love cookies!</button>
+</div>
+</div>
 </div>
 <script>
     // if user has already checked the confirmation button
     // the alert panel should be hidden.
-     if (getCookie('accepted') === 'yes') {
+    if (getCookie('accepted') === 'yes') {
         document.getElementById("alert").style.display = "none";}
 
 
