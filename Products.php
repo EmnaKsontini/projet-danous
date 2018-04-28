@@ -91,7 +91,7 @@ if($_POST["type"]=="phone")
                 <?php
                 // cette fonction permet d eliminer les attributs qu on va pas utiliser dans le filtre--
                 function verifierFiltre ($s){
-                    return (strcmp($s,"Reference")!=0 &&strcmp($s,"Grantie")!=0 && strcmp($s,"Connecteurs")!=0 && strcmp($s,"stock")!=0 &&strcmp($s,"Garantie")!=0 &&strcmp($s,"Dimension")!=0  );
+                    return (strcmp($s,"Reference")!=0 &&strcmp($s,"Grantie")!=0 && strcmp($s,"Connecteurs")!=0 && strcmp($s,"stock")!=0 &&strcmp($s,"Garantie")!=0 &&strcmp($s,"Dimension")!=0 && strcmp($s,"type")!=0 );
                 }
                 //cette fonction permet de corriger la requete lorsque on utilise le caractere spécialte " -> \"
                 function verif_carct_sep ($s){
@@ -106,7 +106,7 @@ if($_POST["type"]=="phone")
                 }
                 //inkemlou l condition lil les catégories l kol
                 if($_POST["type"]=="laptop")
-                {     echo "flag";
+                {
                     $_SESSION["table"]="pc";//lezim ism i table ikoun howa bidou ism l catégorie!!!! bich tkoun dynamique
                 }
                 if($_POST["type"]=="phone")
