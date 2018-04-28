@@ -1,7 +1,7 @@
 <section id="settings" >
     <p>Add new Product :</p>
 
-    <form action="AddProduct.php" method="post" >
+    <form action="executeReqInsert.php" method="post" >
     <?php
 
     //retourne le type d un obj
