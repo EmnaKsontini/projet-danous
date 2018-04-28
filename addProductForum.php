@@ -1,4 +1,4 @@
-<section id="settings" >
+
     <p>Add new Product :</p>
 
     <form action="executeReqInsert.php" method="post" >
