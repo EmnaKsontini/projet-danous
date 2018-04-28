@@ -12,15 +12,15 @@ if(isset($_POST["addtocart"])){
 }
 if(isset($_POST["addtocomparator"])){
     include "comparator.php";
-    var_dump( $_SESSION["comparator_item"]);
+    //var_dump( $_SESSION["comparator_item"]);
 
 }
 if($_POST["type"]=="laptop")
-{     echo "flag";
+{
     $_SESSION["table"]="pc";//lezim ism i table ikoun howa bidou ism l catégorie!!!! bich tkoun dynamique
 }
 if($_POST["type"]=="phone")
-{    echo "flag22";
+{
     $_SESSION["table"]="telephone";//lezim ism i table ikoun howa bidou ism l catégorie!!!! bich tkoun dynamique
 
 }
@@ -47,7 +47,7 @@ if($_POST["type"]=="phone")
         <ul>
             <li class="selected"><a href="home.php">Home</a></li>
             <li><a href="#">Specials</a></li>
-            <li><a href="#">All Products</a></li>
+            <li><a href="MyCart.php">MyCart</a></li>
             <li><a href="#">Contact us</a></li>
             <li><a href="#">About</a></li>
             <li><a href="formulaireLogin.php"> <img src="images/this2.png" title="LogIn" ></a></li>

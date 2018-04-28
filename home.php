@@ -1,4 +1,4 @@
-<?php session_start();?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -15,7 +15,7 @@
         <ul>
             <li class="selected"><a href="#">Home</a></li>
             <li><a href="#">Specials</a></li>
-            <li><a href="Products.php">All Products</a></li>
+            <li><a href="MyCart.php">MyCart</a></li>
             <li><a href="#">Contact us</a></li>
             <li><a href="#">About</a></li>
             <?php

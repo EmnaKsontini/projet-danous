@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `pc` (
   `Categorie` varchar(255) NOT NULL,
   `Marque` varchar(255) NOT NULL,
   `Prix` int(11) NOT NULL,
-  `stock` int(11) NOT NULL,
+  `Stock` int(11) NOT NULL,
   `Grantie` int(11) NOT NULL,
   `Processeur` varchar(255) NOT NULL,
   `Memoire Cache` varchar(255) NOT NULL,
