@@ -47,7 +47,7 @@ if($_POST["type"]=="phone")
         <ul>
             <li class="selected"><a href="home.php">Home</a></li>
             <li><a href="#">Specials</a></li>
-            <li><a href="MyCart.php">MyCart</a></li>
+            <li><a href="MyCart.php">My Cart</a></li>
             <li><a href="#">Contact us</a></li>
             <li><a href="#">About</a></li>
             <li><a href="formulaireLogin.php"> <img src="images/this2.png" title="LogIn" ></a></li>

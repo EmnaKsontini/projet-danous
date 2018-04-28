@@ -14,10 +14,13 @@
     <nav class="hey" >
         <ul>
             <li class="selected"><a href="home.php">Home</a></li>
-            <li><a href="#">Specials</a></li>
+
             <li><a href="Products.php">All Products</a></li>
-            <li><a href="#">Contact us</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="MyCart.php"> My Cart </a></li>
+
+            <li><a href="logout.php" title="Please come again">log out</a></li>
+            <li><a href="#bas">Contact us</a></li>
+            <li><a href="#bas">About</a></li>
             <?php
 
              echo"<li>";
@@ -28,14 +31,7 @@
 
 
 
-        </ul>
-        <section id="search"><!-- Search form -->
-            <form action="#" onsubmit="return false;" method="get">
-                <input type="text" onfocus="if (this.value =='Search..' ) this.value=''" onblur="if (this.value=='') this.value='Search..'" value="Search.." name="q">
-                <input type="submit" value="Search">
-            </form>
 
-        </section>
     </nav>
 
 
@@ -104,6 +100,7 @@
 
 
 <footer>
+    <div id="bas"></div>
     <div id="privacy">
         <p>
         <table class="colone1">

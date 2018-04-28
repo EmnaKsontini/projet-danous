@@ -14,8 +14,10 @@
     <nav class="hey" >
         <ul>
             <li class="selected"><a href="home.php">Home</a></li>
-            <li><a href="#">Specials</a></li>
+
             <li><a href="Products.php">All Products</a></li>
+            <li><a href="MyCart.php">My Cart</a></li>
+
             <li><a href="#">Contact us</a></li>
             <li><a href="#">About</a></li>
             <?php

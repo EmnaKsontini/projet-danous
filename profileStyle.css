@@ -154,40 +154,16 @@ nav ul li a:hover, nav ul li.selected a {
     outline:none;
 
 }
-#main {
-    background-color: #fff;
-    padding:20px 0;
-}
+
 #content {
     overflow: hidden;
 }
-#content #left, #content #right {
-    border: 1px solid #E9E9E9;
-    float: left;
-    margin: 0 2%;
-    width: 63%;
-}
+
 #content #right {
     margin-left: 0;
     width: 30%;
 }
-#content h3 {
-    background: -moz-linear-gradient(#ffffff, #F6F6F6); /* FF 3.6+ */
-    background: -ms-linear-gradient(#ffffff, #F6F6F6); /* IE10 */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #F6F6F6)); /* Safari 4+, Chrome 2+ */
-    background: -webkit-linear-gradient(#ffffff, #F6F6F6); /* Safari 5.1+, Chrome 10+ */
-    background: -o-linear-gradient(#ffffff, #F6F6F6); /* Opera 11.10 */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#F6F6F6'); /* IE6 & IE7 */
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#F6F6F6')"; /* IE8+ */
-    background: linear-gradient(#ffffff, #F6F6F6); /* the standard */
-    border-bottom: 1px solid #E0E0E0;
-    color: #3C3C3C;
-    font-size: 12px;
-    font-weight: bold;
-    line-height: 15px;
-    padding: 11px 0 12px 20px;
-    text-transform: uppercase;
-}
+
 #content ul {
     list-style:none outside none;
     margin:0;
@@ -198,9 +174,7 @@ nav ul li a:hover, nav ul li.selected a {
     padding-bottom: 21px;
     width: 33%;
 }
-#content #left ul li:hover {
-    background-color: #fbfbfb;
-}
+
 #content #right ul li {
     border-top: 1px solid #E7E7E7;
     overflow: hidden;
@@ -208,12 +182,7 @@ nav ul li a:hover, nav ul li.selected a {
 #content #right ul li:hover {
     background-color: #fbfbfb;
 }
-#content #right ul li:first-child {
-    border-width: none;
-}
-#content #left ul li .img {
-    text-align: center;
-}
+
 #content #right ul li .img {
     background-color: #FFFFFF;
     float: left;
@@ -408,16 +377,6 @@ p {
     padding-bottom: 45px;
 }
 
-#contenu {
-    display: block;
-    width: 100%;
-    background: #fff;
-    padding: 25px 20px;
-    padding-bottom: 35px;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-    -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-}
 
 #userphoto {
     display: block;
