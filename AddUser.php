@@ -73,6 +73,10 @@ else
         ));
         
         $message = 'New user added';
+        session_start();
+        $log=$_POST['login'];
+        $_SESSION['login'] = $log;
+        header('Location:profile.php');
        // header('location:profile.php');
     }
     catch(Exception $e)
