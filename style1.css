@@ -2,7 +2,7 @@
 html, body{
 	font-size: 100%;
     font-family: 'Mirza', cursive;
-    background: url(../images/banner.jpg) no-repeat 0px 0px;
+    background: url(images/banner.jpg) no-repeat 0px 0px;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -35,6 +35,7 @@ body a:hover,body a{
 .div1{
 	width:60%;
 	margin:0 auto;
+
 }
 .div1_left{
 	float:left;
@@ -88,6 +89,18 @@ body a:hover,body a{
     margin-bottom: 25px;
 	outline:none;
 }
+#title
+{
+	font-family: "Consolas";
+	text-align: center;
+	font-size: 3em;
+	color: rgba(12, 1, 3, 0.91)
+}
+.label
+{
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 1.6em;
+}
 
 .div2_right2 input[type="submit"] {
     display: block;
@@ -109,7 +122,7 @@ body a:hover,body a{
 }
 .div1_left1 h3{
 	font-size:3em;
-	font-family:"Arial Narrow";
+	font-family: Arial;
 	color:#fff;
 }
 .div1_left1 ul{
@@ -125,10 +138,68 @@ body a:hover,body a{
 }
 .total
 {
-	background-color: red;
+	background-color: rgba(255, 0, 0, 0.61);
+	text-align: center;
+
 
 }
 .total h3
 {
-	font:"Arial Narrow";
+	font-family:"Arial Narrow";
+	font-size: 2em;
+	display: inline-block;
+
+}
+.comment
+{
+	font-family: Arial;
+
+
+}
+.imga
+{
+	height: 50%;
+	width: 50%;
+}
+.button4 {
+	display:inline-block;
+	padding:0.7em 1.7em;
+	margin:0 0.3em 0.3em 0;
+	border-radius:0.2em;
+	box-sizing: border-box;
+	text-decoration:none;
+	font-family:'Roboto',sans-serif;
+	font-weight:400;
+	color:#FFFFFF;
+	background-color:#3369ff;
+	box-shadow:inset 0 -0.6em 1em -0.35em rgba(0,0,0,0.17),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
+	text-align:center;
+	position:relative;
+}
+.button5 {
+	display:inline-block;
+	padding:0.7em 1.7em;
+	margin:0 0.3em 0.3em 0;
+	border-radius:0.2em;
+	box-sizing: border-box;
+	text-decoration:none;
+	font-family:'Roboto',sans-serif;
+	font-weight:400;
+	color:#FFFFFF;
+	background-color: #ff0006;
+	box-shadow:inset 0 -0.6em 1em -0.35em rgba(0,0,0,0.17),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
+	text-align:center;
+	position:relative;
+	float: right;
+}
+
+
+.text{
+	font-family: Arial;
+
+}
+.logo
+{
+	transform: translateZ(10px);
+	transform: translate(0%,39%);
 }
