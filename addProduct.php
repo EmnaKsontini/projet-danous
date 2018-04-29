@@ -18,7 +18,7 @@
 <header>
     <nav class="hey" >
         <ul>
-            <li class="selected"><a href="#">Home</a></li>
+            <li class="selected"><a href="home.php">Home</a></li>
             <li><a href="#">Specials</a></li>
             <li><a href="MyCart.php">MyCart</a></li>
             <li><a href="#">Contact us</a></li>
@@ -33,13 +33,7 @@
 
 
         </ul>
-        <section id="search"><!-- Search form -->
-            <form action="#" onsubmit="return false;" method="get">
-                <input type="text" onfocus="if (this.value =='Search..' ) this.value=''" onblur="if (this.value=='') this.value='Search..'" value="Search.." name="q">
-                <input type="submit" value="Search">
-            </form>
 
-        </section>
     </nav>
 
     <section id="cat">
@@ -48,10 +42,7 @@
                 <form method="post" action="products.php">
                     <li><input name="type" type="submit" value="laptop" /></li>
                     <li><input name="type" type="submit" value="phone" /></li>
-                    <li><input name="type" type="submit" value="Category 3" /></li>
-                    <li><input name="type" type="submit" value="Category 4" /></li>
-                    <li><input name="type" type="submit" value="Category 5" /></li>
-                    <li><input name="type" type="submit" value="Category 6" /></li>
+
                 </form>
             </ul>
         </nav>

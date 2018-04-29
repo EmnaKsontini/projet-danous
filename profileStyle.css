@@ -23,43 +23,9 @@ home {
     height: 20px;
 }
 
-#search {
-    float: right;
-    /* margin: 21px 41px 0 0;*/
-    text-align: right;
-    position:absolute;
-    top:0;
-    right: 40px;
-    padding-top: 10px;
 
 
-}
-#search form {
-    float:right;
-}
-#search form input[type="text"] {
-    background: none repeat scroll 0 0 #FFFFFF;
-    border: 1px solid #E0E0E0;
-    float: left;
-    font-family: Arial,Helvetica,sans-serif;
-    height: 15px;
-    padding: 5px;
-    width: 129px;
-}
-#search form input[type="submit"] {
-    background-color: #FFFFFF;
-    border: 1px solid #E0E0E0;
-    border-left-width:0px;
-    color: #383838;
-    cursor:pointer;
-    float: left;
-    font-family: Arial,Helvetica,sans-serif;
-    font-size: 11px;
-    font-weight: bold;
-    height: 27px;
-    padding: 0;
-    width: 64px;
-}
+
 #social {
     float:right;
     list-style:none outside none;
@@ -115,9 +81,7 @@ nav ul li a:hover, nav ul li.selected a {
     width: 60%;
     margin: auto;
 }
-#cat {
-    margin-top: 420px;//blassit categorie
-}
+
 #submenu ul form  {
     float: left;
     list-style: none outside none;
@@ -149,15 +113,9 @@ nav ul li a:hover, nav ul li.selected a {
 #submenu ul form li:hover {
     background-color:darkred;
 }
-#submenu ul form li input:focus {
 
-    outline:none;
 
-}
 
-#content {
-    overflow: hidden;
-}
 
 #content #right {
     margin-left: 0;
@@ -218,83 +176,13 @@ nav ul li a:hover, nav ul li.selected a {
     text-transform: uppercase;
     width: 150px;
 }
-#content ul li .info .title:hover {
-    color: #049733;
-}
-#content #left ul li .info p {
-    color: #7F7F7F;
-    font-size: 11px;
-    line-height: 16px;
-    padding-top: 3px;
-}
-#content #left ul li .info .price {
-    background: none repeat scroll 0 0 #F7F7F7;
-    color: #383838;
-    font-size: 12px;
-    font-weight: bold;
-    line-height: 16px;
-    margin: 17px 0 10px;
-    padding: 6px 0 6px 8px;
-}
-#content #right ul li .info .price {
-    color: #383838;
-    font-size: 12px;
-    font-weight: bold;
-    line-height: 16px;
-    padding-top: 25px;
-}
-#content #left ul li .info .price .st {
-    color: #7F7F7F;
-    font-size: 11px;
-    line-height: 16px;
-    margin-right: 3px;
-}
-#content #right ul li .info .price .usual, #content #right ul li .info .price .special {
-    color: #7F7F7F;
-    font-size: 12px;
-    font-weight: normal;
-    line-height: 16px;
-    padding-right: 6px;
-    text-decoration: line-through;
-}
-#content #right ul li .info .price .special {
-    color: #FD7A01;
-    font-weight: bold;
-    text-decoration: none;
-}
-#content #left ul li .img form div{
-    overflow:hidden;
-}
 
-#content #left ul li .img form div input  {
-    border: 1px solid #E0E0E0;
-    color: #7f1413;
-    font-size: 11px;
-    font-weight: bold;
-    line-height: 16px;
-    padding: 5px;
-    text-decoration: none;
-}
 
-#content #left ul li .info .actions form div{
-    overflow:hidden;
-}
 
-#content #left ul li .info .actions form div input  {
-    border: 1px solid #E0E0E0;
-    color: #fd7a01;
-    display: block;
-    float:right;
-    font-size: 11px;
-    font-weight: bold;
-    line-height: 16px;
-    padding: 5px;
-    text-decoration: none;
-}
-#content #left ul li .info .actions form div input:first-child {
-    color: #009832;
-    float:left;
-}
+
+
+
+
 footer {
 
 
@@ -305,7 +193,8 @@ footer {
 
     height: 200px;
     margin: 0 auto;
-    PADDING-BOTTOM: 0px;  position:relative;
+    PADDING-BOTTOM: 0px;
+    position:relative;
     text-align:center;
 }
 
