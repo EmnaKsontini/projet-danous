@@ -32,34 +32,24 @@ $log=$_SESSION["login"];
                     <h3>Payment Summary : </h3>
                     <?php
                         $_SESSION["total"]=0;
-                       $prix=0;
                     if(isset($_SESSION["cart_item"]))
+
                     {  foreach ( $_SESSION["cart_item"] as $key => $value) {
-                        $prix = 0;
-                        foreach ($value as $key1 => $value1) {
 
-                            if ($key1 == "produit") {
-                                foreach ($value1 as $key2 => $value2) {
-                                    if ($key2 == "Reference") {
-                                        echo "<ul><li > Reference: $value2<span></span>";
 
-                                    }
-                                    if ($key2 == "Prix") {
-                                        echo "</li><li> Price: $value2 DT</li>";
-                                        $prix = $value2;
-                                    }
 
-                                }
-                            }
-                            if ($key1 == "quantity") {
-                                echo "<br><li> quantity : $value1</li></ul> <hr> ";
-                                $_SESSION["total"] = $_SESSION["total"] + $value1 * $prix;
+                                        echo "<ul><li > Reference: $key <span></span>";
+                                        echo "</li><li> Price:".$_SESSION["cart_item"][$key]["prix"]."DT</li>";
+                                        echo "<br><li> quantity : ".$_SESSION["cart_item"][$key]["quantity"]."</li></ul><hr>";
+                        $prix=$_SESSION["cart_item"][$key]["prix"];
+                        $k1=$_SESSION["cart_item"][$key]["quantity"];
+                                $_SESSION["total"] = $_SESSION["total"] + $k1* $prix;
 
                             }
-                        }
 
 
-                    }}
+
+                    }
 
                     ?>
 
