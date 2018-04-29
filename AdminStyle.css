@@ -1,4 +1,3 @@
-
 BODY {
     PADDING-BOTTOM: 0px; PADDING-TOP: 5px; position:relative; width:100%;  text-align:center;
 
@@ -13,10 +12,6 @@ body > *
 header{
     background: url("images/couverture.png");
     position:relative;
-    z-index: 16;
-    height: 500px;
-    background-repeat: no-repeat;
-
 }
 home {
     width: 20px;
@@ -74,7 +69,7 @@ home {
     margin-top:1px;
 }
 /*navigation menu*/
-.hey {
+nav {
     background-color: #7f1413;
     overflow: hidden;
     height:50px;
@@ -154,16 +149,40 @@ nav ul li a:hover, nav ul li.selected a {
     outline:none;
 
 }
-
+#main {
+    background-color: #fff;
+    padding:20px 0;
+}
 #content {
     overflow: hidden;
 }
-
+#content #left, #content #right {
+    border: 1px solid #E9E9E9;
+    float: left;
+    margin: 0 2%;
+    width: 63%;
+}
 #content #right {
     margin-left: 0;
     width: 30%;
 }
-
+#content h3 {
+    background: -moz-linear-gradient(#ffffff, #F6F6F6); /* FF 3.6+ */
+    background: -ms-linear-gradient(#ffffff, #F6F6F6); /* IE10 */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #F6F6F6)); /* Safari 4+, Chrome 2+ */
+    background: -webkit-linear-gradient(#ffffff, #F6F6F6); /* Safari 5.1+, Chrome 10+ */
+    background: -o-linear-gradient(#ffffff, #F6F6F6); /* Opera 11.10 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#F6F6F6'); /* IE6 & IE7 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#F6F6F6')"; /* IE8+ */
+    background: linear-gradient(#ffffff, #F6F6F6); /* the standard */
+    border-bottom: 1px solid #E0E0E0;
+    color: #3C3C3C;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 15px;
+    padding: 11px 0 12px 20px;
+    text-transform: uppercase;
+}
 #content ul {
     list-style:none outside none;
     margin:0;
@@ -174,7 +193,9 @@ nav ul li a:hover, nav ul li.selected a {
     padding-bottom: 21px;
     width: 33%;
 }
-
+#content #left ul li:hover {
+    background-color: #fbfbfb;
+}
 #content #right ul li {
     border-top: 1px solid #E7E7E7;
     overflow: hidden;
@@ -182,7 +203,12 @@ nav ul li a:hover, nav ul li.selected a {
 #content #right ul li:hover {
     background-color: #fbfbfb;
 }
-
+#content #right ul li:first-child {
+    border-width:   none;
+}
+#content #left ul li .img {
+    text-align: center;
+}
 #content #right ul li .img {
     background-color: #FFFFFF;
     float: left;
@@ -318,150 +344,10 @@ footer {
     font-size:40px;
     font-family: Arial,Helvetica,sans-serif;
 }
+.admin{
 
-
-
-
-
-
-
-
-
-
-table { border-collapse: collapse; border-spacing: 0; }
-img { border: 0; max-width: 100%; }
-
-
-
-
-h1 {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 2.5em;
-    line-height: 1.5em;
-    letter-spacing: -0.05em;
-    margin-bottom: 20px;
-    padding: .1em 0;
-    color: #444;
-    position: relative;
-    overflow: hidden;
-    white-space: nowrap;
-    text-align: center;
-    display: inline-block;
-    width: 50%;
-    height: 1px;
-    vertical-align: middle;
-    background: #f0f0f0;
+    font-size:25px;
+    font-family: Arial,Helvetica,sans-serif;
+    color: whitesmoke;
+    padding-top: 10px;
 }
-
-
-
-
-
-
-p {
-    display: block;
-    font-size: 1.4em;
-    line-height: 1.55em;
-    margin-bottom: 22px;
-    color: #555;
-}
-
-
-
-/** comme ca elle est au milieu !! **/
-#w {
-    display: block;
-    width: 750px;
-    margin: 0 auto;
-    padding-top: 30px;
-    padding-bottom: 45px;
-}
-
-
-#userphoto {
-    display: block;
-    float: right;
-    margin-left: 10px;
-    margin-bottom: 8px;
-}
-input[type='file'] {
-    color: transparent;
-    float: right;
-
-}
-
-#userphoto img {
-    display: block;
-    padding: 2px;
-    background: #fff;
-    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.4);
-    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.4);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.4);
-}
-
-
-/** profile nav links **/
-#profiletabs {
-    display: block;
-    margin-bottom: 4px;
-    height: 50px;
-}
-
-#profiletabs ul { list-style: none; display: block; width: 70%; height: 50px; }
-#profiletabls ul li { float: left; }
-#profiletabs ul li a {
-    display: block;
-    float: left;
-    padding: 8px 11px;
-    font-size: 1.2em;
-    font-weight: bold;
-    background: #eae8db;
-    color: #666;
-    margin-right: 7px;
-    border: 1px solid #fff;
-    -webkit-border-radius: 5px;
-    -webkit-border-bottom-left-radius: 0;
-    -moz-border-radius: 5px;
-    -moz-border-radius-bottomleft: 0;
-    border-radius: 5px;
-    border-bottom-left-radius: 0;
-}
-#profiletabs ul li a:hover {
-    text-decoration: none;
-    background: #dad7c2;
-    color: #565656;
-}
-
-#profiletabs ul li a.sel {
-    background: #fff;
-    border-color: #d1cdb5;
-}
-
-
-/** profile content sections **/
-.hidden {
-    display: none;
-}
-
-.activity {
-    border-bottom: 1px solid #d6d1af;
-    padding-bottom: 4px;
-}
-
-.setting {
-    display: block;
-    font-weight: normal;
-    padding: 7px 3px;
-    border-top: 1px solid #d6d1af;
-    margin-bottom: 5px;
-}
-.setting span {
-    float: left;
-    width: 250px;
-    font-weight: bold;
-}
-.setting span img {
-    cursor: pointer;
-}
-
-

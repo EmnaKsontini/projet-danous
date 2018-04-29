@@ -1,4 +1,3 @@
-<?php session_start();?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -16,22 +15,6 @@
 
 </head>
 <body>
-<?php
-try {
-    $bdd = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '');
-}catch (PDOException $e){
-    print "Erreur : " . $e->getMessage();
-    die();
-}
-$ref = $_GET["code"];
-$table_name=$_SESSION["table"];
-//$ref = "LI2054";
-$req = $bdd ->query("use danousdatabase");
-$req = "SELECT * FROM ".$table_name." where `Reference`=\"".$ref."\"";
-$query = $bdd -> query($req);
-$obj = $query -> fetch(PDO::FETCH_OBJ);
-
-?>
 <header>
     <nav class="hey" >
         <ul>
@@ -74,59 +57,48 @@ $obj = $query -> fetch(PDO::FETCH_OBJ);
         </nav>
     </section>
 </header>
-<main class="container">
+<?php
+//Remplace _  with esp
+function repEsp ($s){
+    $ret=str_replace("_"," ",$s);
+    return $ret;
+}
+if (isset($_POST["table"])){
+    $val="(";
+    $att="(";
 
-    <!-- Left Column / Headphones Image -->
-    <div class="left-column">
-        <?php
-        echo("<img  class=\"active\" src=\"images/".$ref.".jpg\" alt=\"\">");
-        ?>
-    </div>
-
-
-
-    <!-- Right Column -->
-    <div class="right-column">
-
-        <!-- Product Description -->
-        <div class="product-description">
-            <?php
-            echo ("
-            <span>".$obj->Categorie."</span>
-            <h1>".$obj->Marque."</h1>
-            <span>".$ref."</span>");
-
-            ?>
-        </div>
-        <table>
-            <?php
-            $req = "DESCRIBE ".$table_name;
-            //echo $req;
-            $query = $bdd -> query($req);
-            $tab_attribut = $query -> fetchall(PDO::FETCH_NUM );
-            //var_dump($tab_attribut);
-            foreach ($tab_attribut as $ta){
-                echo("<tr>");
-                echo ("<td>".$ta[0]."</td>");
-                $s=$ta[0];
-                echo ("<td>".$obj->$s."</td>");
-                echo("</tr>");
-            }
-            ?>
-        </table>
+    foreach ($_POST as $p=>$v) {
+        if (strcmp($p,"table")==0) continue;
+        $val = $val.'\'' . $v. '\',';
+        $att = $att.' `' . repEsp($p). '`,';
+    }
+    $val=substr($val,0,strlen($val)-1);
+    $att=substr($att,0,strlen($att)-1);
+    $val=$val.')';
+    $att=$att.')';
 
 
-        <!-- Product Pricing -->
-        <div class="product-price">
-            <?php
-            echo ("
-            <span>".$obj->Prix." DT</span> ");
-            ?>
-            <form>
+    try
+    {
+        $BD_connexion=new PDO('mysql:host=localhost;dbname=danousdatabase','root','');
 
-            </form>
-            <a href="#" class="cart-btn">Add to cart</a>
-        </div>
-    </div>
-</main>
+        $BD_connexion->query("use autho");
+        $req="INSERT INTO ".$_POST["table"]." ".$att.' VALUES '.$val;
+        //echo    $req;
+        $stmt = $BD_connexion->prepare($req);
+        $stmt->execute();
+        if ($stmt->rowCount()){
+            echo 'New Prodcut is inserted succesfully';
+        }else {
+            echo 'Error :/';
+        }
+
+        $_POST = array();
+
+    }
+
+    catch(Exception $e) {}
+
+}
+?>
 </body>

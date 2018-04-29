@@ -1,4 +1,3 @@
-<?php session_start();?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -16,22 +15,6 @@
 
 </head>
 <body>
-<?php
-try {
-    $bdd = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '');
-}catch (PDOException $e){
-    print "Erreur : " . $e->getMessage();
-    die();
-}
-$ref = $_GET["code"];
-$table_name=$_SESSION["table"];
-//$ref = "LI2054";
-$req = $bdd ->query("use danousdatabase");
-$req = "SELECT * FROM ".$table_name." where `Reference`=\"".$ref."\"";
-$query = $bdd -> query($req);
-$obj = $query -> fetch(PDO::FETCH_OBJ);
-
-?>
 <header>
     <nav class="hey" >
         <ul>
@@ -74,59 +57,20 @@ $obj = $query -> fetch(PDO::FETCH_OBJ);
         </nav>
     </section>
 </header>
-<main class="container">
+<select id ="categorie">
+    <option value="pc">Laptop</option>
+    <option value="telephone">Phone</option>
+    <option value="ecran">Screen</option>
+</select>
+ <div id ="forum">
 
-    <!-- Left Column / Headphones Image -->
-    <div class="left-column">
-        <?php
-        echo("<img  class=\"active\" src=\"images/".$ref.".jpg\" alt=\"\">");
-        ?>
-    </div>
-
-
-
-    <!-- Right Column -->
-    <div class="right-column">
-
-        <!-- Product Description -->
-        <div class="product-description">
-            <?php
-            echo ("
-            <span>".$obj->Categorie."</span>
-            <h1>".$obj->Marque."</h1>
-            <span>".$ref."</span>");
-
-            ?>
-        </div>
-        <table>
-            <?php
-            $req = "DESCRIBE ".$table_name;
-            //echo $req;
-            $query = $bdd -> query($req);
-            $tab_attribut = $query -> fetchall(PDO::FETCH_NUM );
-            //var_dump($tab_attribut);
-            foreach ($tab_attribut as $ta){
-                echo("<tr>");
-                echo ("<td>".$ta[0]."</td>");
-                $s=$ta[0];
-                echo ("<td>".$obj->$s."</td>");
-                echo("</tr>");
-            }
-            ?>
-        </table>
+ </div>
 
 
-        <!-- Product Pricing -->
-        <div class="product-price">
-            <?php
-            echo ("
-            <span>".$obj->Prix." DT</span> ");
-            ?>
-            <form>
-
-            </form>
-            <a href="#" class="cart-btn">Add to cart</a>
-        </div>
-    </div>
-</main>
 </body>
+<script src="JS/addProduct.js"></script>
+<script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+</html>

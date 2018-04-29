@@ -1,5 +1,4 @@
-<?php session_start();
-?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -15,270 +14,165 @@
     <nav class="hey" >
         <ul>
             <li class="selected"><a href="#">Home</a></li>
-            <li><a href="#">Specials</a></li>
+
             <li><a href="Products.php">All Products</a></li>
-            <li><a href="#">Contact us</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="MyCart.php">MYCART</a></li>
+            <li><a href="#bas">Contact us</a></li>
+            <li><a href="#bas">About</a></li>
             <?php
             session_start();
             if(!isset($_SESSION['login']))
                 echo"<li><a href=\"formulaireLogin.php\"> <img class=\"home\" src=\"images/this2.png\" title=\"LogIn\" ></a></li>";
             else echo"<li><a href=\"profile.php\">my profile</a> </li>";
-                ?>
+            ?>
         </ul>
-        <section id="search"><!-- Search form -->
-            <form action="#" onsubmit="return false;" method="get">
-                <input type="text" onfocus="if (this.value =='Search..' ) this.value=''" onblur="if (this.value=='') this.value='Search..'" value="Search.." name="q">
-                <input type="submit" value="Search">
-            </form>
+
 
         </section>
     </nav>
 
     <section id="cat">
-    <nav id="submenu">
-        <ul>
-            <form method="post" action="products.php">
-                <li><input name="type" type="submit" value="laptop" /></li>
-                <li><input name="type" type="submit" value="phone" /></li>
-                <li><input name="type" type="submit" value="Category 3" /></li>
-                <li><input name="type" type="submit" value="Category 4" /></li>
-                <li><input name="type" type="submit" value="Category 5" /></li>
-                <li><input name="type" type="submit" value="Category 6" /></li>
-            </form>
-        </ul>
-    </nav>
+        <nav id="submenu">
+            <ul>
+                <form method="post" action="products.php">
+                    <li><input name="type" type="submit" value="laptop" /></li>
+                    <li><input name="type" type="submit" value="phone" /></li>
+                    <li><input name="type" type="submit" value="Category 3" /></li>
+                    <li><input name="type" type="submit" value="Category 4" /></li>
+                    <li><input name="type" type="submit" value="Category 5" /></li>
+                    <li><input name="type" type="submit" value="Category 6" /></li>
+                </form>
+            </ul>
+        </nav>
     </section>
 </header>
 <article>
-    <div id="slider"><!-- Defining the main content section -->
-        <!-- Promo slider -->
-                <section id="slider-wrapper">
-                    <div id="slider" class="nivoSlider">
-                <img  src="images/test.jpg" alt="" title="#htmlcaption-1">
-                <img style="display: none;" src="images/promo2.jpg" alt="" title="#htmlcaption-2">
-                <img style="display: none;" src="images/promo3.jpg" alt="" title="#htmlcaption-3">
-            </div>
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
 
-          <div id="main"> <!-- Defining submain content section -->
-                <section id="content"><!-- Defining the content section #2 -->
-                    <div id="left">
-                        <h3>Last products</h3>
-                        <ul>
-                            <li>
-                                <div class="img"><a href="#"><img alt="" src="images/post1.jpg"></a></div>
-                                <div class="info">
-                                    <a class="title" href="#">Product 1</a>
-                                    <p>on va ecire une description ici1</p>
-                                    <div class="price">
-                                        <span class="st">Our price:</span><strong>dt550.00</strong>
-                                    </div>
-                                    <div class="actions">
-                                        <a href="#">Details</a>
-                                        <a href="#">Add to cart</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="img"><a href="#"><img alt="" src="images/post2.jpg"></a></div>
-                                <div class="info">
-                                    <a class="title" href="#">Product 2</a>
-                                    <p>on va ecrire une description ici2</p>
-                                    <div class="price">
-                                        <span class="st">Our price:</span><strong>dt250.00</strong>
-                                    </div>
-                                    <div class="actions">
-                                        <a href="#">Details</a>
-                                        <a href="#">Add to cart</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="img"><a href="#"><img alt="" src="images/post3.jpg"></a></div>
-                                <div class="info">
-                                    <a class="title" href="#">Product 3</a>
-                                    <p>on va ecire une description ici3</p>
-                                    <div class="price">
-                                        <span class="st">Our price:</span><strong>dt350.00</strong>
-                                    </div>
-                                    <div class="actions">
-                                        <a href="#">Details</a>
-                                        <a href="#">Add to cart</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="img"><a href="#"><img alt="" src="images/post4.jpg"></a></div>
-                                <div class="info">
-                                    <a class="title" href="#">Product 4</a>
-                                    <p>on va ecire une description ici1</p>
-                                    <div class="price">
-                                        <span class="st">Our price:</span><strong>dt550.00</strong>
-                                    </div>
-                                    <div class="actions">
-                                        <a href="#">Details</a>
-                                        <a href="#">Add to cart</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="img"><a href="#"><img alt="" src="images/post5.jpg"></a></div>
-                                <div class="info">
-                                    <a class="title" href="#">Product 5</a>
-                                    <p>on va ecire une description ici2</p>
-                                    <div class="price">
-                                        <span class="st">Our price:</span><strong>dt250.00</strong>
-                                    </div>
-                                    <div class="actions">
-                                        <a href="#">Details</a>
-                                        <a href="#">Add to cart</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="img"><a href="#"><img alt="" src="images/post6.jpg"></a></div>
-                                <div class="info">
-                                    <a class="title" href="#">Product 6</a>
-                                    <p>on va ecire une description ici3</p>
-                                    <div class="price">
-                                        <span class="st">Our price:</span><strong>dt350.00</strong>
-                                    </div>
-                                    <div class="actions">
-                                        <a href="#">Details</a>
-                                        <a href="#">Add to cart</a>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div id="right">
-                        <h3>Top sells</h3>
-                        <ul>
-                            <li>
-                                <div class="img"><a href="#"><img alt="" src="images/post6.jpg"></a></div>
-                                <div class="info">
-                                    <a class="title" href="#">Product 7</a>
-                                    <div class="price">
-                                        <span class="usual">dt600.00 </span>&nbsp;
-                                        <span class="special">dt500.00</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="img"><a href="#"><img alt="" src="images/post5.jpg"></a></div>
-                                <div class="info">
-                                    <a class="title" href="#">Product 8</a>
-                                    <div class="price">
-                                        <span class="usual">dt500.00 </span>&nbsp;
-                                        <span class="special">dt400.00</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="img"><a href="#"><img alt="" src="images/post4.jpg"></a></div>
-                                <div class="info">
-                                    <a class="title" href="#">Product 9</a>
-                                    <div class="price">
-                                        <span class="usual">dt700.00 </span>&nbsp;
-                                        <span class="special">dt600.25</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="img"><a href="#"><img alt="" src="images/post3.jpg"></a></div>
-                                <div class="info">
-                                    <a class="title" href="#">Product 10</a>
-                                    <div class="price">
-                                        <span class="usual">dt805.00 </span>&nbsp;
-                                        <span class="special">dt714.25</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="img"><a href="#"><img alt="" src="images/post2.jpg"></a></div>
-                                <div class="info">
-                                    <a class="title" href="#">Product 11</a>
-                                    <div class="price">
-                                        <span class="usual">dt1205.00 </span>&nbsp;
-                                        <span class="special">dt1000.25</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="img"><a href="#"><img alt="" src="images/post1.jpg"></a></div>
-                                <div class="info">
-                                    <a class="title" href="#">Product 12</a>
-                                    <div class="price">
-                                        <span class="usual">dt200.00 </span>&nbsp;
-                                        <span class="special">dt190.25</span>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-            </div>
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="images/Galaxy S8.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="images/E2016H.jpg" style="width:100%">
+            <div class="text">Caption Two</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="images/E2014H.jpg" style="width:100%">
+            <div class="text">Caption Three</div>
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
 </article>
 
-        <footer>
-            <div id="privacy">
-            <p>
-                <table class="colone1">
-                    <tr>
-                        <td  width="20%" colspan="2">CONTACTEZ NOUS :</td>
-                        <td width="20%" colspan="2">SUIVEZ_NOUS:</td>
-                        <td width="20%"></td>
+<footer>
+    <div id="bas"></div>
+    <div id="privacy">
+        <p>
+        <table class="colone1">
+            <tr>
+                <td  width="20%" colspan="2">CONTACTEZ NOUS :</td>
+                <td width="20%" colspan="2">SUIVEZ_NOUS:</td>
+                <td width="20%"></td>
 
-                        <br>
-
-
-                        <tr>
-                            <td><img src="images/mail.png"></td>
-                            <td align="center">Danous@Danous.tn</td>
-                            <td><img src="images/facebook.png" > </td>
-                            <td>DanousVente</td>
-                            <td>LOGO</td>
-
-                         </tr>
-                         <tr>
-                            <td><img src="images/phone.png"></td>
-                             <td align="center"> 71 777 777</td>
-                             <td><img src="images/insta.png" > </td>
-                             <td>DanousVente</td>
-                             <td><img src="images/c.png"></td>
+                <br>
 
 
+            <tr>
+                <td><img src="images/mail.png"></td>
+                <td align="center">Danous@Danous.tn</td>
+                <td><img src="images/facebook.png" > </td>
+                <td>DanousVente</td>
+                <td>LOGO</td>
 
-
-                            </tr>
-
-
-                    </tr>
-
-                </table>
-                <div id="right">
-                <tabele class="colone1">
+            </tr>
+            <tr>
+                <td><img src="images/phone.png"></td>
+                <td align="center"> 71 777 777</td>
+                <td><img src="images/insta.png" > </td>
+                <td>DanousVente</td>
+                <td><img src="images/c.png"></td>
 
 
 
 
+            </tr>
 
-                </tabele>
-                </div>
-            </p>
-            </div>
-        </footer>
-<div class="bottom" id="alert" >
-    <img width="50" class="avatar" src="images/cookies.png" alt="Cookie Icon">
-    <div>We use cookies to give you the best experience on our website.</div>
- <button class="button4" onclick="accpetCookie()" >Nice, I love cookies!</button>
+
+            </tr>
+
+        </table>
+        <div id="right">
+            <tabele class="colone1">
+
+
+
+
+
+            </tabele>
         </div>
+        </p>
     </div>
+</footer>
+<div class="bottom" id="alert" >
+    <img width="50" class="avatar" src="https://designmodo.com/wp-content/themes/designmodo/assets/img/misc/cookie.png" alt="Cookie Icon">
+    <div>We use cookies to give you the best experience on our website.</div>
+    <button class="button4" onclick="accpetCookie()" >Nice, I love cookies!</button>
+</div>
+</div>
 </div>
 <script>
     // if user has already checked the confirmation button
     // the alert panel should be hidden.
-     if (getCookie('accepted') === 'yes') {
+    if (getCookie('accepted') === 'yes') {
         document.getElementById("alert").style.display = "none";}
 
 
