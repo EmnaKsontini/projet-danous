@@ -178,28 +178,33 @@ body a:hover,body a{
 }
 .button5 {
 	display:inline-block;
-	padding:0.7em 1.7em;
+	padding:0.5em 3em;
+	border:0.16em solid #8e8e8e;
+	background-color: #4B4B4B;
 	margin:0 0.3em 0.3em 0;
-	border-radius:0.2em;
 	box-sizing: border-box;
 	text-decoration:none;
+	text-transform:uppercase;
 	font-family:'Roboto',sans-serif;
 	font-weight:400;
 	color:#FFFFFF;
-	background-color: #ff0006;
-	box-shadow:inset 0 -0.6em 1em -0.35em rgba(0,0,0,0.17),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
 	text-align:center;
-	position:relative;
+	transition: all 0.15s;
 	float: right;
+	cursor: pointer;
+
 }
 
 
 .text{
-	font-family: Arial;
+	font-family: "Book Antiqua";
+	font-weight: bold;
+
 
 }
 .logo
 {
 	transform: translateZ(10px);
 	transform: translate(0%,39%);
+	cursor: pointer;
 }
