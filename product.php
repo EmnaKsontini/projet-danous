@@ -24,6 +24,7 @@ try {
     die();
 }
 $ref = $_GET["code"];
+echo $_GET["table"];
 $table_name=$_GET["table"];
 //$ref = "LI2054";
 $req = $bdd ->query("use danousdatabase");

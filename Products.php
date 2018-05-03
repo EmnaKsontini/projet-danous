@@ -126,10 +126,9 @@ if($_POST["type"]=="phone")
                             <a href="#">
                                 <img src="images/<?php echo"$p->Reference"?>.jpg" alt="<?php echo "$p->Reference" ?>" style="width:128px;height:128px">
                             </a>
-                            <form method="post" action="product.php?code=<?php echo $p->Reference; ?>">
+                            <form method="post" action="product.php?code=<?php echo $p->Reference; ?>&table=<?php echo $p->type; ?>">
                                 <div>
                                     <input id="Details" type="submit" value="Details" />
-                                    <input type="hidden" name="type" value="<?php echo $p->type; ?>" />
                                 </div>
                             </form>
                         </div>
@@ -140,7 +139,7 @@ if($_POST["type"]=="phone")
                                 <span class="st">Our price:</span><strong><?php echo "$p->Prix"."DT" ?></strong>
                             </div>
                             <div class="actions">
-                                <form method="post" action="products.php?code=<?php echo $p->Reference; ?> ">
+                                <form method="post" action="products.php?code=<?php echo $p->Reference; ?>">
                                     <div>
                                         <input type="submit" name="addtocomparator" value="Add to comparator" />
                                         <input type="submit" name="addtocart" value="Add to cart" />
