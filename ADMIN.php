@@ -14,9 +14,9 @@
         <ul>
             <li class="selected"><a href="home.php">Home</a></li>
 
-            <li><a href="Products.php">All Products</a></li>
+
             <li><a href="#">controle</a></li>
-            <li><a href="#product">ADD product</a></li>
+            <li><a href="addProduct.php">ADD product</a></li>
 
 
 

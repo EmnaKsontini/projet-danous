@@ -37,10 +37,7 @@
                 <form method="post" action="products.php">
                     <li><input name="type" type="submit" value="laptop" /></li>
                     <li><input name="type" type="submit" value="phone" /></li>
-                    <li><input name="type" type="submit" value="Category 3" /></li>
-                    <li><input name="type" type="submit" value="Category 4" /></li>
-                    <li><input name="type" type="submit" value="Category 5" /></li>
-                    <li><input name="type" type="submit" value="Category 6" /></li>
+
                 </form>
             </ul>
         </nav>

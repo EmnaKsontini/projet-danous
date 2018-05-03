@@ -20,7 +20,11 @@ catch(Exception $e)
  }
  else
  { if($rows["passwd"]!=$pd)
-     echo "le mot de passe saisit ne correspond pas a votre login ";
+
+     echo '<script language="JavaScript">
+	alert("le mot de passe saisit ne correspond pas a votre login");
+	window.location.replace("formulaireLogin.php");
+	</script>';
  else
 
  {

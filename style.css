@@ -285,11 +285,7 @@ nav ul li a:hover, nav ul li.selected a {
     padding-right: 6px;
     text-decoration: line-through;
 }
-#content #right ul li .info .price .special {
-    color: #FD7A01;
-    font-weight: bold;
-    text-decoration: none;
-}
+
 #content #left ul li .img form div{
     overflow:hidden;
 }
@@ -308,21 +304,8 @@ nav ul li a:hover, nav ul li.selected a {
     overflow:hidden;
 }
 
-#content #left ul li .info .actions form div input  {
-    border: 1px solid #E0E0E0;
-    color: #fd7a01;
-    display: block;
-    float:right;
-    font-size: 11px;
-    font-weight: bold;
-    line-height: 16px;
-    padding: 5px;
-    text-decoration: none;
-}
-#content #left ul li .info .actions form div input:first-child {
-    color: #009832;
-    float:left;
-}
+
+
 footer {
 
 

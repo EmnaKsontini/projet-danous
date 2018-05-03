@@ -11,7 +11,15 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="StyleForProduct.css">
+<style>
+    #categorie{
+        background-color:#f0f0f0;
+        color: #7f1413;
+        font-size:20px;
+        text-shadow:1px 1px 1px #fff;
+    }
 
+</style>
 
 </head>
 <body>
@@ -49,6 +57,7 @@
     </section>
 </header>
 <select id ="categorie">
+    <option value="pc">choisissez</option>
     <option value="pc">Laptop</option>
     <option value="telephone">Phone</option>
     <option value="ecran">Screen</option>
