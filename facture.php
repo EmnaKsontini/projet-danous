@@ -2,8 +2,8 @@
 <?php session_start();
 
 if (isset($_SESSION["login"]))
-$log=$_SESSION["login"];
-{
+
+{   $log=$_SESSION["login"];
     $req = "SELECT * FROM autho WHERE login= \"" . $log . "\"";
     try {
         $pdo = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '');
@@ -63,7 +63,7 @@ $log=$_SESSION["login"];
                         $req=" UPDATE `autho` SET  pointdanous= '0' WHERE login= \"".$log."\"";
                        $stmt1 = $pdo->query($req);
                        $rows1 = $stmt1->fetch(PDO::FETCH_ASSOC);
-
+                        $point =0 ;
 
                     }
 
@@ -125,7 +125,7 @@ $log=$_SESSION["login"];
 								</form>
 							</div>
 							<div class="div2_right2">
-                                <p class="text"> Click here <a href="?click=1"><img class="logo" src="images/logo.png" width="100px" height="50px"  border="0.1px" ></img></a>to Use your points to get a discount ( you already have <?php  echo $point ?> points ) <br> <br></p>
+                                <p class="text"> Click here <a href="?click=1"><img class="logo" src="images/logo.png" width="100px" height="50px"  border="0.1px" ></img></a>to Use your points to get a discount ( you already have <?php if (isset($point)) echo $point; else echo "0"?> points ) <br> <br></p>
 
 
 
