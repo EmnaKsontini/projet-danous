@@ -24,7 +24,8 @@ try {
     die();
 }
 $ref = $_GET["code"];
-$table_name=$_SESSION["table"];
+echo $_GET["table"];
+$table_name=$_GET["table"];
 //$ref = "LI2054";
 $req = $bdd ->query("use danousdatabase");
 $req = "SELECT * FROM ".$table_name." where `Reference`=\"".$ref."\"";

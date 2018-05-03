@@ -15,7 +15,7 @@
         <ul>
             <li class="selected"><a href="#">Home</a></li>
 
-            <li><a href="Products.php">All Products</a></li>
+
             <li><a href="MyCart.php">MYCART</a></li>
             <li><a href="#bas">Contact us</a></li>
             <li><a href="#bas">About</a></li>
@@ -51,23 +51,23 @@
     <div class="slideshow-container">
 
         <!-- Full-width images with number and caption text -->
-        <div class="mySlides fade">
+        <a href="product.php?code=X541NA-GO017&table=pc"><div class="mySlides fade">
             <div class="numbertext">1 / 3</div>
-            <img src="images/Galaxy S8.jpg" style="width:100%">
+            <img src="images/X541NA-GO017.jpg" style="width:100%">
             <div class="text">Caption Text</div>
-        </div>
+        </div></a>
 
-        <div class="mySlides fade">
+        <a href="product.php?code=E2016H&table=ecran"><div class="mySlides fade">
             <div class="numbertext">2 / 3</div>
             <img src="images/E2016H.jpg" style="width:100%">
             <div class="text">Caption Two</div>
-        </div>
+        </div></a>
 
-        <div class="mySlides fade">
+        <a href="product.php?code=E2014H&table=ecran"><div class="mySlides fade">
             <div class="numbertext">3 / 3</div>
             <img src="images/E2014H.jpg" style="width:100%">
             <div class="text">Caption Three</div>
-        </div>
+        </div></a>
 
         <!-- Next and previous buttons -->
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
