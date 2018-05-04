@@ -15,14 +15,17 @@ if(isset($_POST["addtocomparator"])){
     //var_dump( $_SESSION["comparator_item"]);
 
 }
-if($_POST["type"]=="laptop")
-{
-    $_SESSION["table"]="pc";//lezim ism i table ikoun howa bidou ism l catégorie!!!! bich tkoun dynamique
-}
-if($_POST["type"]=="phone")
-{
-    $_SESSION["table"]="telephone";//lezim ism i table ikoun howa bidou ism l catégorie!!!! bich tkoun dynamique
+if (sizeof($_POST)!=0) {
+    if ($_POST["type"] == "laptop") {
+        $_SESSION["table"] = "pc";
+    }
+    if ($_POST["type"] == "phone") {
+        $_SESSION["table"] = "telephone";
 
+    }
+}else  {
+
+    $_SESSION["table"] = "pc";
 }
 ?>
 <!DOCTYPE html>
@@ -50,18 +53,17 @@ if($_POST["type"]=="phone")
             <li><a href="MyCart.php">My Cart</a></li>
             <li><a href="#">Contact us</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="formulaireLogin.php"> <img src="images/this2.png" title="LogIn" ></a></li>
+            <?php
+
+            if(!isset($_SESSION['login']))
+                echo"<li><a href=\"formulaireLogin.php\"> <img class=\"home\" src=\"images/this2.png\" title=\"LogIn\" ></a></li>";
+            else echo"<li><a href=\"profile.php\">my profile</a> </li>";
+            ?>
 
 
 
         </ul>
-        <section id="search"><!-- Search form -->
-            <form action="#" onsubmit="return false;" method="get">
-                <input type="text" onfocus="if (this.value =='Search..' ) this.value=''" onblur="if (this.value=='') this.value='Search..'" value="Search.." name="q">
-                <input type="submit" value="Search">
-            </form>
 
-        </section>
     </nav>
 
     <!--<div class="top_head">
@@ -104,16 +106,7 @@ if($_POST["type"]=="phone")
                     print "Erreur : " . $e->getMessage();
                     die();
                 }
-                //inkemlou l condition lil les catégories l kol
-                if($_POST["type"]=="laptop")
-                {
-                    $_SESSION["table"]="pc";//lezim ism i table ikoun howa bidou ism l catégorie!!!! bich tkoun dynamique
-                }
-                if($_POST["type"]=="phone")
-                {
-                    $_SESSION["table"]="telephone";//lezim ism i table ikoun howa bidou ism l catégorie!!!! bich tkoun dynamique
-                    
-                }
+
 
                 $req = $bdd ->query("use danousdatabase");
                 $req = "SELECT * FROM ".$_SESSION["table"];
@@ -178,7 +171,7 @@ if($_POST["type"]=="phone")
                                     ?>
                                     <input type="range" id="scroll" <?php echo "max=\"".$max[0]."\" min =\"".$min[0]."\" value=\"".$max[0]."\">"?>
                                     <div id="prixVal"><?php echo $max[0] ?></div>
-                                <?php
+                                    <?php
 
 
                                 }else {
@@ -200,7 +193,7 @@ if($_POST["type"]=="phone")
                                     }
                                     echo "</form>";
                                 }
-                                };
+                            };
                         };?>
                     </div>
                 </li>

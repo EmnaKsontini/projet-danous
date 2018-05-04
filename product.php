@@ -24,7 +24,6 @@ try {
     die();
 }
 $ref = $_GET["code"];
-echo $_GET["table"];
 $table_name=$_GET["table"];
 //$ref = "LI2054";
 $req = $bdd ->query("use danousdatabase");
@@ -36,11 +35,10 @@ $obj = $query -> fetch(PDO::FETCH_OBJ);
 <header>
     <nav class="hey" >
         <ul>
-            <li class="selected"><a href="#">Home</a></li>
-            <li><a href="#">Specials</a></li>
+            <li class="selected"><a href="home.php">Home</a></li>
+
             <li><a href="MyCart.php">MyCart</a></li>
-            <li><a href="#">Contact us</a></li>
-            <li><a href="#">About</a></li>
+
             <?php
             if(!isset($_SESSION['login']))
                 echo"<li><a href=\"formulaireLogin.php\"> <img class=\"home\" src=\"images/this2.png\" title=\"LogIn\" ></a></li>";

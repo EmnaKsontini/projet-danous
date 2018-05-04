@@ -27,10 +27,8 @@
     <nav class="hey" >
         <ul>
             <li class="selected"><a href="home.php">Home</a></li>
-            <li><a href="#">Specials</a></li>
             <li><a href="MyCart.php">MyCart</a></li>
-            <li><a href="#">Contact us</a></li>
-            <li><a href="#">About</a></li>
+
             <?php
             if(!isset($_SESSION['login']))
                 echo"<li><a href=\"formulaireLogin.php\"> <img class=\"home\" src=\"images/this2.png\" title=\"LogIn\" ></a></li>";

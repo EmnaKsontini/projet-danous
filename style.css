@@ -20,7 +20,7 @@ home {
 
 #search {
     float: right;
-   /* margin: 21px 41px 0 0;*/
+    /* margin: 21px 41px 0 0;*/
     text-align: right;
     position:absolute;
     top:0;
@@ -72,7 +72,7 @@ home {
 nav {
     background-color: #7f1413;
     overflow: hidden;
-   height:50px;
+    height:50px;
 }
 nav ul {
     margin: 0;
@@ -101,12 +101,12 @@ nav ul li a:hover, nav ul li.selected a {
 }
 #submenu {
 
-   background: linear-gradient(#ffffff, #2e2e2e);
-   /* border: 1px solid #E0E0E0;*/
+    background: linear-gradient(#ffffff, #2e2e2e);
+    /* border: 1px solid #E0E0E0;*/
     height: 30px;
 
-   /* padding-left: 100px;*/
-   /* position:absolute;*/
+    /* padding-left: 100px;*/
+    /* position:absolute;*/
     width: 60%;
     margin: auto;
 }
@@ -285,7 +285,11 @@ nav ul li a:hover, nav ul li.selected a {
     padding-right: 6px;
     text-decoration: line-through;
 }
-
+#content #right ul li .info .price .special {
+    color: #FD7A01;
+    font-weight: bold;
+    text-decoration: none;
+}
 #content #left ul li .img form div{
     overflow:hidden;
 }
@@ -304,8 +308,21 @@ nav ul li a:hover, nav ul li.selected a {
     overflow:hidden;
 }
 
-
-
+#content #left ul li .info .actions form div input  {
+    border: 1px solid #E0E0E0;
+    color: #fd7a01;
+    display: block;
+    float:right;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 16px;
+    padding: 5px;
+    text-decoration: none;
+}
+#content #left ul li .info .actions form div input:first-child {
+    color: #009832;
+    float:left;
+}
 footer {
 
 

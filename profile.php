@@ -76,7 +76,7 @@
 
                     echo "
 
-                <p class=\"setting\"><span>name<a href =\"Edit.php\"> </span> ".$personne->nom."</p>
+                <p class=\"setting\"><span>name</span> ".$personne->nom."</p>
                 <p class=\"setting\"><span>Last Name </span>".$personne->prenom."</p>
 
                 <p class=\"setting\"><span>E-mail Address</span> ".$personne->mail."</p>
