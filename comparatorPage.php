@@ -1,35 +1,32 @@
-<?php session_start();?>
 <!DOCTYPE html>
 
 <html lang="en">
 <head>
 
 
-    <title>Product  </title>
+    <title>Comparator</title>
 
     <meta charset="utf-16">
 
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="StyleForProduct.css">
+    <link rel="stylesheet" href="styleForComparatorPage.css">
+
 
 
 </head>
 <body>
+
 <?php
+session_start();
+//session_destroy();
 try {
     $bdd = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '');
 }catch (PDOException $e){
     print "Erreur : " . $e->getMessage();
     die();
 }
-$ref = $_GET["code"];
-$table_name=$_SESSION["table"];
-//$ref = "LI2054";
-$req = $bdd ->query("use danousdatabase");
-$req = "SELECT * FROM ".$table_name." where `Reference`=\"".$ref."\"";
-$query = $bdd -> query($req);
-$obj = $query -> fetch(PDO::FETCH_OBJ);
+
 
 ?>
 <header>
@@ -37,7 +34,7 @@ $obj = $query -> fetch(PDO::FETCH_OBJ);
         <ul>
             <li class="selected"><a href="#">Home</a></li>
             <li><a href="#">Specials</a></li>
-            <li><a href="MyCart.php">MyCart</a></li>
+            <li><a href="Products.php">All Products</a></li>
             <li><a href="#">Contact us</a></li>
             <li><a href="#">About</a></li>
             <?php
@@ -74,59 +71,46 @@ $obj = $query -> fetch(PDO::FETCH_OBJ);
         </nav>
     </section>
 </header>
-<main class="container">
 
-    <!-- Left Column / Headphones Image -->
-    <div class="left-column">
+    <h1 class="page-heading">Comparator Table</h1>
+    <div class="outercontainer">
+    <div id="innercontainer">
+    <table id="comparator">
+        <tr>
+
         <?php
-        echo("<img  class=\"active\" src=\"images/".$ref.".jpg\" alt=\"".$ref."\">");
+      //  $table_name;
+       // var_dump($_SESSION);
+        foreach ($_SESSION['comparator_item'] as $item){
+            $table_name = $item["produit"]->type;
+
+        }
         ?>
+        </tr>
+        <?php
+        $req = "DESCRIBE ".$table_name;
+        $query = $bdd -> query($req);
+        $tab_attribut = $query -> fetchall();
+        //var_dump($tab_attribut);
+        //var_dump($tab_attribut);
+        foreach ($tab_attribut as $ta){
+            echo ("<tr><th>".$ta[0]."</th>");
+            foreach ($_SESSION["comparator_item"] as $item){
+                //var_dump($item);
+                if ($item["produit"]->type==$table_name){
+                if($ta[0]=="Reference"){
+
+                    echo ("<td><img class='autoResizeImage' src=\"images/".$item["produit"]->$ta[0].".jpg\" alt = \"".$item["produit"]->$ta[0]."\" >".$item["produit"]->$ta[0]."</td>");
+                }
+                else echo ("<td>".$item["produit"]->$ta[0]."</td>");
+            }}
+            echo ("</tr>");
+        }
+        ?>
+
+    </table>
+    </div>
     </div>
 
-
-
-    <!-- Right Column -->
-    <div class="right-column">
-
-        <!-- Product Description -->
-        <div class="product-description">
-            <?php
-            echo ("
-            <span>".$obj->Categorie."</span>
-            <h1>".$obj->Marque."</h1>
-            <span>".$ref."</span>");
-
-            ?>
-        </div>
-        <table>
-            <?php
-            $req = "DESCRIBE ".$table_name;
-            //echo $req;
-            $query = $bdd -> query($req);
-            $tab_attribut = $query -> fetchall(PDO::FETCH_NUM );
-            //var_dump($tab_attribut);
-            foreach ($tab_attribut as $ta){
-                echo("<tr>");
-                echo ("<td>".$ta[0]."</td>");
-                $s=$ta[0];
-                echo ("<td>".$obj->$s."</td>");
-                echo("</tr>");
-            }
-            ?>
-        </table>
-
-
-        <!-- Product Pricing -->
-        <div class="product-price">
-            <?php
-            echo ("
-            <span>".$obj->Prix." DT</span> ");
-            ?>
-            <form>
-
-            </form>
-            <a href="#" class="cart-btn">Add to cart</a>
-        </div>
-    </div>
 </main>
 </body>

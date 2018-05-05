@@ -1,0 +1,44 @@
+#outercontainer{
+    width: 1200px;
+    position:relative
+}
+#innercontainer{
+    overflow-x:scroll;
+    overflow-y:visible;
+    width:1200px;
+
+}
+#comparator {
+
+    width: 100%;
+    table-layout: fixed;
+
+}
+
+#comparator td, #comparator th {
+    border: 1px solid #ddd;
+    vertical-align: top;
+    border-top: 1px solid #ccc;
+    padding:10px;
+    width:400px;
+}
+
+
+#comparator tr:nth-child(even){background-color: #f2f2f2;}
+
+#comparator tr:hover {background-color: #ddd;}
+
+#comparator th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+   /* position:absolute;*/
+    background-color: #7f1413;
+    color: white;
+    width:200px;
+}
+.autoResizeImage{
+    max-width: 100%;
+    height: 200px;
+    width: 100%;
+}
