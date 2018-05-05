@@ -85,7 +85,7 @@ if (isset($_SESSION["login"]))
 					<div >
 						<ul>
                             <form method="post">
-                             <div style="float:left">    <input type="checkbox" ><img src="images/1.jpg" alt=" "></input> </div>
+                             <div style="float:left">    <input type="checkbox" name="check1" ><img src="images/1.jpg" alt=" "></input> </div>
 
                                 <div style="float:right"> <input type="checkbox" ><img src="images/2.jpg" alt=" " /> </div>
                             </form> <br> <br> <br>
@@ -137,26 +137,27 @@ if (isset($_SESSION["login"]))
                         $BD_connexion->query("use achat");
                         $str = "INSERT INTO `achat`(`reference`, `price`, `quantity`, `Client`, `date`) VALUES (:val1,:val2,:val3,:val4,:val5)";
                         $req = $BD_connexion->prepare($str);
-                        foreach ($_SESSION["cart_item"] as $key => $value) {
+                            foreach ($_SESSION["cart_item"] as $key => $value) {
 
-                            $prix = $_SESSION["cart_item"][$key]["prix"];
-                            $k1 = $_SESSION["cart_item"][$key]["quantity"];
-                            $_SESSION["total"] = $_SESSION["total"] + $k1 * $prix;
-                            $req->execute(array(
-                                'val1' => $key,
-                                'val2' => $prix,
-                                'val3' => $k1,
-                                'val4' => $_SESSION["login"],
-                                'val5' => date("Y/m/d"),
-                            ));
+                                $prix = $_SESSION["cart_item"][$key]["prix"];
+                                $k1 = $_SESSION["cart_item"][$key]["quantity"];
+                                $_SESSION["total"] = $_SESSION["total"] + $k1 * $prix;
+                                $req->execute(array(
+                                    'val1' => $key,
+                                    'val2' => $prix,
+                                    'val3' => $k1,
+                                    'val4' => $_SESSION["login"],
+                                    'val5' => date("Y/m/d"),
+                                ));
+
+                            $h = $point + $_SESSION["nbrpoint"];
+                            $BD_connexion->query("use autho");
+                            $str1 = "UPDATE autho SET `pointdanous`=" . $h . " WHERE login=\"" . $_SESSION["login"] . "\"";
+                            $req1 = $BD_connexion->prepare($str1);
+                            $req1->execute();
+
                         }
-                        $h = $point + $_SESSION["nbrpoint"];
-                        $BD_connexion->query("use autho");
-                        $str1 = "UPDATE autho SET `pointdanous`=" . $h . " WHERE login=\"" . $_SESSION["login"] . "\"";
-                        $req1 = $BD_connexion->prepare($str1);
-                        $req1->execute();
-
-
+                        header('Location:home.php');
                     }
                     ?>
 
