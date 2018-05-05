@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="StyleForProduct.css">
+
 <style>
     #categorie{
         background-color:#f0f0f0;
@@ -28,6 +29,7 @@
         <ul>
             <li class="selected"><a href="home.php">Home</a></li>
             <li><a href="MyCart.php">MyCart</a></li>
+            <li><a href="TableAchat.php">Sale Summary</a></li>
 
             <?php
             if(!isset($_SESSION['login']))

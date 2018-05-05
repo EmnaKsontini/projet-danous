@@ -17,6 +17,7 @@
 
             <li><a href="#">controle</a></li>
             <li><a href="addProduct.php">ADD product</a></li>
+            <li><a href="TableAchat.php">Sale Summary</a></li>
 
 
 
