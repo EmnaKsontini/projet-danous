@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php session_start();
+//a l'achat d un article le client obtient un point danous sachant que un point danous vaut 1% de reduction le client a le choix d'utiliser ses points ou pas
 
 if (isset($_SESSION["login"]))
 
@@ -59,6 +60,7 @@ if (isset($_SESSION["login"]))
 
 				</div>
 				<div class="total">
+
                     <?php
                     if (isset($_GET["click"])) {
 

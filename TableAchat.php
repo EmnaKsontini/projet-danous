@@ -3,6 +3,7 @@
 
 <html lang="en">
 <head>
+    <!--  l'admin peut consulter toutes les operations d'achat faite sur son site ( d'une facon detaillée ) ! !-->
 
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title>Danous  </title>
