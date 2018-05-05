@@ -39,7 +39,7 @@ foreach ($objs as $el){
             <a href="#">
                 <img src="images/<?php echo"$el->Reference"?>.jpg" alt="<?php echo "$el->Reference" ?>" style="width:128px;height:128px">
             </a>
-            <form method="post" action="product.php?code=<?php echo $el->Reference; ?> ">
+            <form method="post" action="product.php?code=<?php echo $el->Reference; ?>&table=<?php echo $el->type; ?>">
                 <div>
                     <input id="Details" type="submit" value="Details" />
                 </div>
@@ -52,11 +52,12 @@ foreach ($objs as $el){
                 <span class="st">Our price:</span><strong><?php echo "$el->Prix"."DT" ?></strong>
             </div>
             <div class="actions">
-                <form method="post" action="products.php?code=<?php echo $el->Reference; ?> ">
+                <form method="post" action="products.php?code=<?php echo $el->Reference; ?>">
                     <div>
                         <input type="submit" name="addtocomparator" value="Add to comparator" />
                         <input type="submit" name="addtocart" value="Add to cart" />
                         <input type="text" id="q" name="quantity" value="1" size="1" />
+                        <input type="hidden" name="type" value="<?php echo $el->type; ?>" />
                     </div>
                 </form>
             </div>

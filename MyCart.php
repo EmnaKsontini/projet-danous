@@ -24,25 +24,21 @@ if(isset($_POST["remove"])){
             <li class="selected"><a href="home.php">Home</a></li>
 
             <li><a href="MyCart.php">My Cart</a></li>
-            <li><a href="#">Contact us</a></li>
-            <li><a href="#">About</a></li>
+
             <?php
-            if(!isset($_SESSION['login']))
-                echo"<li><a href=\"formulaireLogin.php\"> <img class=\"home\" src=\"images/this2.png\" title=\"LogIn\" ></a></li>";
-            else echo"<li><a href=\"profile.php\">my profile</a> </li>";
-                ?>
+            if(!isset($_SESSION['login'])) {
+                echo "<li><a href=\"formulaireLogin.php\"> <img class=\"home\" src=\"images/this2.png\" title=\"LogIn\" ></a></li>";
+            } else {
+                echo "<li><a href=\"profile.php\">my profile</a> </li>";
+                echo "<li><a href=\"logout.php\" title=\"Please come again\">log out</a></li>";
+            }
+            ?>
 
 
 
 
         </ul>
-        <section id="search"><!-- Search form -->
-            <form action="#" onsubmit="return false;" method="get">
-                <input type="text" onfocus="if (this.value =='Search..' ) this.value=''" onblur="if (this.value=='') this.value='Search..'" value="Search.." name="q">
-                <input type="submit" value="Search">
-            </form>
 
-        </section>
     </nav>
 
     <section id="cat">

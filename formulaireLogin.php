@@ -26,7 +26,7 @@
             <form action="AddUser.php" method="post" >
                 <input type="text" class="input" placeholder="Login"  name="login" />
                 <input type="text" class="input" placeholder="Name"   name="nom" />
-                <input type="text" class="input" placeholder="prénom"   name="prenom" />
+                <input type="text" class="input" placeholder="Last Name"   name="prenom" />
                 <input type="password" class="input" placeholder="Password"  name="password" />
         </div>
         <button class="submit-btn" name="ok" >Sign up</button>

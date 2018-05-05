@@ -1,7 +1,11 @@
-<section id="settings" >
-    <p>Add new Product :</p>
-
-    <form action="AddProduct.php" method="post" >
+<link rel="stylesheet" href="addProductStyle.css">
+    <p></p>
+<div id="content">
+    <div id="in">
+        <div id="steps">
+<legend>Add new Product :</legend>
+<fieldset class="step">
+    <form id="formElem" action="executeReqInsert.php" method="post" >
     <?php
 
     //retourne le type d un obj
@@ -25,4 +29,8 @@
 
 <button class="submit-btn" name="table" value="<?php echo $_POST["tab"]?>" >OK</button>
     </form>
+</fieldset>
+    </div>
+    </div>
+    </div>
 </section>

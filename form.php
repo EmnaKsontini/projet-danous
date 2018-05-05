@@ -16,11 +16,18 @@ catch(Exception $e)
 }
 
  if(!$rows["login"]) {
-     echo "<div class=\"alert\"><span class=\"\" onclick=\"this.parentElement.style.display=\'none\';\"> &times;</span> this is an alert box.\"</div>";
+     echo '<script language="JavaScript">
+	alert("oopps wrong login!!");
+	window.location.replace("formulaireLogin.php");
+	</script>';
  }
  else
  { if($rows["passwd"]!=$pd)
-     echo "le mot de passe saisit ne correspond pas a votre login ";
+
+     echo '<script language="JavaScript">
+	alert("opps wrong password!!");
+	window.location.replace("formulaireLogin.php");
+	</script>';
  else
 
  {

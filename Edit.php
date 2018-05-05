@@ -15,11 +15,11 @@
         <ul>
             <li class="selected"><a href="home.php">Home</a></li>
 
-            <li><a href="Products.php">All Products</a></li>
+
             <li><a href="MyCart.php">My Cart</a></li>
 
-            <li><a href="#">Contact us</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="#bas">Contact us</a></li>
+            <li><a href="#bas">About</a></li>
             <?php
 
             echo"<li>";
@@ -30,14 +30,7 @@
 
 
 
-        </ul>
-        <section id="search"><!-- Search form -->
-            <form action="#" onsubmit="return false;" method="get">
-                <input type="text" onfocus="if (this.value =='Search..' ) this.value=''" onblur="if (this.value=='') this.value='Search..'" value="Search.." name="q">
-                <input type="submit" value="Search">
-            </form>
 
-        </section>
     </nav>
 
 
@@ -62,7 +55,7 @@
             <br>
             <br>
             <br>
-            <input id="userphoto" type="file"  placeholder="Name"   name="nom" />
+
             <section id="settings" >
                 <p>Edit your user settings:</p>
 
@@ -73,7 +66,7 @@
 
                 <p class="setting"><span>E-mail Address </span> <input type="text"  placeholder="Email"   name="mail" /></p>
 
-                <p class="setting"><span>pays </span> <input type="text"  placeholder="Language"   name="pays" /></p>
+                <p class="setting"><span>pays </span> <input type="text"  placeholder="pays"   name="pays" /></p>
 
 
 
@@ -91,9 +84,11 @@
 
 
 <footer>
+
     <div id="privacy">
         <p>
         <table class="colone1">
+            <div id="bas"></div>
             <tr>
                 <td  width="33%" colspan="2">CONTACTEZ NOUS :</td>
                 <td width="33%" colspan="2">SUIVEZ_NOUS:</td>

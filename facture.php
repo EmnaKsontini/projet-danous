@@ -1,39 +1,57 @@
 <!DOCTYPE html>
 <?php session_start();
+
+if (isset($_SESSION["login"]))
+
+{   $log=$_SESSION["login"];
+    $req = "SELECT * FROM autho WHERE login= \"" . $log . "\"";
+    try {
+        $pdo = new PDO('mysql:host=localhost;dbname=danousdatabase', 'root', '');
+        $stmt = $pdo->query($req);
+        $rows = $stmt->fetch(PDO::FETCH_ASSOC);
+    } catch (Exception $e) {
+        exit('<b>Catched exception at line ' . $e->getLine() . ' (code : ' . $e->getCode() . ') :</b> ' . $e->getMessage());
+    }
+
+    $point = $rows["pointdanous"];
+}
+
  ?>
+
 <html>
 <head>
 <title> Payment </title>
 <link href="style1.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
-	<div class="main">	
-		<h1> Facturation </h1>
+<script></script>
+	<div class="main">
 		<div class="div1">
 			<div class="div1_left">
 				<div class="div1_left1">
                     <h3>Payment Summary : </h3>
                     <?php
+                    $BD_connexion=new PDO('mysql:host=localhost;dbname=danousdatabase','root','');
+                        $_SESSION["total"]=0;
+                    $_SESSION["nbrpoint"]=0;
+                    if(isset($_SESSION["cart_item"]))
 
-                    foreach ( $_SESSION["cart_item"] as $key => $value)
-                    {
-                        foreach ( $value  as $key1 => $value1) {
+                    {  foreach ( $_SESSION["cart_item"] as $key => $value) {
 
-                            if ($key1 == "produit") {
-                                foreach ($value1 as $key2 => $value2) {
-                                    if ($key2 == "Reference") {
-                                        echo "<ul><li > Reference: $value2<span></span>";
-                                    }
-                                    if ($key2 == "Prix") {
-                                        echo "</li><li> Price: $value2</li>";
-                                    }
 
-                                }
+
+                                        echo "<ul><li > Reference: $key <span></span>";
+                                        echo "</li><li> Price:".$_SESSION["cart_item"][$key]["prix"]."DT</li>";
+                                        echo "<br><li> quantity : ".$_SESSION["cart_item"][$key]["quantity"]."</li></ul><hr>";
+                        $prix=$_SESSION["cart_item"][$key]["prix"];
+                        $k1=$_SESSION["cart_item"][$key]["quantity"];
+                                $_SESSION["total"] = $_SESSION["total"] + $k1* $prix;
+                        $_SESSION["nbrpoint"]= $_SESSION["nbrpoint"]+$_SESSION["cart_item"][$key]["quantity"];
+
                             }
-                            if ($key1 == "quantity") {
-                                echo "<br><li> quantity : $value1</li></ul> <hr> ";
-                            }
-                        }
+
+
+
 
                     }
 
@@ -41,17 +59,35 @@
 
 				</div>
 				<div class="total">
-					<h3>Total Price</h3>
-					<h4>523.63 GBP</h4>					<p>Price includes all taxes</p>
+                    <?php
+                    if (isset($_GET["click"])) {
+
+                        $_SESSION["total"] = $_SESSION["total"]- $_SESSION["total"] * ($point/100);
+
+                        $req=" UPDATE `autho` SET  pointdanous= '0' WHERE login= \"".$log."\"";
+                       $stmt1 = $pdo->query($req);
+                       $rows1 = $stmt1->fetch(PDO::FETCH_ASSOC);
+                        $point =0 ;
+
+                    }
+
+
+                    ?>
+					<h3> Total Price : <?php if($_SESSION["total"]>0) echo $_SESSION["total"]; else echo "0"?> DT  </h3>
+                    <p class="comment">Price includes all taxes</p>
 				</div>
 			</div>
 			<div class="div1_right">
 				<div class="payement">
-					<h2>Payment Method</h2>
+					<h2 id="title">PAYMENT METHOD</h2>
 					<div >
 						<ul>
-							<li><img src="images/1.jpg" alt=" " /></li>
-							<li><img src="images/2.jpg" alt=" " /></li>
+                            <form method="post">
+                             <div style="float:left">    <input type="checkbox" ><img src="images/1.jpg" alt=" "></input> </div>
+
+                                <div style="float:right"> <input type="checkbox" ><img src="images/2.jpg" alt=" " /> </div>
+                            </form> <br> <br> <br>
+
 						</ul>
 						<div>
 							<div>
@@ -60,20 +96,20 @@
 										<div>
 											<div>
 												<div >
-													<label class="control-label">Name on Card</label>
-													<input class="billing-address-name form-control" type="text" name="name" placeholder="John Smith">
+													<label class="label">Name on Card</label>
+													<input class="billing-address-name form-control" type="text" name="name" placeholder="">
 												</div>
 												<div class="w3_agileits_card_number_grids">
 													<div class="w3_agileits_card_number_grid_left">
 														<div>
-															<label class="control-label">Card Number</label>
+															<label class="label">Card Number</label>
 															<input class="number credit-card-number form-control" type="text" name="number"
 																		  placeholder="&#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149;">
 														</div>
 													</div>
 													<div class="div2_right">
 														<div >
-															<label class="control-label">CVV</label>
+															<label class="label">CVV</label>
 															<input class="security-code form-control"Â·
 																		  inputmode="numeric"
 																		  type="text" name="security-code"
@@ -83,28 +119,59 @@
 													<div> </div>
 												</div>
 												<div>
-													<label class="control-label">Expiration Date</label>
-													<input class="expiration-month-and-year form-control" type="text" name="expiration-month-and-year" placeholder="MM / YY">
+													<label class="label">Expiration Date</label>
+													<input class="expiration-month-and-year form-control" type="text" name="expiration-month-and-year" placeholder="">
 												</div>
 											</div>
-											<button class="submit"><span>Make a payment <i aria-hidden="true"></i></span></button>
+
 										</div>
 									</section>
 								</form>
 							</div>
 							<div class="div2_right2">
-								<h3>Already have a paypal Account <a href="#">Login here</a></h3>
-								<form action="#" method="post">
-									<input type="email" name="Email" placeholder="Email" required="">
-									<input type="password" name="Password" placeholder="Password" required="">
-									<input type="submit" value="Login">
+                                <p class="text"> Click here <a href="?click=1"><img class="logo" src="images/logo.png" width="100px" height="50px"  border="0.1px" ></img></a>to Use your points to get a discount ( you already have <?php if (isset($point)) echo $point; else echo "0"?> points ) <br> <br></p>
+                                  <?php
+                    if (isset($_GET["click1"])) {
+                        $BD_connexion->query("use achat");
+                        $str = "INSERT INTO `achat`(`reference`, `price`, `quantity`, `Client`, `date`) VALUES (:val1,:val2,:val3,:val4,:val5)";
+                        $req = $BD_connexion->prepare($str);
+                        foreach ($_SESSION["cart_item"] as $key => $value) {
+
+                            $prix = $_SESSION["cart_item"][$key]["prix"];
+                            $k1 = $_SESSION["cart_item"][$key]["quantity"];
+                            $_SESSION["total"] = $_SESSION["total"] + $k1 * $prix;
+                            $req->execute(array(
+                                'val1' => $key,
+                                'val2' => $prix,
+                                'val3' => $k1,
+                                'val4' => $_SESSION["login"],
+                                'val5' => date("Y/m/d"),
+                            ));
+                        }
+                        $h = $point + $_SESSION["nbrpoint"];
+                        $BD_connexion->query("use autho");
+                        $str1 = "UPDATE autho SET `pointdanous`=" . $h . " WHERE login=\"" . $_SESSION["login"] . "\"";
+                        $req1 = $BD_connexion->prepare($str1);
+                        $req1->execute();
+
+
+                    }
+                    ?>
+
+
 								</form>
 							</div>
+
 						</div>
+
 					</div>
+
 				</div>
+                <a href="?click1=1"><submit class="button5" > Make the payment  </submit><a>
+
 			</div>
-			<div> </div>
+
+			<div>  </div>
 		</div>
 	</div>
 

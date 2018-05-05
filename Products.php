@@ -15,14 +15,17 @@ if(isset($_POST["addtocomparator"])){
     //var_dump( $_SESSION["comparator_item"]);
 
 }
-if($_POST["type"]=="laptop")
-{
-    $_SESSION["table"]="pc";//lezim ism i table ikoun howa bidou ism l catégorie!!!! bich tkoun dynamique
-}
-if($_POST["type"]=="phone")
-{
-    $_SESSION["table"]="telephone";//lezim ism i table ikoun howa bidou ism l catégorie!!!! bich tkoun dynamique
+if (sizeof($_POST)!=0) {
+    if ($_POST["type"] == "laptop") {
+        $_SESSION["table"] = "pc";
+    }
+    if ($_POST["type"] == "phone") {
+        $_SESSION["table"] = "telephone";
 
+    }
+}else  {
+
+    $_SESSION["table"] = "pc";
 }
 ?>
 <!DOCTYPE html>
@@ -50,18 +53,17 @@ if($_POST["type"]=="phone")
             <li><a href="MyCart.php">My Cart</a></li>
             <li><a href="#">Contact us</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="formulaireLogin.php"> <img src="images/this2.png" title="LogIn" ></a></li>
+            <?php
+
+            if(!isset($_SESSION['login']))
+                echo"<li><a href=\"formulaireLogin.php\"> <img class=\"home\" src=\"images/this2.png\" title=\"LogIn\" ></a></li>";
+            else echo"<li><a href=\"profile.php\">my profile</a> </li>";
+            ?>
 
 
 
         </ul>
-        <section id="search"><!-- Search form -->
-            <form action="#" onsubmit="return false;" method="get">
-                <input type="text" onfocus="if (this.value =='Search..' ) this.value=''" onblur="if (this.value=='') this.value='Search..'" value="Search.." name="q">
-                <input type="submit" value="Search">
-            </form>
 
-        </section>
     </nav>
 
     <!--<div class="top_head">
@@ -91,7 +93,7 @@ if($_POST["type"]=="phone")
                 <?php
                 // cette fonction permet d eliminer les attributs qu on va pas utiliser dans le filtre--
                 function verifierFiltre ($s){
-                    return (strcmp($s,"Reference")!=0 &&strcmp($s,"Grantie")!=0 && strcmp($s,"Connecteurs")!=0 && strcmp($s,"stock")!=0 &&strcmp($s,"Garantie")!=0 &&strcmp($s,"Dimension")!=0  );
+                    return (strcmp($s,"Reference")!=0 &&strcmp($s,"Grantie")!=0 && strcmp($s,"Connecteurs")!=0 && strcmp($s,"stock")!=0 &&strcmp($s,"Garantie")!=0 &&strcmp($s,"Dimension")!=0 && strcmp($s,"type")!=0 );
                 }
                 //cette fonction permet de corriger la requete lorsque on utilise le caractere spécialte " -> \"
                 function verif_carct_sep ($s){
@@ -104,16 +106,7 @@ if($_POST["type"]=="phone")
                     print "Erreur : " . $e->getMessage();
                     die();
                 }
-                //inkemlou l condition lil les catégories l kol
-                if($_POST["type"]=="laptop")
-                {     echo "flag";
-                    $_SESSION["table"]="pc";//lezim ism i table ikoun howa bidou ism l catégorie!!!! bich tkoun dynamique
-                }
-                if($_POST["type"]=="phone")
-                {
-                    $_SESSION["table"]="telephone";//lezim ism i table ikoun howa bidou ism l catégorie!!!! bich tkoun dynamique
-                    
-                }
+
 
                 $req = $bdd ->query("use danousdatabase");
                 $req = "SELECT * FROM ".$_SESSION["table"];
@@ -126,10 +119,9 @@ if($_POST["type"]=="phone")
                             <a href="#">
                                 <img src="images/<?php echo"$p->Reference"?>.jpg" alt="<?php echo "$p->Reference" ?>" style="width:128px;height:128px">
                             </a>
-                            <form method="post" action="product.php?code=<?php echo $p->Reference; ?>">
+                            <form method="post" action="product.php?code=<?php echo $p->Reference; ?>&table=<?php echo $p->type; ?>">
                                 <div>
                                     <input id="Details" type="submit" value="Details" />
-                                    <input type="hidden" name="type" value="<?php echo $p->type; ?>" />
                                 </div>
                             </form>
                         </div>
@@ -140,7 +132,7 @@ if($_POST["type"]=="phone")
                                 <span class="st">Our price:</span><strong><?php echo "$p->Prix"."DT" ?></strong>
                             </div>
                             <div class="actions">
-                                <form method="post" action="products.php?code=<?php echo $p->Reference; ?> ">
+                                <form method="post" action="products.php?code=<?php echo $p->Reference; ?>">
                                     <div>
                                         <input type="submit" name="addtocomparator" value="Add to comparator" />
                                         <input type="submit" name="addtocart" value="Add to cart" />
@@ -179,7 +171,7 @@ if($_POST["type"]=="phone")
                                     ?>
                                     <input type="range" id="scroll" <?php echo "max=\"".$max[0]."\" min =\"".$min[0]."\" value=\"".$max[0]."\">"?>
                                     <div id="prixVal"><?php echo $max[0] ?></div>
-                                <?php
+                                    <?php
 
 
                                 }else {
@@ -201,7 +193,7 @@ if($_POST["type"]=="phone")
                                     }
                                     echo "</form>";
                                 }
-                                };
+                            };
                         };?>
                     </div>
                 </li>
