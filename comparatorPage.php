@@ -81,13 +81,16 @@ try {
         <?php
       //  $table_name;
        // var_dump($_SESSION);
+
+        if (isset($_SESSION['comparator_item'])){
         foreach ($_SESSION['comparator_item'] as $item){
             $table_name = $item["produit"]->type;
 
+
         }
-        ?>
-        </tr>
-        <?php
+        echo ("</tr>");
+
+
         $req = "DESCRIBE ".$table_name;
         $query = $bdd -> query($req);
         $tab_attribut = $query -> fetchall();
@@ -105,7 +108,8 @@ try {
                 else echo ("<td>".$item["produit"]->$ta[0]."</td>");
             }}
             echo ("</tr>");
-        }
+        }}
+        else echo("Oops Your comaprator list is empty");
         ?>
 
     </table>
