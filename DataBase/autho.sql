@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  Dim 29 avr. 2018 à 15:14
+-- Généré le :  sam. 05 mai 2018 à 13:58
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -46,10 +46,10 @@ CREATE TABLE IF NOT EXISTS `autho` (
 --
 
 INSERT INTO `autho` (`login`, `nom`, `prenom`, `passwd`, `mail`, `pays`, `age`, `pointdanous`) VALUES
-('MERIEM', 'Meriem', 'Ben', '555555', 'meriembenchaaben97@gmail.com', 'Tunisia', 50, NULL),
-('ADMIN', 'ADMIN', 'ADMIN', '00000000', '', '', 18, NULL),
-('Rymouch', 'rym', 'jamila', 'beautiful', 'rymksontini03@mail.com', 'allemand', 19, NULL),
-('sousou', 'kk', 'lll', '1234', '', '', 18, NULL),
+('MERIEM', 'Meriem', 'Ben', '555555', 'meriembenchaaben97@gmail.com', 'Tunisia', 50, 0),
+('ADMIN', 'ADMIN', 'ADMIN', '00000000', '', '', 18, 100),
+('Rymouch', 'rym', 'jamila', 'beautiful', 'rymksontini03@mail.com', 'allemand', 19, 0),
+('sousou', 'kk', 'lll', '1234', '', '', 18, 0),
 ('emna', 'emna', 'ksontini', '12345', '', '', 18, 0);
 COMMIT;
 

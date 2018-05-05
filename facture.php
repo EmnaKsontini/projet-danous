@@ -31,7 +31,9 @@ if (isset($_SESSION["login"]))
 				<div class="div1_left1">
                     <h3>Payment Summary : </h3>
                     <?php
+                    $BD_connexion=new PDO('mysql:host=localhost;dbname=danousdatabase','root','');
                         $_SESSION["total"]=0;
+                    $_SESSION["nbrpoint"]=0;
                     if(isset($_SESSION["cart_item"]))
 
                     {  foreach ( $_SESSION["cart_item"] as $key => $value) {
@@ -44,8 +46,10 @@ if (isset($_SESSION["login"]))
                         $prix=$_SESSION["cart_item"][$key]["prix"];
                         $k1=$_SESSION["cart_item"][$key]["quantity"];
                                 $_SESSION["total"] = $_SESSION["total"] + $k1* $prix;
+                        $_SESSION["nbrpoint"]= $_SESSION["nbrpoint"]+$_SESSION["cart_item"][$key]["quantity"];
 
                             }
+
 
 
 
@@ -69,7 +73,7 @@ if (isset($_SESSION["login"]))
 
 
                     ?>
-					<h3> Total Price : <?php echo $_SESSION["total"]?> DT  </h3>
+					<h3> Total Price : <?php if($_SESSION["total"]>0) echo $_SESSION["total"]; else echo "0"?> DT  </h3>
                     <p class="comment">Price includes all taxes</p>
 				</div>
 			</div>
@@ -78,7 +82,7 @@ if (isset($_SESSION["login"]))
 					<h2 id="title">PAYMENT METHOD</h2>
 					<div >
 						<ul>
-                            <form>
+                            <form method="post">
                              <div style="float:left">    <input type="checkbox" ><img src="images/1.jpg" alt=" "></input> </div>
 
                                 <div style="float:right"> <input type="checkbox" ><img src="images/2.jpg" alt=" " /> </div>
@@ -126,7 +130,33 @@ if (isset($_SESSION["login"]))
 							</div>
 							<div class="div2_right2">
                                 <p class="text"> Click here <a href="?click=1"><img class="logo" src="images/logo.png" width="100px" height="50px"  border="0.1px" ></img></a>to Use your points to get a discount ( you already have <?php if (isset($point)) echo $point; else echo "0"?> points ) <br> <br></p>
+                                  <?php
+                    if (isset($_GET["click1"])) {
+                        $BD_connexion->query("use achat");
+                        $str = "INSERT INTO `achat`(`reference`, `price`, `quantity`, `Client`, `date`) VALUES (:val1,:val2,:val3,:val4,:val5)";
+                        $req = $BD_connexion->prepare($str);
+                        foreach ($_SESSION["cart_item"] as $key => $value) {
 
+                            $prix = $_SESSION["cart_item"][$key]["prix"];
+                            $k1 = $_SESSION["cart_item"][$key]["quantity"];
+                            $_SESSION["total"] = $_SESSION["total"] + $k1 * $prix;
+                            $req->execute(array(
+                                'val1' => $key,
+                                'val2' => $prix,
+                                'val3' => $k1,
+                                'val4' => $_SESSION["login"],
+                                'val5' => date("Y/m/d"),
+                            ));
+                        }
+                        $h = $point + $_SESSION["nbrpoint"];
+                        $BD_connexion->query("use autho");
+                        $str1 = "UPDATE autho SET `pointdanous`=" . $h . " WHERE login=\"" . $_SESSION["login"] . "\"";
+                        $req1 = $BD_connexion->prepare($str1);
+                        $req1->execute();
+
+
+                    }
+                    ?>
 
 
 								</form>
@@ -137,13 +167,13 @@ if (isset($_SESSION["login"]))
 					</div>
 
 				</div>
-                <button class="button5" > Make the payment  </button>
+                <a href="?click1=1"><submit class="button5" > Make the payment  </submit><a>
+
 			</div>
 
 			<div>  </div>
 		</div>
 	</div>
-
 
 
 
