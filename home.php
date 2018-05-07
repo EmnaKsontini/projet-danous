@@ -17,6 +17,7 @@
 
 
             <li><a href="MyCart.php">MYCART</a></li>
+            <li><a href="comparatorPage.php">Comparator</a></li>
             <li><a href="#bas">Contact us</a></li>
             <li><a href="#bas">About</a></li>
             <?php

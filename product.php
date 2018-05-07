@@ -38,6 +38,7 @@ $obj = $query -> fetch(PDO::FETCH_OBJ);
             <li class="selected"><a href="home.php">Home</a></li>
 
             <li><a href="MyCart.php">MyCart</a></li>
+            <li><a href="comparatorPage.php">Comparator</a></li>
 
             <?php
             if(!isset($_SESSION['login']))
@@ -58,10 +59,6 @@ $obj = $query -> fetch(PDO::FETCH_OBJ);
                 <form method="post" action="products.php">
                     <li><input name="type" type="submit" value="laptop" /></li>
                     <li><input name="type" type="submit" value="phone" /></li>
-                    <li><input name="type" type="submit" value="Category 3" /></li>
-                    <li><input name="type" type="submit" value="Category 4" /></li>
-                    <li><input name="type" type="submit" value="Category 5" /></li>
-                    <li><input name="type" type="submit" value="Category 6" /></li>
                 </form>
             </ul>
         </nav>

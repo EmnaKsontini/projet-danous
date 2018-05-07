@@ -51,6 +51,7 @@ if (sizeof($_POST)!=0) {
             <li class="selected"><a href="home.php">Home</a></li>
             <li><a href="#">Specials</a></li>
             <li><a href="MyCart.php">My Cart</a></li>
+            <li><a href="comparatorPage.php">Comparator</a></li>
             <li><a href="#">Contact us</a></li>
             <li><a href="#">About</a></li>
             <?php

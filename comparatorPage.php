@@ -32,7 +32,7 @@ try {
 <header>
     <nav class="hey" >
         <ul>
-            <li class="selected"><a href="#">Home</a></li>
+            <li class="selected"><a href="home.php">Home</a></li>
             <li><a href="#">Specials</a></li>
             <li><a href="Products.php">All Products</a></li>
             <li><a href="#">Contact us</a></li>
